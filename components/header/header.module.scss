@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .link_con {
+    display: flex;
+    align-items: center;
+    a {
+      margin-right: 10px;
+    }
+  }
+}
