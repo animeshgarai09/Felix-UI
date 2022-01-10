@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { MdOpenInNew } from 'react-icons/md'
 import { VscEyeClosed, VscEye } from 'react-icons/vsc'
 
-export const A = ({ href, newTab, ...props }) => {
+export const A = ({ href, newTab, className, ...props }) => {
     return (
         <Link href={href}>
-            <a target={newTab && '_blank'} >{props.children} {newTab && <MdOpenInNew />}</a>
+            <a className={className} target={newTab && '_blank'} >{props.children} {newTab && <MdOpenInNew />}</a>
         </Link>
     )
 }
@@ -112,10 +112,31 @@ const InputRadio = ({ options }) => {
 }
 
 
-export const Button = () => {
+export const Button = ({ options, className }) => {
+    /*
+        options:{
+            text:'submit',
+            size:'xs' || 'sm' || 'md' || 'lg', // md is by default
+            theme: 'primary' || 'info' || 'warning' || 'success' || disable, // primary is by default
+            type: ['rounded','outlined','ghost','link'], // solid is by default
+            icon: icon,
+            direction: 'left' || 'right',
+            className: 'class'
+        }
+    */
+    let { text, icon, size = 'md', theme = 'primary', type = ['solid'], direction = "left" } = options
+
     return (
-        <div>
-            button text
-        </div>
+        <button className={`
+            ${styles.button} 
+            ${styles[size]} 
+            ${styles[theme]} 
+            ${(type.map((item) => styles[item])).join(' ')} 
+            ${styles[direction]}
+            ${className ? className : ''}`}
+        >
+            {icon}
+            {text}
+        </button>
     )
 }

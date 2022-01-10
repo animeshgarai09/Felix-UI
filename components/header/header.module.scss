@@ -1,12 +1,27 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .link_con {
+@import "../../styles/designComponents/utils/";
+.container {
+  border-bottom: 1px solid #e3e3e3c7;
+  position: sticky;
+  background: var(--page-bg);
+  top: 0;
+  width: 100vw;
+  .sub_con {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
     align-items: center;
-    a {
-      margin-right: 10px;
+    padding: rem(20) rem(20);
+    h3 {
+      color: var(--primary);
+    }
+    .link_con {
+      display: flex;
+      align-items: center;
+      a {
+        margin-right: 10px;
+      }
     }
   }
 }
