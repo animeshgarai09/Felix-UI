@@ -1,25 +1,46 @@
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import styles from '../styles/documentation.module.scss'
-import Header from '../components/header'
-import { A } from '../styles/designComponents/components'
+import { useRouter } from 'next/router'
+import styles from '../../styles/documentation.module.scss'
+import Header from '../../components/header'
+import { A } from '../../styles/designComponents/components'
+import page from '../../components/pages'
 const Documentation = () => {
 
-    let links = ['Introduction', 'Colors', 'Typography', 'Conclusion', 'Avatar', 'Alert', 'Badge', 'Button', 'Card', 'Grid', 'Image', 'Input', 'List', 'Modal', 'Navigation', 'Rating', 'Toggle button']
+    const [activePage, setActivePage] = useState('')
+    const router = useRouter()
+    useEffect(() => {
+        if (!router.isReady) return
+
+        const { activePage } = router.query
+        setActivePage(activePage)
+    }, [router.isReady, router.query])
+
+
+    const loadPage = () => {
+        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = page
+        return docPage
+    }
+
     let genLink = flag => {
+        let pageNames = Object.keys(page)
         let com;
         if (flag) {
-            com = links.slice(0, 3).map((item, i) => {
-                return <A className={styles.link} href={`\\${item.toLowerCase()}`}>{item}</A>
+            com = pageNames.slice(0, 3).map((item, i) => {
+                let link = item.toLowerCase()
+                return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
             })
         } else {
-            com = links.map((item, i) => {
-                if (i > 3) {
-                    return <A className={styles.link} href={`\\${item.toLowerCase()}`}>{item}</A>
+            com = pageNames.map((item, i) => {
+                if (i > 2) {
+                    let link = item.toLowerCase()
+                    return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
                 }
             })
         }
         return com
     }
+
     return (
         <>
             <Head>
@@ -30,13 +51,13 @@ const Documentation = () => {
             <main className={styles.main}>
                 <aside className={styles.side_container}>
                     <h5>Getting started</h5>
-                    {genLink(true)}
+                    {router.isReady && genLink(true)}
                     <h5>Components</h5>
-                    {genLink()}
+                    {router.isReady && genLink()}
 
                 </aside>
                 <div className={styles.container}>
-
+                    {activePage && loadPage()}
                 </div>
                 {/* <div className={styles.main__container}>
                     <section>

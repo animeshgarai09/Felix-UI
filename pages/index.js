@@ -6,7 +6,6 @@ import Select from 'react-select'
 import { useState } from 'react'
 import Header from '../components/header'
 import { BsArrowRight } from 'react-icons/bs'
-
 export default function Index() {
     const [value, onChange2] = useState(new Date());
     const Countries = [
