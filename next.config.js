@@ -1,5 +1,8 @@
 module.exports = {
     reactStrictMode: true,
+    images: {
+        domains: ['bit.ly'],
+    },
 }
 
 const withReactSvg = require("next-react-svg");

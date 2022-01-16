@@ -1,10 +1,16 @@
-import Layout from '../../components/layout/layout'
-const Rating = () => {
+import { Rating } from "../../styles/designComponents/components"
+const RatingUI = () => {
     return (
         <div>
-            Rating
+            <Rating
+                options={{
+                    points: 2.5,
+                    className: ''
+                    // text: true
+                }}
+            />
         </div>
     )
 }
 
-export default Rating
+export default RatingUI

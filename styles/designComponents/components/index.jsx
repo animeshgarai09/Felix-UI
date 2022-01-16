@@ -3,7 +3,8 @@ import styles from './system.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { MdOpenInNew } from 'react-icons/md'
-import { VscEyeClosed, VscEye } from 'react-icons/vsc'
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"
+import { VscEyeClosed, VscEye, } from 'react-icons/vsc'
 
 export const A = ({ href, newTab, className, ...props }) => {
     return (
@@ -14,7 +15,8 @@ export const A = ({ href, newTab, className, ...props }) => {
 }
 
 //Next image wrapper
-export const Img = ({ id, src, alt, priority, quality, containerClass, imageClass, blur }) => {
+export const Img = ({ options }) => {
+    let { id, src, alt, priority, quality, containerClass, imageClass, blur } = options
     return (
         <div className={`${styles.image__con} ${containerClass}`}>
             <Image
@@ -112,10 +114,9 @@ const InputRadio = ({ options }) => {
 }
 
 
-export const Button = ({ options, className }) => {
+export const Button = ({ options, className, children }) => {
     /*
         options:{
-            text:'submit',
             size:'xs' || 'sm' || 'md' || 'lg', // md is by default
             theme: 'primary' || 'info' || 'warning' || 'success' || disable, // primary is by default
             type: ['rounded','outlined','ghost','link'], // solid is by default
@@ -136,7 +137,120 @@ export const Button = ({ options, className }) => {
             ${className ? className : ''}`}
         >
             {icon}
-            {text}
+            {children}
         </button>
+    )
+}
+const gradientColors = [
+    'linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)',
+    'linear-gradient( 135deg, #FEB692 10%, #EA5455 100%)',
+    'linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%)',
+    'linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%)',
+    'linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%)',
+    'linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%)',
+    'linear-gradient( 135deg, #FCCF31 10%, #F55555 100%)',
+    'linear-gradient( 135deg, #52E5E7 10%, #130CB7 100%)',
+    'linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%)',
+    'linear-gradient( 135deg, #FFAA85 10%, #B3315F 100%)'
+]
+
+function randomNumberGen(max, min = 0) {
+    return Math.floor(Math.random() * (max - min + 1)) << 0;
+}
+
+export const Avatar = ({ options }) => {
+    /*
+        options:{
+            name: name,
+            src: link,
+            size: 'xs' || 'sm' || 'md' || 'lg' || 'xl' || '2xl',
+            badge: 'green' || 'red' || 'blue',
+        }
+    */
+    const { name, src, num, size = 'md', badge } = options
+    const shortName = name && name.split(' ')[0][0].toUpperCase() + name.split(' ')[1][0].toUpperCase()
+    return (
+        <div className={styles.avatar}>
+            {src && <Img options={{
+                src: src,
+                alt: name,
+                containerClass: styles[size],
+                imageClass: styles.circle,
+            }} />}
+
+            {!src && name &&
+                <div style={{ background: gradientColors[randomNumberGen(9)] }} className={`${styles.text} ${styles[size]} ${styles.circle}`}>
+                    <span>{shortName}</span>
+                </div>
+            }
+
+            {!src && !name &&
+                <div className={`${styles.info} ${styles.circle}`}>
+                    <span>{'+' + num}</span>
+                </div>
+            }
+
+            {badge &&
+                <span className={`${styles.badge} ${styles[badge]} `}>
+                </span>
+            }
+        </div>
+    )
+}
+
+export const AvatarGroup = ({ options, children }) => {
+    /* 
+        options={
+            size: 'xs' || 'sm' || 'md' || 'lg' || 'xl' || '2xl', // md is by default
+            show: 5
+            max: 100
+        }
+    */
+
+    const { size = 'md', show, max } = options
+
+
+    return (
+        <div className={`${styles.avatar_group} ${styles[size]}`}>
+            {children.slice(0, show)}
+            <Avatar options={{
+                num: max || (children.slice(show, children.length)).length,
+                // src: '/images/100200.jpeg',
+            }} />
+        </div>
+    )
+
+}
+
+export const Rating = ({ options, className }) => {
+    /*
+        options={
+            points: number,//(0-5)
+            text: false || true //default true
+        }
+    */
+    let { points, text } = options
+    let [first, second] = points.toString().split('.')
+    let blank = second ? 4 - parseInt(first) : 5 - parseInt(first)
+    let arr = []
+    let i = 0;
+    while (i < first) {
+        arr.push(<FaStar key={i} size={15} />)
+        i++
+    }
+    if (second) {
+        arr.push(<FaStarHalfAlt key={7} size={15} />)
+    }
+    i = 0
+    while (i < blank) {
+        arr.push(<FaRegStar key={10 + i} size={15} />)
+        i++
+    }
+
+    return (
+        <span className={`${styles.rating} ${className}`}>
+            {arr}
+            {text && points}
+        </span>
     )
 }

@@ -8,6 +8,7 @@
   height: 100%;
   justify-content: center;
   align-items: center;
+  position: relative;
   & > div {
     position: unset !important;
     overflow: visible !important;
@@ -205,8 +206,10 @@
     color: var(--white);
   }
   &.success {
+    background: var(--green);
   }
   &.warning {
+    background: var(--red);
   }
   &.disable {
   }
@@ -256,4 +259,208 @@
       margin-left: 0.3rem;
     }
   }
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 10px;
+  .badge {
+    display: inline-block;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    background: var(--primary);
+    position: absolute;
+    border: 2px solid var(--page-bg);
+    &.green {
+      background: var(--green);
+    }
+    &.red {
+      background: var(--red);
+    }
+    &.yellow {
+      background: var(--yellow);
+    }
+  }
+  .xs {
+    width: rem(24);
+    height: rem(24);
+    font-size: 0.5em;
+    + .badge {
+      width: 0.5rem;
+      height: 0.5rem;
+      bottom: -1px;
+      right: 0;
+      border-width: 1px;
+    }
+  }
+  .sm {
+    width: rem(32);
+    height: rem(32);
+    font-size: 0.7em;
+    + .badge {
+      width: 0.7rem;
+      height: 0.7rem;
+      bottom: -2px;
+      right: 0;
+    }
+  }
+  .md {
+    width: rem(48);
+    height: rem(48);
+    font-size: 1.1em;
+    + .badge {
+      width: 0.9rem;
+      height: 0.9rem;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .lg {
+    width: rem(64);
+    height: rem(64);
+    font-size: 2rem;
+    + .badge {
+      width: 1.1rem;
+      height: 1.1rem;
+      bottom: 6px;
+      right: 4px;
+    }
+  }
+  .xl {
+    width: rem(96);
+    height: rem(96);
+    font-size: 2.6rem;
+    + .badge {
+      width: 1.3rem;
+      height: 1.3rem;
+      bottom: 9px;
+      right: 8px;
+    }
+  }
+  .xxl {
+    width: rem(128);
+    height: rem(128);
+    font-size: 3.2rem;
+    + .badge {
+      width: 1.3rem;
+      height: 1.3rem;
+      bottom: 9px;
+      right: 8px;
+    }
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #ffffff;
+    span {
+      line-height: 0;
+    }
+  }
+  .info {
+    @extend .text;
+    font-weight: 500;
+    color: #5b5b5b;
+    background: #e1e1e1;
+  }
+}
+
+.avatar_group {
+  display: inline-flex;
+  .avatar {
+    margin-right: -1.7rem;
+    border: 2px solid var(--page-bg);
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  &.xs .avatar > div {
+    width: rem(24);
+    height: rem(24);
+    font-size: 0.5em;
+    + .badge {
+      width: 0.5rem;
+      height: 0.5rem;
+      bottom: -1px;
+      right: 0;
+      border-width: 1px;
+    }
+  }
+  &.sm .avatar > div {
+    width: rem(32);
+    height: rem(32);
+    font-size: 0.7em;
+    + .badge {
+      width: 0.7rem;
+      height: 0.7rem;
+      bottom: -2px;
+      right: 0;
+    }
+  }
+  &.md .avatar > div {
+    width: rem(48);
+    height: rem(48);
+    font-size: 1.1em;
+    + .badge {
+      width: 0.9rem;
+      height: 0.9rem;
+      bottom: 0;
+      right: 0;
+    }
+  }
+  &.lg .avatar > div {
+    width: rem(64);
+    height: rem(64);
+    font-size: 2rem;
+    + .badge {
+      width: 1.1rem;
+      height: 1.1rem;
+      bottom: 6px;
+      right: 4px;
+    }
+  }
+  &.xl .avatar > div {
+    width: rem(96);
+    height: rem(96);
+    font-size: 2.6rem;
+    + .badge {
+      width: 1.3rem;
+      height: 1.3rem;
+      bottom: 9px;
+      right: 8px;
+    }
+  }
+  &.xxl .avatar > div {
+    width: rem(128);
+    height: rem(128);
+    font-size: 2.6rem;
+    + .badge {
+      width: 1.3rem;
+      height: 1.3rem;
+      bottom: 9px;
+      right: 8px;
+    }
+  }
+}
+
+.rating {
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  svg {
+    color: var(--yellow);
+    margin-right: 3px;
+    &:last-of-type {
+      margin-right: 10px;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
 }
