@@ -1,4 +1,3 @@
-import Layout from '../../components/layout/layout'
 const List = () => {
     return (
         <div>

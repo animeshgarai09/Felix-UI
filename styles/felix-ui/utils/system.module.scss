@@ -3,11 +3,8 @@
 //Next image warapper class
 
 .image__con {
-  display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
   position: relative;
   & > div {
     position: unset !important;
@@ -162,35 +159,35 @@
   }
 }
 .button {
-  margin: 0;
+  margin: 0 0.5rem;
   border: 0;
   outline: none;
   padding: 10px 15px;
   font-weight: 500;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
-  line-height: 1.4;
+  line-height: 0;
   letter-spacing: 0.25px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   &.xs {
-    font-size: rem(12);
+    font-size: rem(11);
     padding: 0 rem(8);
     height: 1.5rem;
   }
   &.sm {
-    font-size: rem(14);
+    font-size: rem(13);
     padding: 0 rem(12);
     height: 2rem;
   }
   &.md {
-    font-size: rem(16);
+    font-size: rem(15);
     padding: 0 rem(18);
     height: 2.5rem;
   }
   &.lg {
-    font-size: rem(18);
+    font-size: rem(17);
     padding: 0 rem(24);
     height: 3rem;
     svg {
@@ -216,7 +213,7 @@
   &.rounded {
     border-radius: 5rem;
   }
-  &.outlined {
+  &.outline {
     background: var(--primary-light);
     color: var(--primary);
     border: 2px solid var(--primary);
@@ -259,13 +256,23 @@
       margin-left: 0.3rem;
     }
   }
+
+  &.icon {
+    &.md {
+      padding: 0 0.6rem;
+      font-size: 1.301rem;
+    }
+    svg {
+      margin: 0;
+    }
+  }
 }
 
 .avatar {
   position: relative;
   display: inline-block;
   border-radius: 50%;
-  margin: 10px;
+  margin: 0 0.5rem;
   .badge {
     display: inline-block;
     border-radius: 50%;
@@ -463,4 +470,56 @@
 
 .circle {
   border-radius: 50%;
+}
+
+.alert {
+  max-width: 700px;
+  padding: 0.6rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 4rem 1fr 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  &.success {
+    background: #c6f6d5;
+    svg {
+      background: var(--green);
+    }
+  }
+  &.error {
+    background: #fed6d7;
+    svg {
+      background: var(--red);
+    }
+  }
+  &.warning {
+    background: #feebc8;
+    svg {
+      background: var(--yellow);
+    }
+  }
+  &.info {
+    background: #bde3f8;
+    svg {
+      background: var(--yellow);
+    }
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span:nth-of-type(2) {
+      font-size: 0.8rem;
+    }
+  }
+  .icon {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    svg {
+      padding: 0.6rem;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+  }
 }

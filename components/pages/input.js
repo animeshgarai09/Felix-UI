@@ -1,4 +1,3 @@
-import Layout from '../../components/layout/layout'
 const Input = () => {
     return (
         <div>

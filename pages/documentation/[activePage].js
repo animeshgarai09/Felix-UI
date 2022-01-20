@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../../styles/documentation.module.scss'
 import Header from '../../components/header'
-import { A } from '../../styles/designComponents/components'
+import { A } from '../../styles/felix-ui'
 import page from '../../components/pages'
 const Documentation = () => {
 
@@ -57,7 +57,9 @@ const Documentation = () => {
 
                 </aside>
                 <div className={styles.container}>
-                    {activePage && loadPage()}
+                    <div className={styles.sub_container}>
+                        {activePage && loadPage()}
+                    </div>
                 </div>
                 {/* <div className={styles.main__container}>
                     <section>

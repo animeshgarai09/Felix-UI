@@ -1,4 +1,4 @@
-import { Rating } from "../../styles/designComponents/components"
+import { Rating } from "../../styles/felix-ui"
 const RatingUI = () => {
     return (
         <div>

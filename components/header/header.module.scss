@@ -1,10 +1,9 @@
-@import "../../styles/designComponents/utils/";
+@import "../../styles/felix-ui/utils/";
 .container {
   border-bottom: 1px solid #e3e3e3c7;
   position: sticky;
   background: #ffffff;
   top: 0;
-  width: 100vw;
   z-index: 10;
   .sub_con {
     display: flex;

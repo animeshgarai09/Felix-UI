@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  span {
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    svg {
+      font-size: inherit;
+      color: var(--red);
+      margin: 0 0.4rem;
+    }
+  }
+  svg {
+    font-size: 1.8rem;
+    margin: 0 0.5rem;
+    color: #b2b2b2;
+    transition: 0.2s;
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

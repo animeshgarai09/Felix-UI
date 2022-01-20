@@ -1,5 +1,5 @@
 import styles from './header.module.scss'
-import { A } from '../../styles/designComponents/components'
+import { A } from '../../styles/felix-ui'
 const Header = () => {
     return (
         <header className={styles.container}>

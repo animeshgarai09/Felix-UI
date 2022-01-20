@@ -1,4 +1,3 @@
-import Layout from '../layout/layout'
 const toggleButton = () => {
     return (
         <div>

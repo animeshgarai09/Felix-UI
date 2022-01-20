@@ -1,11 +1,14 @@
-import Layout from '../layout/layout'
-
-const Alert = () => {
+import { Alert } from "../../styles/felix-ui"
+const AlertUI = () => {
     return (
         <div>
-            Alert
+            <Alert options={{
+                status: 'error',
+                title: 'Did you know something',
+                description: 'A lot has to be talked about this component'
+            }} />
         </div>
     )
 }
 
-export default Alert
+export default AlertUI
