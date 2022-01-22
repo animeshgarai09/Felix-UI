@@ -1,4 +1,4 @@
-const Conclusion = () => {
+const Installation = () => {
     return (
         <div>
             Conclusion
@@ -6,4 +6,4 @@ const Conclusion = () => {
     )
 }
 
-export default Conclusion
+export default Installation

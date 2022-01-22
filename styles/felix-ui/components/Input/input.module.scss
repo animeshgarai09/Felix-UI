@@ -1,0 +1,87 @@
+@import "../../utils/functions.scss";
+
+.group {
+    background: var(--input-bg);
+    border-radius: em(6);
+    padding: em(10) em(15);
+    display: flex;
+    width: 100%;
+    flex-direction: column-reverse;
+    border: 1px solid #00000017;
+    transition: 0.2s;
+    position: relative;
+    margin-bottom: em(15);
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1.3rem;
+    }
+    &:focus-within {
+        border-color: var(--primary);
+        .info label {
+            color: var(--primary);
+        }
+    }
+    &.error {
+        border-color: var(--error);
+        .info {
+            label {
+                color: var(--error);
+            }
+            span {
+                color: var(--error);
+                font-size: rem(12.8);
+                transition: 0.2s;
+            }
+        }
+    }
+    .info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        label {
+            color: var(--label-white);
+            transition: 0.2s;
+        }
+    }
+    input {
+        border: none;
+        background-image: none;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        font-size: 1rem;
+        font-family: Montserrat;
+        &:focus {
+            outline: none;
+            //   & + .info label {
+            //     color: var(--primary);
+            //   }
+        }
+    }
+    input[type="password"] {
+        font-family: monospace;
+        padding-right: em(10);
+        &::-ms-reveal,
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    svg {
+        font-size: 1.32rem;
+        padding: 0.1em;
+        border-radius: 50%;
+        transition: 0.2s;
+        &:hover {
+            cursor: pointer;
+            background: #8787872b;
+        }
+        &:active {
+            transform: scale(0.9);
+            background: #8787872b;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@felix-ui": ["styles/felix-ui/index.js"],
+            "@felix-ui/*": ["styles/felix-ui/*"]
+        }
+    }
+}

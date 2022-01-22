@@ -3,7 +3,7 @@ import { AiFillHeart, AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai'
 import { IoLogoLinkedin } from 'react-icons/io'
 import { HiMail } from 'react-icons/hi'
 import { CodeBlock, dracula } from "react-code-blocks"
-import { A } from '../../styles/felix-ui'
+import { A } from '@felix-ui'
 export const SocialLinks = () => {
     return (
         <div className={styles.container}>

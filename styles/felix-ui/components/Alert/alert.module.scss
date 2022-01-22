@@ -1,0 +1,70 @@
+.container {
+    max-width: 600px;
+    padding: 0.6rem;
+    border-radius: 10px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 4rem 1fr 3rem;
+    margin: 0.5rem;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 8%) 0px 1px 2px;
+    &.success {
+        background: #c6f6d5;
+        svg {
+            background: var(--green);
+        }
+    }
+    &.error {
+        background: #fed6d7;
+        svg {
+            background: var(--red);
+        }
+    }
+    &.warning {
+        background: #feebc8;
+        svg {
+            background: var(--yellow);
+        }
+    }
+    &.info {
+        background: #bde3f8;
+        svg {
+            background: var(--blue);
+        }
+    }
+    .text {
+        span {
+            display: block;
+            &:nth-of-type(2) {
+                font-size: 0.8rem;
+                color: #606060;
+            }
+        }
+    }
+    .icon {
+        display: flex;
+        padding: 0 0.5rem;
+        svg {
+            padding: 0.6rem;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+    }
+
+    .close {
+        background: none;
+        padding: 0;
+        margin: 0;
+        width: 35px;
+        height: 35px;
+        transition: 0.2s;
+        svg {
+            background: none;
+            color: #1c1c1c6b;
+            padding: 0;
+        }
+        &:hover {
+            background: #c3c3c33b;
+        }
+    }
+}

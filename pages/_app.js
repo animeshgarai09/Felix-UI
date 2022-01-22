@@ -1,4 +1,4 @@
-import '../styles/felix-ui/globals.scss'
+import '@felix-ui/global.scss'
 import '../styles/fonts.scss'
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />

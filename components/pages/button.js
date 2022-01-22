@@ -1,4 +1,4 @@
-import { Button } from "../../styles/felix-ui"
+import { Button } from "@felix-ui"
 import { Codeblock } from '../utils'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { BiHomeCircle } from 'react-icons/bi'
@@ -15,7 +15,7 @@ const ButtonUI = () => {
             <h4>Import</h4>
             <Codeblock>
 
-                {`import { Button } from '../../styles/designComponents/components'`}
+                {`import { Button } from "@felix-ui"`}
             </Codeblock>
             <h4>Usage</h4>
             <div className={styles.element_container}>

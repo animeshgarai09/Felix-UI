@@ -1,5 +1,5 @@
 import styles from '../../styles/documentation.module.scss'
-import { Avatar, AvatarGroup } from '../../styles/felix-ui'
+import { Avatar, AvatarGroup } from '@felix-ui'
 import { Codeblock } from '../utils'
 import Footer from '../footer/footer'
 const AvatarUI = () => {
@@ -18,7 +18,7 @@ const AvatarUI = () => {
 
             < Codeblock>
 
-                {`import { Avatar, AvatarGroup } from '../../styles/designComponents/components'`}
+                {`import { Avatar, AvatarGroup } from '@felix-ui'`}
             </ Codeblock>
 
             <h4>Usage</h4>

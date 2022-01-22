@@ -1,6 +1,6 @@
 import styles from '../../styles/documentation.module.scss'
 import { Codeblock } from '../utils'
-import { Img } from '../../styles/felix-ui'
+import { Img } from '@felix-ui'
 import Footer from '../footer/footer'
 const Image = () => {
     return (
@@ -9,7 +9,7 @@ const Image = () => {
             <p>The <code>Img</code> component is used to display images.</p>
             <h4>Import</h4>
             <Codeblock>
-                {`import { Img } from '../../styles/designComponents/components'`}
+                {`import { Img } from '@felix-ui'`}
             </Codeblock>
 
             <h4>Usage</h4>

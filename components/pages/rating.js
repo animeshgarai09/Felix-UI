@@ -1,4 +1,4 @@
-import { Rating } from "../../styles/felix-ui"
+import { Rating } from "@felix-ui"
 const RatingUI = () => {
     return (
         <div>

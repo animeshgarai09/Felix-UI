@@ -4,7 +4,7 @@ import Badge from "./badge";
 import Button from "./button";
 import Card from "./card";
 import Colors from "./colors";
-import Conclusion from "./conclusion";
+import Installation from "./installation";
 import Grid from "./grid";
 import Image from "./image";
 import Input from "./input";
@@ -16,9 +16,9 @@ import ToggleButton from "./toggleButton";
 import Typography from "./typography";
 
 export default {
+    Installation: <Installation />,
     Colors: <Colors />,
     Typography: <Typography />,
-    Conclusion: <Conclusion />,
     Alert: <Alert />,
     Avatar: <Avatar />,
     Badge: <Badge />,

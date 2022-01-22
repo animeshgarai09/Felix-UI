@@ -1,5 +1,5 @@
-import Img from './Img'
-import styles from '../utils/system.module.scss'
+import Img from '../Img'
+import styles from './avatar.module.scss'
 
 
 const gradientColors = [
@@ -30,7 +30,7 @@ const Avatar = ({ options, className }) => {
     const { name, src, num, size = 'md', badge } = options ? options : {}
     const shortName = name && name.split(' ')[0][0].toUpperCase() + name.split(' ')[1][0].toUpperCase()
     return (
-        <div className={`${styles.avatar} ${className ? className : ''}`}>
+        <div className={`${styles.container} ${className ? className : ''}`}>
             {src && <Img className={styles[size]} options={{
                 src: src,
                 alt: name,

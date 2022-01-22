@@ -1,0 +1,37 @@
+@import "../../utils/functions.scss";
+
+.container {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    background: #cfcfcf;
+    border-radius: rem(3);
+    &.green {
+        background: #c6f6d5;
+        color: #1c8963;
+        border-color: #1c8963;
+    }
+    &.red {
+        background: #fed7d7;
+        color: var(--red);
+        border-color: var(--red);
+    }
+    &.yellow {
+        background: #feebc8;
+        color: #f9a100;
+        border-color: #f9a100;
+    }
+    &.primary {
+        background: var(--primary-light);
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    &.rounded {
+        border-radius: rem(15);
+    }
+    &.outline {
+        border: 1px solid;
+    }
+}

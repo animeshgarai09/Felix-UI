@@ -1,4 +1,4 @@
-import styles from '../utils/system.module.scss'
+import styles from './avatar.module.scss'
 import Avatar from './Avatar'
 const AvatarGroup = ({ options, className, children }) => {
     /* 
@@ -13,7 +13,7 @@ const AvatarGroup = ({ options, className, children }) => {
 
 
     return (
-        <div className={`${styles.avatar_group} ${styles[size]} ${className ? className : ''}`}>
+        <div className={`${styles.group} ${styles[size]} ${className ? className : ''}`}>
             {children.slice(0, show)}
             <Avatar options={{
                 num: max || (children.slice(show, children.length)).length,

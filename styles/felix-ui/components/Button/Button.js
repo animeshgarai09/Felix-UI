@@ -1,4 +1,4 @@
-import styles from '../utils/system.module.scss'
+import styles from './button.module.scss'
 
 const Button = ({ options, className, children }) => {
     /*
@@ -15,13 +15,13 @@ const Button = ({ options, className, children }) => {
 
     return (
         <button className={`
-            ${styles.button} 
+            ${styles.btn} 
             ${styles[size]} 
             ${styles[theme]} 
             ${typeof (variant) == 'string' ? styles[variant] : (variant.map((item) => styles[item])).join(' ')} 
-            ${styles[direction]}
-            ${className ? className : ''}
+            ${styles[direction]}       
             ${icon && !children ? styles.icon : ''}
+            ${className ? className : ''}
             `}
         >
             {icon}
