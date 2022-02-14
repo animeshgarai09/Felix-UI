@@ -21,6 +21,10 @@
             align-items: center;
             a {
                 margin-right: 10px;
+                color: var(--black);
+                &:hover {
+                    color: var(--primary);
+                }
             }
         }
     }

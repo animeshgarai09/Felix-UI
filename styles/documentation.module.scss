@@ -21,20 +21,28 @@
         }
         .link {
             font-size: 15px;
-            color: #7c7c7c;
+            color: var(--gray-2);
             margin-bottom: 1rem;
             &:before {
                 content: "";
                 width: 6px;
-                height: 20px;
+                height: 6px;
                 border-radius: 3px;
                 margin-right: 1rem;
+                background: var(--gray-1);
+                transition: 0.3s;
             }
             &:hover {
                 color: var(--primary);
+                &:before {
+                    margin-right: 1.4rem;
+                }
             }
-            &.active:before {
-                background: var(--primary);
+            &.active {
+                color: var(--primary);
+                &:before {
+                    background: var(--primary);
+                }
             }
         }
         // &::-webkit-scrollbar {
@@ -80,7 +88,7 @@
         code {
             font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
             font-size: 14px;
-            color: var(--primary);
+            color: #8d66d6;
         }
     }
     ul {
@@ -104,7 +112,7 @@
         flex-wrap: wrap;
         padding: 0.7rem;
         margin-bottom: 1rem;
-        span {
+        > span {
             margin-right: 0.4rem;
         }
         &.align_center {

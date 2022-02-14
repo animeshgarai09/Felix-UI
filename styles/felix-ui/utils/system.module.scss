@@ -27,6 +27,8 @@
     svg {
         color: var(--yellow);
         margin-right: 3px;
+        font-size: inherit;
+        margin-bottom: -0.07rem;
         &:last-of-type {
             margin-right: 10px;
         }

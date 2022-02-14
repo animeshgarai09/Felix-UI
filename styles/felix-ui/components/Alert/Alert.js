@@ -15,7 +15,7 @@ const Alert = ({ options, className }) => {
     */
     const { status, title, description, closeButton = true } = options ? options : {}
     return (
-        <div className={`${styles.container} ${styles[status]} ${className ? className : ''}`}>
+        <div className={`${styles.container} ${styles[status]} ${className ? className : ''}`} role="alert">
             <div className={styles.icon}>
                 {status == 'success' && <BsCheckAll />}
                 {status == 'error' && <HiOutlineExclamationCircle />}

@@ -44,14 +44,21 @@ const ButtonUI = () => {
             </Codeblock>
             <h4>Button variants</h4>
             <p>Use the <code>variant</code> prop to change the visual style of the Button. You can set the
-                value to <code>rounded</code>, <code>outline</code>, <code>ghost</code>, or <code>link</code>.</p>
+                value to <code>round</code>, <code>outline</code>, <code>ghost</code>, or <code>link</code>.</p>
 
             <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button options={{ variant: 'rounded' }}>Submit</Button>
+                <Button options={{ variant: 'round' }}>Submit</Button>
                 <Button options={{ variant: 'outline' }}>Submit</Button>
                 <Button options={{ variant: 'ghost' }}>Submit</Button>
                 <Button options={{ variant: 'link' }}>Submit</Button>
             </div>
+            <Codeblock>
+
+                {`<Button options={{ variant: 'round' }}>Submit</Button>
+<Button options={{ variant: 'outline' }}>Submit</Button>
+<Button options={{ variant: 'ghost' }}>Submit</Button>
+<Button options={{ variant: 'link' }}>Submit</Button>`}
+            </Codeblock>
             <h4>Button with icon</h4>
             <p>You can add icons to the Button component using the <code>icon</code> prop, and change its position using <code>direction</code> prop.</p>
 

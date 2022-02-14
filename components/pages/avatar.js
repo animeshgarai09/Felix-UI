@@ -166,7 +166,8 @@ const AvatarUI = () => {
             <div className={styles.element_container}>
                 <AvatarGroup options={{
                     size: 'md',
-                    show: 4,
+                    show: 5,
+                    max: 76,
                 }}>
                     <Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
                     <Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />
@@ -181,6 +182,7 @@ const AvatarUI = () => {
                 {`<AvatarGroup options={{
     size: 'md',
     show: 4,
+    max:100
 }}>
     <Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
     <Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />

@@ -1,18 +1,22 @@
 @import "../../utils/functions.scss";
 
 .btn {
-    margin: 0 0.5rem;
     border: 0;
     outline: none;
     padding: 10px 15px;
     font-weight: 500;
     border-radius: 6px;
     cursor: pointer;
-    line-height: 0;
+    line-height: 1.5;
     letter-spacing: 0.25px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease 0s;
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+    }
     &.xs {
         font-size: rem(11);
         padding: 0 rem(8);
@@ -39,6 +43,9 @@
     &.primary {
         background-color: var(--primary);
         color: var(--white);
+        &:hover {
+            background: var(--primary-dark);
+        }
     }
     &.info {
         background-color: var(--primary);
@@ -48,18 +55,22 @@
         background: var(--green);
     }
     &.warning {
+        background: var(--yellow);
+        color: var(--white);
+    }
+    &.danger {
         background: var(--red);
+        color: var(--white);
     }
     &.disable {
     }
-    &.rounded {
+    &.round {
         border-radius: 5rem;
     }
     &.outline {
         background: var(--primary-light);
         color: var(--primary);
         border: 2px solid var(--primary);
-        transition: 0.2s;
         &:hover {
             background: var(--primary);
             color: var(--white);
@@ -69,7 +80,6 @@
         background: var(--primary-light);
         border: none;
         color: var(--primary);
-        transition: 0.2s;
         &:hover {
             background: var(--primary);
             color: var(--white);
@@ -79,11 +89,12 @@
         background: none;
         border: none;
         color: var(--primary);
-        transition: 0.2s;
         &:hover {
             background: none;
             color: var(--primary);
             text-decoration: underline;
+            transform: none;
+            box-shadow: none;
         }
     }
     &.left {

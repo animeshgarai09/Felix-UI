@@ -6,7 +6,7 @@ const Header = () => {
             <div className={styles.sub_con}>
                 <h3>Felix-UI</h3>
                 <div className={styles.link_con}>
-                    <A href="/documentation" >Documentation</A>
+                    <A href="/documentation/installation" >Documentation</A>
                     <A href="#">Examples </A>
                 </div>
             </div>

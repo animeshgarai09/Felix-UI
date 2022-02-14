@@ -24,13 +24,9 @@
     &.error {
         border-color: var(--error);
         .info {
-            label {
-                color: var(--error);
-            }
+            label,
             span {
                 color: var(--error);
-                font-size: rem(12.8);
-                transition: 0.2s;
             }
         }
     }
@@ -39,10 +35,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 5px;
+        margin-bottom: rem(7);
         label {
             color: var(--label-white);
             transition: 0.2s;
+            line-height: 1;
+        }
+        span {
+            font-size: rem(12.8);
+            transition: 0.2s;
+            line-height: 1;
         }
     }
     input {
@@ -52,8 +54,7 @@
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         box-shadow: none;
-        font-size: 1rem;
-        font-family: Montserrat;
+        font-size: 0.9rem;
         &:focus {
             outline: none;
             //   & + .info label {

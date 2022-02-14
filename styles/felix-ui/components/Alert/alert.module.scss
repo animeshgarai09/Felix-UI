@@ -8,25 +8,25 @@
     margin: 0.5rem;
     box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 8%) 0px 1px 2px;
     &.success {
-        background: #c6f6d5;
+        background: var(--green-light);
         svg {
             background: var(--green);
         }
     }
     &.error {
-        background: #fed6d7;
+        background: var(--red-light);
         svg {
             background: var(--red);
         }
     }
     &.warning {
-        background: #feebc8;
+        background: var(--yellow-light);
         svg {
             background: var(--yellow);
         }
     }
     &.info {
-        background: #bde3f8;
+        background: var(--blue--light);
         svg {
             background: var(--blue);
         }
@@ -35,6 +35,8 @@
         span {
             display: block;
             &:nth-of-type(2) {
+                line-height: 1;
+                margin-top: rem(6);
                 font-size: 0.8rem;
                 color: #606060;
             }
@@ -52,7 +54,7 @@
     }
 
     .close {
-        background: none;
+        background: none !important;
         padding: 0;
         margin: 0;
         width: 35px;
@@ -64,7 +66,9 @@
             padding: 0;
         }
         &:hover {
-            background: #c3c3c33b;
+            background: #c3c3c33b !important;
+            transform: none;
+            box-shadow: none;
         }
     }
 }

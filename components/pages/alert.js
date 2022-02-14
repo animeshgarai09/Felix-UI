@@ -34,7 +34,7 @@ const AlertUI = () => {
             <div className={`${styles.element_container} ${styles.column}`}>
                 <Alert options={{
                     status: 'error',
-                    title: 'There was an error processing your request',
+                    title: 'There was an error processing your request!',
                     // description: 'A lot has to be talked about this component'
                 }} />
                 <Alert options={{
@@ -44,7 +44,7 @@ const AlertUI = () => {
                 }} />
                 <Alert options={{
                     status: 'warning',
-                    title: 'Seems your account is about to expire, upgrade now',
+                    title: 'Seems your account is about to expire, upgrade now.',
                     // description: 'A lot has to be talked about this component'
                 }} />
                 <Alert options={{
@@ -57,7 +57,7 @@ const AlertUI = () => {
             <Codeblock>
                 {`<Alert options={{
     status: 'error',
-    title: 'There was an error processing your request',
+    title: 'There was an error processing your request!',
 }} />
 <Alert options={{
     status: 'success',
@@ -65,7 +65,7 @@ const AlertUI = () => {
 }} />
 <Alert options={{
     status: 'warning',
-    title: 'Seems your account is about to expire, upgrade now',
+    title: 'Seems your account is about to expire, upgrade now.',
 }} />
 <Alert options={{
     status: 'info',

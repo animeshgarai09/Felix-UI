@@ -1,26 +1,31 @@
 @import "../../utils/functions.scss";
 
 .container {
-    font-size: 0.7rem;
+    font-size: 0.7em;
     font-weight: 600;
     text-transform: uppercase;
     padding: 0.1rem 0.4rem;
     background: #cfcfcf;
     border-radius: rem(3);
     &.green {
-        background: #c6f6d5;
-        color: #1c8963;
-        border-color: #1c8963;
+        background: var(--green-light);
+        color: var(--green);
+        border-color: var(--green);
     }
     &.red {
-        background: #fed7d7;
+        background: var(--red-light);
         color: var(--red);
         border-color: var(--red);
     }
+    &.blue {
+        background: var(--blue-light);
+        color: var(--blue);
+        border-color: var(--blue);
+    }
     &.yellow {
-        background: #feebc8;
-        color: #f9a100;
-        border-color: #f9a100;
+        background: var(--yellow-light);
+        color: var(--yellow);
+        border-color: var(--yellow);
     }
     &.primary {
         background: var(--primary-light);
