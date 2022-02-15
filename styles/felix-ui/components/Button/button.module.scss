@@ -1,6 +1,20 @@
 @import "../../utils/functions.scss";
 
+@mixin base($color, $v: 0) {
+    background: var(--#{$color}-light);
+    @if $v != 0 {
+        border: none;
+    } @else {
+        border: 2px solid var(--#{$color});
+    }
+    color: var(--#{$color});
+    &:hover {
+        background: var(--#{$color});
+        color: var(--white);
+    }
+}
 .btn {
+    $p: &;
     border: 0;
     outline: none;
     padding: 10px 15px;
@@ -12,10 +26,16 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease 0s;
+    gap: 0.3rem;
+    transition: var(--transition);
     &:hover {
         transform: translateY(-3px);
         box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
+    }
+    &.no-transform {
+        &:hover {
+            transform: none;
+        }
     }
     &.xs {
         font-size: rem(11);
@@ -36,9 +56,9 @@
         font-size: rem(17);
         padding: 0 rem(24);
         height: 3rem;
-        svg {
-            font-size: 1.6rem;
-        }
+    }
+    &.full {
+        width: 100%;
     }
     &.primary {
         background-color: var(--primary);
@@ -48,11 +68,12 @@
         }
     }
     &.info {
-        background-color: var(--primary);
+        background-color: var(--blue);
         color: var(--white);
     }
     &.success {
         background: var(--green);
+        color: var(--white);
     }
     &.warning {
         background: var(--yellow);
@@ -67,22 +88,48 @@
     &.round {
         border-radius: 5rem;
     }
-    &.outline {
-        background: var(--primary-light);
-        color: var(--primary);
-        border: 2px solid var(--primary);
+    &.close {
+        font-size: 1.6rem;
+        width: 2rem;
+        background: none;
+        color: var(--gray-2);
         &:hover {
-            background: var(--primary);
-            color: var(--white);
+            color: var(--gray-1);
+            transform: none;
+        }
+    }
+    &.outline {
+        &.primary {
+            @include base(primary);
+        }
+        &.success {
+            @include base(green);
+        }
+        &.info {
+            @include base(blue);
+        }
+        &.danger {
+            @include base(red);
+        }
+        &.warning {
+            @include base(yellow);
         }
     }
     &.ghost {
-        background: var(--primary-light);
-        border: none;
-        color: var(--primary);
-        &:hover {
-            background: var(--primary);
-            color: var(--white);
+        &.primary {
+            @include base(primary, 1);
+        }
+        &.success {
+            @include base(green, 1);
+        }
+        &.info {
+            @include base(blue, 1);
+        }
+        &.danger {
+            @include base(red, 1);
+        }
+        &.warning {
+            @include base(yellow, 1);
         }
     }
     &.link {
@@ -95,18 +142,6 @@
             text-decoration: underline;
             transform: none;
             box-shadow: none;
-        }
-    }
-    &.left {
-        flex: row;
-        svg {
-            margin-right: 0.3rem;
-        }
-    }
-    &.right {
-        flex-flow: row-reverse;
-        svg {
-            margin-left: 0.3rem;
         }
     }
 

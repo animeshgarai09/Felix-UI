@@ -1,16 +1,20 @@
 .container {
     width: 100vw;
-    height: calc(100vh - 82px);
+    height: calc(100vh - 81px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     .text {
         width: 58vw;
         text-align: center;
+        margin-top: 5rem;
+        position: relative;
+        z-index: 10;
         h1 {
             margin-bottom: 1.5rem;
             font-size: 3.6rem;
+            line-height: 1.4;
             span {
                 color: var(--primary);
             }
@@ -24,6 +28,31 @@
             font-size: 1rem;
             margin: 0 8rem;
             margin-bottom: 1.5rem;
+        }
+    }
+    .footer {
+        position: relative;
+        z-index: 10;
+        span:first-child {
+            margin-bottom: 1rem;
+        }
+    }
+    .actions {
+        display: flex;
+        justify-content: center;
+        button {
+            width: 10rem;
+            margin: 0 0.7rem;
+        }
+    }
+    & > svg {
+        position: absolute;
+        bottom: 0;
+        &.left {
+            left: 0;
+        }
+        &.right {
+            right: 0;
         }
     }
 }

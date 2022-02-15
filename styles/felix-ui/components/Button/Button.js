@@ -1,31 +1,27 @@
 import styles from './button.module.scss'
 
-const Button = ({ options, className, children }) => {
-    /*
-        options:{
-            size:'xs' || 'sm' || 'md' || 'lg', // md is by default
-            theme: 'primary' || 'info' || 'warning' || 'success' || disable, // primary is by default
-            variant: ['round','outline','ghost','link'], // solid is by default
-            icon: icon,
-            direction: 'left' || 'right',
-            className: 'class'
-        }
-    */
-    let { icon = null, size = 'md', theme = 'primary', variant = 'solid', direction = "left" } = options || {}
+const Button = (
+    {
+        size = "md", //'xs' || 'sm' || 'md' || 'lg', // md is by default
+        theme = "primary", //'primary' || 'info' || 'warning' || 'success' || disable, // primary is by default
+        variant = "solid", //['round','outline','ghost','link'], // solid is by default
+        leftIcon, // React-icons
+        rightIcon, // React-icons
+        className, //user-defined classnames
+        children //button text
+    }) => {
 
+    // Creating class list for the component
+
+    let classNames = [styles.btn, styles[size], styles[theme]]
+    classNames = classNames.concat((typeof (variant) == 'string' ? [styles[variant]] || '' : variant.map((item) => styles[item])))
+    classNames.push((leftIcon || rightIcon) && !children ? styles.icon : '')
+    classNames.push(className)
     return (
-        <button type='button' className={`
-            ${styles.btn} 
-            ${styles[size]} 
-            ${styles[theme]} 
-            ${typeof (variant) == 'string' ? styles[variant] || '' : (variant.map((item) => styles[item])).join(' ')} 
-            ${styles[direction]}       
-            ${icon && !children ? styles.icon : ''}
-            ${className || ''}
-            `}
-        >
-            {icon}
+        <button type='button' className={`${classNames.join(' ')}`}>
+            {leftIcon}
             {children}
+            {rightIcon}
         </button>
     )
 }

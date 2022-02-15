@@ -1,22 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/index.module.scss'
-import { Img, Input, Button, A, InputGroup } from '@felix-ui'
-import Calendar from 'react-calendar'
-import Select from 'react-select'
-import { useState } from 'react'
+import { Button } from '@felix-ui'
 import Header from '../components/header'
-import { BsArrowRight } from 'react-icons/bs'
+import { SocialLinks } from '../components/utils'
+import { AiFillGithub } from 'react-icons/ai'
+import Left from '../public/svg/left.svg'
+import Right from '../public/svg/right.svg'
 export default function Index() {
-    const [value, onChange2] = useState(new Date());
-    const Countries = [
-        { label: "Albania", value: 355 },
-        { label: "Argentina", value: 54 },
-        { label: "Austria", value: 43 },
-        { label: "Cocos Islands", value: 61 },
-        { label: "Kuwait", value: 965 },
-        { label: "Sweden", value: 46 },
-        { label: "Venezuela", value: 58 }
-    ];
     return (
         <>
             <Head>
@@ -30,21 +20,22 @@ export default function Index() {
                     <p>Felix UI is a React component library built for Next JS </p>
                     <p>Minimal, modular and accessible component library that gives you the building blocks for faster development.</p>
                     <div className={styles.actions}>
-                        <Button options={{
-                            icon: <BsArrowRight />,
-                            size: 'lg',
-                            variant: 'round',
-                            direction: 'right',
-                        }}>Get started</Button>
-                        <Button options={{
-                            // icon: <BsArrowRight />,
-                            size: 'lg',
-                            variant: ['round', 'outline', 'ghost'],
-                            direction: 'right',
-                        }}>GitHub</Button>
+                        <a href="/documentation.html#introduction"><Button
+                            size='lg'
+                            variant='round'
+                        >Get started</Button>
+                        </a>
+                        <a href="https://github.com/animeshgarai09/Felix-UI-Vanilla"><Button
+                            leftIcon={<AiFillGithub />}
+                            size='lg'
+                            variant={['round', 'outline']}
+                        >GitHub</Button>
+                        </a>
                     </div>
                 </div>
-
+                <SocialLinks />
+                <Left className={styles.left} />
+                <Right className={styles.right} />
             </main>
         </>
     )

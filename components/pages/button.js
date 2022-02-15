@@ -29,48 +29,54 @@ const ButtonUI = () => {
             <p>Use the <code>size</code> prop to change the size of the button. You can set the value to
                 <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
             <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button options={{ size: 'xs' }}>Submit</Button>
-                <Button options={{ size: 'sm' }}>Submit</Button>
-                <Button options={{ size: 'md' }}>Submit</Button>
-                <Button options={{ size: 'lg' }}>Submit</Button>
+                <Button size='xs'>Extra small</Button>
+                <Button size='sm'>Small</Button>
+                <Button size='md'>Medium</Button>
+                <Button size='lg'>Large</Button>
             </div>
 
             <Codeblock>
 
-                {`<Button options={{ size: 'xs' }}>Submit</Button>
-<Button options={{ size: 'sm' }}>Submit</Button>
-<Button options={{ size: 'md' }}>Submit</Button>
-<Button options={{ size: 'lg' }}>Submit</Button>`}
+                {
+                    `<Button size='xs'>Extra small</Button>
+<Button size='sm'>Small</Button>
+<Button size='md'>Medium</Button>
+<Button size='lg'>Large</Button>`
+                }
             </Codeblock>
             <h4>Button variants</h4>
             <p>Use the <code>variant</code> prop to change the visual style of the Button. You can set the
                 value to <code>round</code>, <code>outline</code>, <code>ghost</code>, or <code>link</code>.</p>
 
             <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button options={{ variant: 'round' }}>Submit</Button>
-                <Button options={{ variant: 'outline' }}>Submit</Button>
-                <Button options={{ variant: 'ghost' }}>Submit</Button>
-                <Button options={{ variant: 'link' }}>Submit</Button>
+                <Button variant='round'>Submit</Button>
+                <Button variant='outline'>Submit</Button>
+                <Button variant='ghost'>Submit</Button>
+                <Button variant='link'>Submit</Button>
             </div>
             <Codeblock>
 
-                {`<Button options={{ variant: 'round' }}>Submit</Button>
-<Button options={{ variant: 'outline' }}>Submit</Button>
-<Button options={{ variant: 'ghost' }}>Submit</Button>
-<Button options={{ variant: 'link' }}>Submit</Button>`}
+                {
+                    `<Button variant='round'>Submit</Button>
+<Button variant='outline'>Submit</Button>
+<Button variant='ghost'>Submit</Button>
+<Button variant='link'>Submit</Button>`
+                }
             </Codeblock>
             <h4>Button with icon</h4>
             <p>You can add icons to the Button component using the <code>icon</code> prop, and change its position using <code>direction</code> prop.</p>
 
             <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button options={{ icon: <BiHomeCircle />, direction: 'left' }}></Button>
-                <Button options={{ icon: <FiChevronRight />, direction: 'right' }}>Back</Button>
+                <Button leftIcon={<FiChevronLeft />} >Back</Button>
+                <Button leftIcon={<BiHomeCircle />}></Button>
+                <Button rightIcon={<FiChevronRight />} >Get started</Button>
             </div>
 
             <Codeblock>
 
-                {`<Button options={{ icon: <BiHomeCircle />, direction: 'left' }}>Home</Button>
-<Button options={{ icon: <FiChevronRight />, direction: 'right' }}>Back</Button>`}
+                {`<Button leftIcon={<FiChevronLeft />} >Back</Button>
+<Button leftIcon={<BiHomeCircle />}></Button>
+<Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
             <Footer previous={['Badge', '/documentation/badge']} next={['Card', '/documentation/card']} />
         </>
