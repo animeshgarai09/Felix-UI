@@ -6,8 +6,8 @@ const footer = ({ previous, next }) => {
     return (
         <footer className={styles.container}>
             <div className={styles.links_con}>
-                <A href={previous[1]}><Button className={styles.button} options={{ size: 'md', icon: <FiChevronLeft /> }}>{previous[0]}</Button></A>
-                <A href={next[1]}><Button className={styles.button} options={{ size: 'md', icon: <FiChevronRight />, direction: 'right' }}>{next[0]}</Button></A>
+                <A href={`/documentation/${previous.toLowerCase()}`}><Button className={styles.button} leftIcon={<FiChevronLeft />}>{previous}</Button></A>
+                <A href={`/documentation/${next.toLowerCase()}`}><Button className={styles.button} rightIcon={<FiChevronRight />}>{next}</Button></A>
             </div>
             <SocialLinks />
         </footer>

@@ -1,7 +1,13 @@
-import Image from 'next/image'
 import styles from '../utils/system.module.scss'
 
-const Img = ({ options, className }) => {
+const Image = (
+    {
+        src,
+        alt,
+        width,
+        loading,
+        className
+    }) => {
     /* 
         options={
             src: path,  //!required,
@@ -13,20 +19,18 @@ const Img = ({ options, className }) => {
             blur:
         }
     */
-    let { src, alt, width, priority, quality, imageClass, blur } = options ? options : {}
+
     return (
         <div style={{ width: width }} className={`${styles.image__con} ${className ? className : ''}`}>
-            <Image
+            <img
                 src={src}
                 alt={alt}
-                priority={priority}
+                loading={loading}
                 layout="fill"
-                quality={quality}
-                placeholder={blur && 'blur'}
-                className={`${styles.image} ${imageClass}`}
+                className={styles.image}
             />
         </div>
     )
 }
 
-export default Img
+export default Image

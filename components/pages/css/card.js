@@ -1,5 +1,5 @@
 import { ProductCard } from "@felix-ui"
-import { Codeblock } from '../utils'
+import { Codeblock } from 'components/utils'
 const CardUI = () => {
     return (
         <>

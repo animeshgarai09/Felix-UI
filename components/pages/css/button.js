@@ -1,9 +1,9 @@
 import { Button } from "@felix-ui"
-import { Codeblock } from '../utils'
+import { Codeblock } from 'components/utils'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { BiHomeCircle } from 'react-icons/bi'
-import Footer from "../footer/footer"
-import styles from '../../styles/documentation.module.scss'
+import Footer from "components/footer"
+import styles from '@styles/documentation.module.scss'
 
 const ButtonUI = () => {
     return (
@@ -78,7 +78,7 @@ const ButtonUI = () => {
 <Button leftIcon={<BiHomeCircle />}></Button>
 <Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
-            <Footer previous={['Badge', '/documentation/badge']} next={['Card', '/documentation/card']} />
+            <Footer previous='Badge' next='Card' />
         </>
     )
 }

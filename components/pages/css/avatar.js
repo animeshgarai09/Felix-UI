@@ -1,7 +1,7 @@
-import styles from '../../styles/documentation.module.scss'
+import styles from '@styles/documentation.module.scss'
 import { Avatar, AvatarGroup } from '@felix-ui'
-import { Codeblock } from '../utils'
-import Footer from '../footer/footer'
+import { Codeblock } from 'components/utils'
+import Footer from 'components/footer'
 const AvatarUI = () => {
     return (
         <>
@@ -194,7 +194,7 @@ const AvatarUI = () => {
 </AvatarGroup>`}
             </ Codeblock>
 
-            <Footer previous={['Alert', '/documentation/alert']} next={['Badge', '/documentation/badge']} />
+            <Footer previous='Alert' next='Badge' />
         </>
     )
 }

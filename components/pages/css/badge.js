@@ -1,7 +1,7 @@
 import { Badge, IconBadge } from '@felix-ui'
-import { Codeblock } from '../utils'
-import styles from '../../styles/documentation.module.scss'
-import Footer from '../footer/footer'
+import { Codeblock } from 'components/utils'
+import styles from '@styles/documentation.module.scss'
+import Footer from 'components/footer'
 import { HiBell } from 'react-icons/hi'
 const BadgeUI = () => {
     return (
@@ -66,7 +66,7 @@ const BadgeUI = () => {
 <IconBadge options={{ icon: <HiBell />, number: 10 }} />
 <IconBadge options={{ icon: <HiBell />, number: 248 }} />`}
             </Codeblock>
-            <Footer previous={['Avatar', '/documentation/avatar']} next={['Button', '/documentation/button']} />
+            <Footer previous='Avatar' next='Button' />
 
         </>
     )

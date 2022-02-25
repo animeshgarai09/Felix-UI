@@ -2,7 +2,7 @@ import styles from './index.module.scss'
 import { AiFillHeart, AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai'
 import { IoLogoLinkedin } from 'react-icons/io'
 import { HiMail } from 'react-icons/hi'
-import { CodeBlock, dracula } from "react-code-blocks"
+import { CodeBlock, atomOneDark } from "react-code-blocks"
 import { A } from '@felix-ui'
 export const SocialLinks = () => {
     return (
@@ -24,7 +24,7 @@ export const Codeblock = ({ children }) => {
             text={children}
             language='jsx'
             showLineNumbers={false}
-            theme={dracula}
+            theme={atomOneDark}
         />
     )
 }

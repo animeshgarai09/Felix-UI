@@ -1,17 +1,11 @@
 .container {
-  margin: 1.3rem 0;
-  .links_con {
-    padding: 1rem;
-    background: var(--primary-light);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .button {
-      font-size: 0.9rem;
-      svg {
-        font-size: 1.2rem;
-      }
+    margin: 1.3rem 0;
+    .links_con {
+        padding: 1rem;
+        background: var(--primary-light);
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-  }
 }

@@ -1,4 +1,4 @@
-import Img from '../Img'
+import Image from '../Image'
 import styles from './avatar.module.scss'
 
 
@@ -31,11 +31,7 @@ const Avatar = ({ options, className }) => {
     const shortName = name && name.split(' ')[0][0].toUpperCase() + name.split(' ')[1][0].toUpperCase()
     return (
         <div className={`${styles.container} ${className ? className : ''}`}>
-            {src && <Img className={styles[size]} options={{
-                src: src,
-                alt: name,
-                imageClass: styles.circle,
-            }} />}
+            {src && <Image className={`${styles[size]} ${styles.circle}`} src={src} alt={name} />}
 
             {!src && name &&
                 <div style={{ background: gradientColors[randomNumberGen(9)] }} className={`${styles.text} ${styles[size]} ${styles.circle}`}>

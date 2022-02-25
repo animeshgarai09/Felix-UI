@@ -3,7 +3,8 @@
         "baseUrl": ".",
         "paths": {
             "@felix-ui": ["styles/felix-ui/index.js"],
-            "@felix-ui/*": ["styles/felix-ui/*"]
+            "@felix-ui/*": ["styles/felix-ui/*"],
+            "@styles/*": ["styles/*"]
         }
     }
 }

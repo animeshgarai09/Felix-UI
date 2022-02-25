@@ -1,6 +1,6 @@
 import { Input } from '@felix-ui'
-import { Codeblock } from '../utils'
-import styles from '../../styles/documentation.module.scss'
+import { Codeblock } from 'components/utils'
+import styles from '@styles/documentation.module.scss'
 import Footer from 'components/footer/footer'
 const InputUI = () => {
     return (
@@ -51,7 +51,7 @@ const InputUI = () => {
     err_msg: "Incorrect password" 
 }} />`}
             </Codeblock>
-            <Footer previous={['Image', '/documentation/image']} next={['List', '/documentation/list']} />
+            <Footer previous='Image' next='List' />
         </>
     )
 }

@@ -1,29 +1,34 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import styles from '../../styles/documentation.module.scss'
+import styles from '@styles/documentation.module.scss'
 import Header from '../../components/header'
 import { A } from '@felix-ui'
-import page from '../../components/pages'
+import reactPages from '../../components/pages/react'
+
 const Documentation = () => {
 
     const [activePage, setActivePage] = useState('')
+
     const router = useRouter()
+
+    // Checking URL to load corresponding page and set it to activePage variable
+
     useEffect(() => {
         if (!router.isReady) return
-
         const { activePage } = router.query
         setActivePage(activePage)
     }, [router.isReady, router.query])
 
-
+    // Based on the page stored in activePage variable it load that particular component from JSON (reactPages or cssPages) 
     const loadPage = () => {
-        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = page
+        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = reactPages
         return docPage
     }
 
+    //creates side navigation from reactPages JSON
     let genLink = flag => {
-        let pageNames = Object.keys(page)
+        let pageNames = Object.keys(reactPages)
         let com;
         if (flag) {
             com = pageNames.slice(0, 3).map((item, i) => {
@@ -57,78 +62,10 @@ const Documentation = () => {
 
                 </aside>
                 <div className={styles.container}>
-                    <div className={styles.sub_container}>
+                    <section className={styles.sub_container}>
                         {activePage && loadPage()}
-                    </div>
+                    </section>
                 </div>
-                {/* <div className={styles.main__container}>
-                    <section>
-                        <p>This page defines the design language of UI elements used in Felix-UI projects and meant to be reused through out every project</p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum temporibus autem quos sint. Reiciendis distinctio doloremque modi labore blanditiis excepturi eos minus maiores. Ab dolores deleniti itaque distinctio dicta voluptatibus?
-                    </section>
-
-                    <section className='container'>
-                        <div className='column'>
-                            <div className='row'>
-
-                                <button>Button 1</button>
-
-                                <InputGroup options={{
-                                    label: 'Number'
-                                }}>
-                                    <Select
-                                        options={Countries}
-                                        // closeMenuOnSelect={false}
-                                        // menuIsOpen={true}
-                                        menuPosition="absolute"
-                                        className='react-select-container'
-                                        classNamePrefix="react-select"
-                                        isSearchable={false}
-                                        placeholder='Choose from options'
-                                    />
-                                </InputGroup>
-                                <Input options={{
-                                    type: "email",
-                                    label: "Email",
-                                    id: "email",
-                                }} />
-
-                                <Input options={{
-                                    type: "password",
-                                    label: "Password",
-                                    id: "password",
-                                }} />
-                                <InputGroup options={{
-                                label: 'Number'
-                            }}>
-                                <select>
-                                    <option value='1'>1</option>
-                                    <option value='2'>2</option>
-                                    <option value='3'>3</option>
-                                    <option value='4'>4</option>
-                                </select>
-                            </InputGroup>
-
-                                <Input options={{
-                                    type: "radio",
-                                    value: ["Male", "Female"],
-                                    name: 'Gender'
-                                }}
-
-                                />
-                                <Calendar
-                                    onChange={onChange2}
-                                    value={value}
-
-                                />
-
-
-                                <Button />
-                            </div>
-                            <A href="https://www.google.com" newTab={true} ></A>
-                        </div>
-                    </section>
-                </div> */}
             </main>
         </>
     )

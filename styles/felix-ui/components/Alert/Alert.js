@@ -4,18 +4,17 @@ import { CgClose } from 'react-icons/cg'
 import { BsCheckAll, BsInfo } from 'react-icons/bs'
 import { HiExclamation, HiOutlineExclamationCircle } from 'react-icons/hi'
 
-const Alert = ({ options, className }) => {
-    /* 
-        options={
-            status: 'success'|| 'error-r' || 'warning' || 'info',
-            title: 'text', //required
-            descriptions: 'text',
-            closeButton:true|| false //default true
-        }
-    */
-    const { status, title, description, closeButton = true } = options ? options : {}
+const Alert = (
+    {
+        status = 'info',        //  'success'|| 'error' || 'warning' || 'info',
+        title,                  //  'text', //required,
+        description,            //  'text',
+        closeButton = false,    //   true|| false //default true
+        className
+    }) => {
+
     return (
-        <div className={`${styles.container} ${styles[status]} ${className ? className : ''}`} role="alert">
+        <div className={`${styles.container} ${styles[status]} ${className}`} role="alert">
             <div className={styles.icon}>
                 {status == 'success' && <BsCheckAll />}
                 {status == 'error' && <HiOutlineExclamationCircle />}
@@ -26,7 +25,7 @@ const Alert = ({ options, className }) => {
                 <span>{title}</span>
                 <span>{description}</span>
             </div>
-            {closeButton && <Button options={{ icon: <CgClose /> }} className={styles.close} />}
+            {closeButton && <Button leftIcon={<CgClose />} className={styles.close} />}
         </div>
     )
 }

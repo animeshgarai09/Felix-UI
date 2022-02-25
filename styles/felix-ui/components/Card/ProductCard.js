@@ -1,6 +1,6 @@
 import styles from './ProductCard.module.scss'
 import A from '../A'
-import Img from '../Img'
+import Image from '../Image'
 import Rating from '../Rating'
 import Button from '../Button/Button'
 import Badge from '../Badge/Badge'
@@ -33,7 +33,7 @@ const ProductCard = ({ product, category, vendor, rating, price, oldPrice, type,
             {img && <div className={styles.image}>
                 <Badge className={styles.badge} options={{ color: 'red' }}>Sale</Badge>
                 <A href={link}>
-                    <Img options={{ src: img }} />
+                    <Image options={{ src: img }} />
                 </A>
             </div>}
             <div className={styles.content_wrap}>
