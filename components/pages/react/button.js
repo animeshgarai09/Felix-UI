@@ -1,4 +1,4 @@
-import { Button } from "@felix-ui"
+import { Button, ButtonGroup } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { BiHomeCircle } from 'react-icons/bi'
@@ -78,6 +78,12 @@ const ButtonUI = () => {
 <Button leftIcon={<BiHomeCircle />}></Button>
 <Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
+
+            <ButtonGroup size="xs" theme="primary">
+                <Button theme="gray" >Submit</Button>
+                <Button theme="warning">Submit</Button>
+                <Button theme="gray">Submit</Button>
+            </ButtonGroup>
             <Footer previous='Badge' next='Card' />
         </>
     )

@@ -1,7 +1,7 @@
 @import "../../utils/functions.scss";
 
 .group {
-    background: var(--input-bg);
+    background: var(--clr-input-bg);
     border-radius: em(6);
     padding: em(10) em(15);
     display: flex;
@@ -16,17 +16,17 @@
         grid-template-columns: 1fr 1.3rem;
     }
     &:focus-within {
-        border-color: var(--primary);
+        border-color: var(--clr-primary);
         .info label {
-            color: var(--primary);
+            color: var(--clr-primary);
         }
     }
     &.error {
-        border-color: var(--error);
+        border-color: var(--clr-error);
         .info {
             label,
             span {
-                color: var(--error);
+                color: var(--clr-error);
             }
         }
     }
@@ -37,7 +37,7 @@
         justify-content: space-between;
         margin-bottom: rem(7);
         label {
-            color: var(--label-white);
+            color: var(--clr-label-white);
             transition: 0.2s;
             line-height: 1;
         }
@@ -58,7 +58,7 @@
         &:focus {
             outline: none;
             //   & + .info label {
-            //     color: var(--primary);
+            //     color: var(--clr-primary);
             //   }
         }
     }

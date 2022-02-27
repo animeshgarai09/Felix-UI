@@ -1,18 +1,21 @@
 @import "../../utils/functions.scss";
 
+/* Mixins for outline and ghost button variant */
+
 @mixin base($color, $v: 0) {
-    background: var(--#{$color}-light);
+    background: var(--clr-#{$color}-light);
     @if $v != 0 {
         border: none;
     } @else {
-        border: 2px solid var(--#{$color});
+        border: 2px solid var(--clr-#{$color});
     }
-    color: var(--#{$color});
+    color: var(--clr-#{$color});
     &:hover {
-        background: var(--#{$color});
-        color: var(--white);
+        background: var(--clr-#{$color});
+        color: var(--clr-white);
     }
 }
+
 .btn {
     $p: &;
     border: 0;
@@ -32,11 +35,14 @@
         transform: translateY(-3px);
         box-shadow: 5px 5px 15px rgb(0 0 0 / 5%);
     }
-    &.no-transform {
+    &.noTransform {
         &:hover {
             transform: none;
         }
     }
+
+    /* Button sizes */
+
     &.xs {
         font-size: rem(11);
         padding: 0 rem(8);
@@ -60,44 +66,50 @@
     &.full {
         width: 100%;
     }
+
+    /* BUtton themes */
+
     &.primary {
-        background-color: var(--primary);
-        color: var(--white);
+        background-color: var(--clr-primary);
+        color: var(--clr-white);
         &:hover {
-            background: var(--primary-dark);
+            background: var(--clr-primary-dark);
         }
     }
     &.info {
-        background-color: var(--blue);
-        color: var(--white);
+        background-color: var(--clr-blue);
+        color: var(--clr-white);
     }
     &.success {
-        background: var(--green);
-        color: var(--white);
+        background: var(--clr-green);
+        color: var(--clr-white);
     }
     &.warning {
-        background: var(--yellow);
-        color: var(--white);
+        background: var(--clr-yellow);
+        color: var(--clr-white);
     }
     &.danger {
-        background: var(--red);
-        color: var(--white);
+        background: var(--clr-red);
+        color: var(--clr-white);
+    }
+    &.gray {
+        background: var(--clr-gray-5);
+        color: var(--clr-gray-1);
+        &:hover {
+            background: var(--clr-gray-4);
+        }
     }
     &.disable {
     }
+
+    /* Button Variants */
+
     &.round {
         border-radius: 5rem;
     }
-    &.close {
-        font-size: 1.6rem;
-        width: 2rem;
-        background: none;
-        color: var(--gray-2);
-        &:hover {
-            color: var(--gray-1);
-            transform: none;
-        }
-    }
+
+    /* Outline css generated from base mixin */
+
     &.outline {
         &.primary {
             @include base(primary);
@@ -114,7 +126,11 @@
         &.warning {
             @include base(yellow);
         }
+        &.gray {
+            border: 2px solid var(--clr-gray-4);
+        }
     }
+
     &.ghost {
         &.primary {
             @include base(primary, 1);
@@ -135,10 +151,10 @@
     &.link {
         background: none;
         border: none;
-        color: var(--primary);
+        color: var(--clr-primary);
         &:hover {
             background: none;
-            color: var(--primary);
+            color: var(--clr-primary);
             text-decoration: underline;
             transform: none;
             box-shadow: none;
@@ -152,6 +168,121 @@
         }
         svg {
             margin: 0;
+        }
+    }
+}
+
+/* Button group */
+
+.group {
+    width: max-content;
+    margin-block: 0.6rem;
+    .btn {
+        border-radius: 0;
+        &:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+        &:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+        &:hover {
+            transform: none;
+        }
+    }
+
+    /* Button group global sizes for child buttons extended from button sizes*/
+
+    &.xs > button {
+        @extend .xs;
+    }
+    &.sm > button {
+        @extend .sm;
+    }
+    &.md > button {
+        @extend .md;
+    }
+    &.lg > button {
+        @extend .lg;
+    }
+
+    /* Button group global theme style for child buttons */
+
+    &.primary {
+        & > button.btn {
+            @include base(primary);
+            border: inherit;
+        }
+        &.outline > button.btn {
+            border-color: var(--clr-primary);
+            &:first-child {
+                border-color: var(--clr-primary);
+            }
+        }
+    }
+    &.info {
+        & > button.btn {
+            @include base(blue);
+            border: inherit;
+        }
+        &.outline > button.btn {
+            border-color: var(--clr-blue);
+            &:first-child {
+                border-color: var(--clr-blue);
+            }
+        }
+    }
+    &.success {
+        & > button.btn {
+            @include base(green);
+            border: inherit;
+        }
+        &.outline > button.btn {
+            border-color: var(--clr-green);
+            &:first-child {
+                border-color: var(--clr-green);
+            }
+        }
+    }
+    &.warning {
+        & > button.btn {
+            @include base(yellow);
+            border: inherit;
+        }
+        &.outline > button.btn {
+            border-color: var(--clr-yellow);
+            &:first-child {
+                border-color: var(--clr-yellow);
+            }
+        }
+    }
+    &.danger {
+        & > button.btn {
+            @include base(red);
+            border: inherit;
+        }
+        &.outline > button.btn {
+            border-color: var(--clr-red);
+            &:first-child {
+                border-color: var(--clr-red);
+            }
+        }
+    }
+    &.gray > button {
+        background: var(--clr-gray-5);
+        color: var(--clr-gray-1);
+        border-color: var(--clr-gray-3);
+        &:hover {
+            background: var(--clr-gray-4);
+        }
+    }
+
+    /* Button outline class */
+
+    &.outline > button.btn {
+        border-width: 1px 1px 1px 0;
+        border-style: solid;
+        &:first-child {
+            border-left: 1px solid var(--clr-gray-3);
         }
     }
 }
