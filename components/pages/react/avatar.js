@@ -5,8 +5,7 @@ import Footer from 'components/footer'
 const AvatarUI = () => {
     return (
         <>
-            <h1 >Avatar</h1>
-            <p>The <code>Avatar</code> component is used to represent a user, and displays the profile
+            <p className={styles.des}>The <code>Avatar</code> component is used to represent a user, and displays the profile
                 picture, initials or fallback icon.</p>
 
             <h4>Import</h4>

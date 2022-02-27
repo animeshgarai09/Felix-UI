@@ -2,13 +2,13 @@ import { Alert } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from "components/footer"
+
 const AlertUI = () => {
     return (
         <>
-            <h1>Alert</h1>
-            <p>Alerts are used to communicate a state that affects a system, feature or page.</p>
+            <p className={styles.des}>Alerts are used to communicate a state that affects a system, feature or page.</p>
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { Alert } from "@felix-ui"`}
             </Codeblock>
 
@@ -19,11 +19,50 @@ const AlertUI = () => {
                     title='Data uploaded to the server. Fire on!'
                 />
             </div>
-            <Codeblock>
-                {`<Alert
-    status='success'
-    title='Data uploaded to the server. Fire on!'
-/>`}
+            <Codeblock lang="html" >
+                {`<!-- Success alert -->
+
+<div class="alert alert--success" role="alert">
+    <div class="alert__icon">
+        <i class="fas fa-check" aria-hidden="true"></i>
+    </div>
+    <div class="alert__text">
+        <span>Data uploaded to the server. Fire on!</span>
+    </div>
+</div>
+
+<!-- Info alert -->
+
+<div class="alert alert--info" role="alert">
+    <div class="alert__icon">
+        <i class="fas fa-check" aria-hidden="true"></i>
+    </div>
+    <div class="alert__text">
+        <span>Update is ready to be installed.</span>
+    </div>
+</div>
+
+<!-- Warning alert -->
+
+<div class="alert alert--warning" role="alert">
+    <div class="alert__icon">
+        <i class="fas fa-check" aria-hidden="true"></i>
+    </div>
+    <div class="alert__text">
+        <span>Seems your account is about to expire, upgrade now.</span>
+    </div>
+</div>
+
+<!-- Error alert -->
+
+<div class="alert alert--error" role="alert">
+    <div class="alert__icon">
+        <i class="fas fa-check" aria-hidden="true"></i>
+    </div>
+    <div class="alert__text">
+        <span>There was an error processing your request!</span>
+    </div>
+</div>`}
             </Codeblock>
 
             <h4>Status</h4>
@@ -49,7 +88,7 @@ const AlertUI = () => {
                 />
             </div>
 
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Alert
     status='danger'
     title='There was an error processing your request!'
@@ -77,7 +116,7 @@ const AlertUI = () => {
                     closeButton={true}
                 />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Alert
     status='error'
     title='There was an error processing your request'

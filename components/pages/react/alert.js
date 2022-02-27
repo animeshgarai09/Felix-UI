@@ -1,14 +1,13 @@
 import { Alert } from "@felix-ui"
-import { Codeblock } from 'components/utils'
+import { Codeblock, LangSwitcher } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from "components/footer"
 const AlertUI = () => {
     return (
         <>
-            <h1>Alert</h1>
-            <p>Alerts are used to communicate a state that affects a system, feature or page.</p>
+            <p className={styles.des}>Alerts are used to communicate a state that affects a system, feature or page.</p>
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { Alert } from "@felix-ui"`}
             </Codeblock>
 
@@ -19,7 +18,7 @@ const AlertUI = () => {
                     title='Data uploaded to the server. Fire on!'
                 />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Alert
     status='success'
     title='Data uploaded to the server. Fire on!'
@@ -49,7 +48,7 @@ const AlertUI = () => {
                 />
             </div>
 
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Alert
     status='danger'
     title='There was an error processing your request!'
@@ -77,7 +76,7 @@ const AlertUI = () => {
                     closeButton={true}
                 />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Alert
     status='error'
     title='There was an error processing your request'

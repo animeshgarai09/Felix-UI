@@ -8,12 +8,11 @@ import styles from '@styles/documentation.module.scss'
 const ButtonUI = () => {
     return (
         <>
-            <h1>Button</h1>
-            <p>The Button component is used to trigger an action or event, such as submitting a
+            <p className={styles.des}>The Button component is used to trigger an action or event, such as submitting a
                 form, opening a dialog, canceling an action, or performing a delete operation.</p>
 
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
 
                 {`import { Button } from "@felix-ui"`}
             </Codeblock>
@@ -21,7 +20,7 @@ const ButtonUI = () => {
             <div className={styles.element_container}>
                 <Button>Submit</Button>
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
 
                 {`<Button>Submit</Button>`}
             </Codeblock>
@@ -35,7 +34,7 @@ const ButtonUI = () => {
                 <Button size='lg'>Large</Button>
             </div>
 
-            <Codeblock>
+            <Codeblock lang="jsx">
 
                 {
                     `<Button size='xs'>Extra small</Button>
@@ -54,7 +53,7 @@ const ButtonUI = () => {
                 <Button variant='ghost'>Submit</Button>
                 <Button variant='link'>Submit</Button>
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
 
                 {
                     `<Button variant='round'>Submit</Button>
@@ -72,17 +71,16 @@ const ButtonUI = () => {
                 <Button rightIcon={<FiChevronRight />} >Get started</Button>
             </div>
 
-            <Codeblock>
-
+            <Codeblock lang="jsx">
                 {`<Button leftIcon={<FiChevronLeft />} >Back</Button>
 <Button leftIcon={<BiHomeCircle />}></Button>
 <Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
 
-            <ButtonGroup size="xs" theme="primary">
-                <Button theme="gray" >Submit</Button>
-                <Button theme="warning">Submit</Button>
-                <Button theme="gray">Submit</Button>
+            <ButtonGroup size="xs" theme="danger" >
+                <Button theme="gray" onClickActive={true}>Submit</Button>
+                <Button theme="warning" onClickActive={true} >Submit</Button>
+                <Button theme="gray" onClickActive={true} >Submit</Button>
             </ButtonGroup>
             <Footer previous='Badge' next='Card' />
         </>

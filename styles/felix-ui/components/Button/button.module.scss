@@ -1,6 +1,10 @@
 @import "../../utils/functions.scss";
 
-/* Mixins for outline and ghost button variant */
+/*  
+    base mixin for outline and ghost button variant 
+    base mixin accepts 2 parameter color and v - for variant
+    v=0 ghost and v=1 outline
+*/
 
 @mixin base($color, $v: 0) {
     background: var(--clr-#{$color}-light);
@@ -10,7 +14,17 @@
         border: 2px solid var(--clr-#{$color});
     }
     color: var(--clr-#{$color});
-    &:hover {
+    @media (hover: hover) {
+        &:hover {
+            background: var(--clr-#{$color});
+            color: var(--clr-white);
+        }
+    }
+    &:active {
+        background: var(--clr-#{$color});
+        color: var(--clr-white);
+    }
+    &.active {
         background: var(--clr-#{$color});
         color: var(--clr-white);
     }
@@ -72,7 +86,12 @@
     &.primary {
         background-color: var(--clr-primary);
         color: var(--clr-white);
-        &:hover {
+        @media (hover: hover) {
+            &:hover {
+                background: var(--clr-primary-dark);
+            }
+        }
+        &:active {
             background: var(--clr-primary-dark);
         }
     }
