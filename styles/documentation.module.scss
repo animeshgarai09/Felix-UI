@@ -75,10 +75,24 @@
         }
     }
 
-    h1,
+    .heading_con {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--clr-white);
+        margin: 2rem -2rem;
+        padding: 0.4rem 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--clr-border-color-3);
+    }
+    .des {
+        font-size: var(--fs-300);
+        font-weight: 500;
+    }
+
     h4 {
-        margin-top: 2.4rem;
-        margin-bottom: 1.3rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
     h1,
     h3,
@@ -105,7 +119,7 @@
     }
 
     .element_container {
-        border: 1px solid #ededed;
+        border: 1px solid var(--clr-border-color-3);
         background: #ffffff;
         border-radius: 10px;
         display: flex;

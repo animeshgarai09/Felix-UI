@@ -6,22 +6,21 @@ import { HiBell } from 'react-icons/hi'
 const BadgeUI = () => {
     return (
         <>
-            <h1>Badge</h1>
-            <p>Badges are used to highlight an item's status for quick recognition.</p>
+            <p className={styles.des}>Badges are used to highlight an item's status for quick recognition.</p>
             <h4>Import</h4>
             <p >Felix UI exports 2 badge-related components:</p>
             <ul >
                 <li><code >Badge</code>: The tag to represent the status.</li>
                 <li><code>IconBadge</code>: A wrapper to add badges to icons.</li>
             </ul>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { Badge, IconBadge } from '@felix-ui'`}
             </Codeblock>
             <h4>Usage</h4>
             <div className={`${styles.element_container} ${styles.block}`}>
                 <Badge>default</Badge>
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Badge>default</Badge>`}
             </Codeblock>
             <h4>Badge Color</h4>
@@ -34,7 +33,7 @@ const BadgeUI = () => {
                 <Badge options={{ color: 'yellow' }}>changed</Badge>
             </div>
 
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Badge options={{ color: 'primary' }}>new</Badge>
 <Badge options={{ color: 'green' }}>Added</Badge>
 <Badge options={{ color: 'red' }}>removed</Badge>
@@ -48,7 +47,7 @@ const BadgeUI = () => {
                 <Badge options={{ color: 'green', variant: 'rounded' }}>Added</Badge>
                 <Badge options={{ color: 'red', variant: ['outline', 'rounded'] }}>removed</Badge>
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Badge options={{ color: 'primary', variant: 'outline' }}>new</Badge>
 <Badge options={{ color: 'green', variant: 'rounded' }}>Added</Badge>
 <Badge options={{ color: 'red', variant: ['outline', 'rounded'] }}>removed</Badge>`}
@@ -61,7 +60,7 @@ const BadgeUI = () => {
                 <IconBadge options={{ icon: <HiBell />, number: 248 }} />
             </div>
 
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<IconBadge options={{ icon: <HiBell /> }} />
 <IconBadge options={{ icon: <HiBell />, number: 10 }} />
 <IconBadge options={{ icon: <HiBell />, number: 248 }} />`}

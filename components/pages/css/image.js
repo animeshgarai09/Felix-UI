@@ -8,7 +8,7 @@ const ImageUI = () => {
             <h1>Image</h1>
             <p>The <code>Image</code> component is used to display images.</p>
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { Image } from '@felix-ui'`}
             </Codeblock>
 
@@ -16,7 +16,7 @@ const ImageUI = () => {
             <div className={styles.element_container}>
                 <Image src='/images/3.jpg' width='200px' alt='Dan Abramov' />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Image options={{ src: '/images/3.jpg', width: '200px', alt='Dan Abramov' }} />`}
             </Codeblock>
             <h4>Size</h4>

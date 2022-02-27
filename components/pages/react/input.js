@@ -8,7 +8,7 @@ const InputUI = () => {
             <h1>Input</h1>
             <p>The <code>Input</code> component is a component that is used to get user input in a text field.</p>
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { Input } from '@felix-ui'`}
             </Codeblock>
             <h4>Usage</h4>
@@ -16,7 +16,7 @@ const InputUI = () => {
             <div className={styles.element_container}>
                 <Input options={{ type: "text", label: "Full name", id: "name" }} />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Input options={{ type: "text", label: "Full name", id: "name" }} />`}
             </Codeblock>
             <h4>Input type</h4>
@@ -27,7 +27,7 @@ const InputUI = () => {
                 <Input options={{ type: "email", label: "Email", id: "email" }} />
                 <Input options={{ type: "password", label: "Password", id: "password" }} />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Input options={{ type: "text", label: "Full name", id: "name" }} />
 <Input options={{ type: "email", label: "Email", id: "email" }} />
 <Input options={{ type: "password", label: "Password", id: "password" }} />`}
@@ -43,7 +43,7 @@ const InputUI = () => {
                     err_msg: "Incorrect password"
                 }} />
             </div>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`<Input options={{ 
     type: "password", 
     label: "Password", 

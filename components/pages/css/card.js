@@ -3,11 +3,9 @@ import { Codeblock } from 'components/utils'
 const CardUI = () => {
     return (
         <>
-
-            <h1>Card</h1>
-            <p>Felix UI comes with easy to use highly customizable card component for product and profile view.</p>
+            <p className={styles.des}>Felix UI comes with easy to use highly customizable card component for product and profile view.</p>
             <h4>Import</h4>
-            <Codeblock>
+            <Codeblock lang="jsx">
                 {`import { ProductCard } from "@felix-ui"`}
             </Codeblock>
             <ProductCard

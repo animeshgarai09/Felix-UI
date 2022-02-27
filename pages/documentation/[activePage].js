@@ -3,12 +3,14 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '@styles/documentation.module.scss'
 import Header from '../../components/header'
-import { A } from '@felix-ui'
+import { A, Button, ButtonGroup } from '@felix-ui'
 import reactPages from '../../components/pages/react'
+import cssPages from '../../components/pages/css'
 
 const Documentation = () => {
 
     const [activePage, setActivePage] = useState('')
+    const [lang, setLang] = useState('react')
 
     const router = useRouter()
 
@@ -18,11 +20,15 @@ const Documentation = () => {
         if (!router.isReady) return
         const { activePage } = router.query
         setActivePage(activePage)
+        console.log(lang)
     }, [router.isReady, router.query])
 
-    // Based on the page stored in activePage variable it load that particular component from JSON (reactPages or cssPages) 
+    /* 
+        Based on the page stored in activePage variable 
+        this function loads that particular component from JSON (reactPages or cssPages) 
+     */
     const loadPage = () => {
-        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = reactPages
+        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = lang === 'react' ? reactPages : cssPages
         return docPage
     }
 
@@ -31,11 +37,13 @@ const Documentation = () => {
         let pageNames = Object.keys(reactPages)
         let com;
         if (flag) {
+            /* If flag is true load first 3 links from pages */
             com = pageNames.slice(0, 3).map((item, i) => {
                 let link = item.toLowerCase()
                 return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
             })
         } else {
+            /* Load all pages except first 3 */
             com = pageNames.map((item, i) => {
                 if (i > 2) {
                     let link = item.toLowerCase()
@@ -63,7 +71,14 @@ const Documentation = () => {
                 </aside>
                 <div className={styles.container}>
                     <section className={styles.sub_container}>
-                        {activePage && loadPage()}
+                        <div className={styles.heading_con}>
+                            <h1>{activePage && activePage[0].toUpperCase() + activePage.slice(1)}</h1>
+                            <ButtonGroup size="sm" theme="primary">
+                                <Button onClick={() => { setLang('react') }} selected={lang == 'react' && true}>React</Button>
+                                <Button onClick={() => { setLang('css') }} selected={lang == 'css' && true}>CSS</Button>
+                            </ButtonGroup>
+                        </div>
+                        {activePage && lang && loadPage()}
                     </section>
                 </div>
             </main>
