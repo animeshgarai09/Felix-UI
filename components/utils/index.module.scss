@@ -11,7 +11,7 @@
         margin-bottom: 1.5rem;
         svg {
             font-size: inherit;
-            color: var(--red);
+            color: var(--clr-red);
             margin: 0 0.4rem;
         }
     }
@@ -19,9 +19,9 @@
         font-size: 1.8rem;
         margin: 0 0.5rem;
         color: #b2b2b2;
-        transition: all 0.3s ease 0s;
+        transition: var(--transition);
         &:hover {
-            color: var(--primary);
+            color: var(--clr-primary);
         }
     }
 }

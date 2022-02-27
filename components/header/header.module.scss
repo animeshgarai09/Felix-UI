@@ -1,9 +1,9 @@
 @import "../../styles/felix-ui/utils/functions.scss";
 
 .container {
-    border-bottom: 1px solid var(--border-color-3);
+    border-bottom: 1px solid var(--clr-border-color-3);
     position: sticky;
-    background: var(--white);
+    background: var(--clr-white);
     top: 0;
     z-index: 10;
     .wrapper {

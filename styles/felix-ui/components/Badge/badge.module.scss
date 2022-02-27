@@ -8,29 +8,29 @@
     background: #cfcfcf;
     border-radius: rem(3);
     &.green {
-        background: var(--green-light);
-        color: var(--green);
-        border-color: var(--green);
+        background: var(--clr-green-light);
+        color: var(--clr-green);
+        border-color: var(--clr-green);
     }
     &.red {
-        background: var(--red-light);
-        color: var(--red);
-        border-color: var(--red);
+        background: var(--clr-red-light);
+        color: var(--clr-red);
+        border-color: var(--clr-red);
     }
     &.blue {
-        background: var(--blue-light);
-        color: var(--blue);
-        border-color: var(--blue);
+        background: var(--clr-blue-light);
+        color: var(--clr-blue);
+        border-color: var(--clr-blue);
     }
     &.yellow {
-        background: var(--yellow-light);
-        color: var(--yellow);
-        border-color: var(--yellow);
+        background: var(--clr-yellow-light);
+        color: var(--clr-yellow);
+        border-color: var(--clr-yellow);
     }
     &.primary {
-        background: var(--primary-light);
-        color: var(--primary);
-        border-color: var(--primary);
+        background: var(--clr-primary-light);
+        color: var(--clr-primary);
+        border-color: var(--clr-primary);
     }
 
     &.rounded {
