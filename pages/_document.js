@@ -21,6 +21,7 @@ class MyDocument extends Document {
                     <link href="/fonts/Montserrat-Regular.woff2" rel='preload' as='font' />
                     <link href="/fonts/Montserrat-Bold.woff2" rel='preload' as='font' />
                     <meta charSet="utf-8" />
+                    <link rel="stylesheet" href="https://felix-ui-dev.netlify.app/components/main.css" />
 
                     <meta name="description" content='A community of AI enthusiast' />
 

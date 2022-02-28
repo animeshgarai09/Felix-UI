@@ -15,7 +15,7 @@ const AvatarUI = () => {
                 <li ><code>AvatarGroup</code>: A wrapper to stack multiple Avatars together.</li>
             </ul>
 
-            < Codeblock>
+            <Codeblock>
 
                 {`import { Avatar, AvatarGroup } from '@felix-ui'`}
             </ Codeblock>
@@ -193,7 +193,7 @@ const AvatarUI = () => {
 </AvatarGroup>`}
             </ Codeblock>
 
-            <Footer previous='Alert' next='Badge' />
+            <Footer currentPage='Avatar' />
         </>
     )
 }

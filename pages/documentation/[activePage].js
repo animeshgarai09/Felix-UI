@@ -4,13 +4,13 @@ import { useRouter } from 'next/router'
 import styles from '@styles/documentation.module.scss'
 import Header from '../../components/header'
 import { A, Button, ButtonGroup } from '@felix-ui'
-import reactPages from '../../components/pages/react'
-import cssPages from '../../components/pages/css'
+import Pages from '/components/pages'
 
 const Documentation = () => {
 
     const [activePage, setActivePage] = useState('')
     const [lang, setLang] = useState('react')
+    const [showLangSwitch, setShowLangSwitch] = useState(false)
 
     const router = useRouter()
 
@@ -20,37 +20,28 @@ const Documentation = () => {
         if (!router.isReady) return
         const { activePage } = router.query
         setActivePage(activePage)
-        console.log(lang)
+        /* Check if language switch is required or not based on pages */
+        activePage === 'installation' || activePage === 'colors' || activePage === 'typography'
+            ? showLangSwitch && setShowLangSwitch(() => false)
+            : !showLangSwitch && setShowLangSwitch(() => true)
     }, [router.isReady, router.query])
 
     /* 
         Based on the page stored in activePage variable 
-        this function loads that particular component from JSON (reactPages or cssPages) 
+        this function loads that particular component from JSON Pages imported
      */
     const loadPage = () => {
-        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = lang === 'react' ? reactPages : cssPages
-        return docPage
+        const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = Pages
+        return lang === 'react' ? docPage?.react : docPage?.css
     }
 
-    //creates side navigation from reactPages JSON
-    let genLink = flag => {
-        let pageNames = Object.keys(reactPages)
-        let com;
-        if (flag) {
-            /* If flag is true load first 3 links from pages */
-            com = pageNames.slice(0, 3).map((item, i) => {
-                let link = item.toLowerCase()
-                return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
-            })
-        } else {
-            /* Load all pages except first 3 */
-            com = pageNames.map((item, i) => {
-                if (i > 2) {
-                    let link = item.toLowerCase()
-                    return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
-                }
-            })
-        }
+    //creates side navigation from Pages JSON
+    let genLink = (start, end) => {
+        const pageNames = Object.keys(Pages)
+        let com = pageNames.slice(start, end).map((item, i) => {
+            const link = item.toLowerCase()
+            return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
+        })
         return com
     }
 
@@ -63,20 +54,24 @@ const Documentation = () => {
             <Header />
             <main className={styles.main}>
                 <aside className={styles.side_container}>
-                    <h5>Getting started</h5>
-                    {router.isReady && genLink(true)}
-                    <h5>Components</h5>
-                    {router.isReady && genLink()}
+                    <span className={styles.label}>Getting started</span>
+                    {router.isReady && genLink(0, 3)}
+                    <span className={styles.label}>Elements</span>
+                    {router.isReady && genLink(3, 7)}
+                    <span className={styles.label}>Views</span>
+                    {router.isReady && genLink(7, 11)}
+                    <span className={styles.label}>Modules</span>
+                    {router.isReady && genLink(11)}
 
                 </aside>
                 <div className={styles.container}>
                     <section className={styles.sub_container}>
                         <div className={styles.heading_con}>
                             <h1>{activePage && activePage[0].toUpperCase() + activePage.slice(1)}</h1>
-                            <ButtonGroup size="sm" theme="primary">
+                            {showLangSwitch && <ButtonGroup size="sm" theme="primary">
                                 <Button onClick={() => { setLang('react') }} selected={lang == 'react' && true}>React</Button>
                                 <Button onClick={() => { setLang('css') }} selected={lang == 'css' && true}>CSS</Button>
-                            </ButtonGroup>
+                            </ButtonGroup>}
                         </div>
                         {activePage && lang && loadPage()}
                     </section>

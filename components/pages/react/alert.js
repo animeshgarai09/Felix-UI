@@ -1,5 +1,5 @@
 import { Alert } from "@felix-ui"
-import { Codeblock, LangSwitcher } from 'components/utils'
+import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from "components/footer"
 const AlertUI = () => {
@@ -84,7 +84,7 @@ const AlertUI = () => {
     closeButton={true}
 />`}
             </Codeblock>
-            <Footer previous='Typography' next='Avatar' />
+            <Footer currentPage='Alert' />
         </>
     )
 }

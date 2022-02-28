@@ -193,7 +193,7 @@ const AvatarUI = () => {
 </AvatarGroup>`}
             </ Codeblock>
 
-            <Footer previous='Alert' next='Badge' />
+            <Footer currentPage='Avatar' />
         </>
     )
 }

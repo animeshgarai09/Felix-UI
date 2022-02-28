@@ -65,7 +65,7 @@ const BadgeUI = () => {
 <IconBadge options={{ icon: <HiBell />, number: 10 }} />
 <IconBadge options={{ icon: <HiBell />, number: 248 }} />`}
             </Codeblock>
-            <Footer previous='Avatar' next='Button' />
+            <Footer currentPage='Badge' />
 
         </>
     )

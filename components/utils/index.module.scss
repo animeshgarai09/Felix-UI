@@ -25,3 +25,11 @@
         }
     }
 }
+.codeblock > div {
+    border-radius: 10px;
+    button {
+        border: 1px solid var(--clr-gray-1);
+        padding-bottom: 0.3rem;
+        cursor: pointer;
+    }
+}

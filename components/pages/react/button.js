@@ -82,7 +82,7 @@ const ButtonUI = () => {
                 <Button theme="warning" onClickActive={true} >Submit</Button>
                 <Button theme="gray" onClickActive={true} >Submit</Button>
             </ButtonGroup>
-            <Footer previous='Badge' next='Card' />
+            <Footer currentPage="Button" />
         </>
     )
 }

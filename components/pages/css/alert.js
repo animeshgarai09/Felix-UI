@@ -124,7 +124,7 @@ const AlertUI = () => {
     closeButton={true}
 />`}
             </Codeblock>
-            <Footer previous='Typography' next='Avatar' />
+            <Footer currentPage="Alert" />
         </>
     )
 }

@@ -1,4 +1,3 @@
-import { Button } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { BiHomeCircle } from 'react-icons/bi'
@@ -8,76 +7,43 @@ import styles from '@styles/documentation.module.scss'
 const ButtonUI = () => {
     return (
         <>
-            <p className={styles.des}>The Button component is used to trigger an action or event, such as submitting a
+            <p classNameName={styles.des}>The Button component is used to trigger an action or event, such as submitting a
                 form, opening a dialog, canceling an action, or performing a delete operation.</p>
 
-            <h4>Import</h4>
-            <Codeblock lang="jsx">
-
-                {`import { Button } from "@felix-ui"`}
-            </Codeblock>
-            <h4>Usage</h4>
+            <h4>Examples</h4>
+            <p>Felix UI includes several predefined button styles, each serving its own semantic purpose.</p>
             <div className={styles.element_container}>
-                <Button>Submit</Button>
+                <button className="btn btn--primary">Primary</button>
+                <button className="btn btn--info">Info</button>
+                <button className="btn btn--success">Success</button>
+                <button className="btn btn--warning">Warning</button>
+                <button className="btn btn--error">Error</button>
             </div>
-            <Codeblock lang="jsx">
-
-                {`<Button>Submit</Button>`}
-            </Codeblock>
-            <h4>Button Sizes</h4>
-            <p>Use the <code>size</code> prop to change the size of the button. You can set the value to
-                <code>xs</code>, <code>sm</code>, <code>md</code>, or <code>lg</code>.</p>
-            <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button size='xs'>Extra small</Button>
-                <Button size='sm'>Small</Button>
-                <Button size='md'>Medium</Button>
-                <Button size='lg'>Large</Button>
-            </div>
-
-            <Codeblock lang="jsx">
-
-                {
-                    `<Button size='xs'>Extra small</Button>
-<Button size='sm'>Small</Button>
-<Button size='md'>Medium</Button>
-<Button size='lg'>Large</Button>`
-                }
+            <Codeblock lang="html">
+                {`<button className="btn btn--primary">Primary</button>
+<button className="btn btn--info">Info</button>
+<button className="btn btn--success">Success</button>
+<button className="btn btn--warning">Warning</button>
+<button className="btn btn--error">Error</button>`}
             </Codeblock>
             <h4>Button variants</h4>
-            <p>Use the <code>variant</code> prop to change the visual style of the Button. You can set the
-                value to <code>round</code>, <code>outline</code>, <code>ghost</code>, or <code>link</code>.</p>
-
-            <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button variant='round'>Submit</Button>
-                <Button variant='outline'>Submit</Button>
-                <Button variant='ghost'>Submit</Button>
-                <Button variant='link'>Submit</Button>
+            <div className={styles.element_container}>
+                <button className="btn btn--primary btn--round">Primary</button>
+                <button className="btn btn--info btn--outline">Info</button>
+                <button className="btn btn--warning btn--round btn--outline">Warning</button>
+                <button className="btn btn--error btn--ghost">Error</button>
+                <button className="btn btn--success btn--link">Success</button>
             </div>
-            <Codeblock lang="jsx">
+            <Codeblock lang="html">
 
-                {
-                    `<Button variant='round'>Submit</Button>
-<Button variant='outline'>Submit</Button>
-<Button variant='ghost'>Submit</Button>
-<Button variant='link'>Submit</Button>`
-                }
+                {`<button className="btn btn--primary btn--round">Primary</button>
+<button className="btn btn--info btn--outline">Info</button>
+<button className="btn btn--warning btn--round btn--outline">Warning</button>
+<button className="btn btn--error btn--ghost">Error</button>
+<button className="btn btn--success btn--link">Success</button>`}
             </Codeblock>
-            <h4>Button with icon</h4>
-            <p>You can add icons to the Button component using the <code>icon</code> prop, and change its position using <code>direction</code> prop.</p>
 
-            <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button leftIcon={<FiChevronLeft />} >Back</Button>
-                <Button leftIcon={<BiHomeCircle />}></Button>
-                <Button rightIcon={<FiChevronRight />} >Get started</Button>
-            </div>
-
-            <Codeblock lang="jsx">
-
-                {`<Button leftIcon={<FiChevronLeft />} >Back</Button>
-<Button leftIcon={<BiHomeCircle />}></Button>
-<Button rightIcon={<FiChevronRight />} >Get started</Button>`}
-            </Codeblock>
-            <Footer previous='Badge' next='Card' />
+            <Footer currentPage='Button' />
         </>
     )
 }

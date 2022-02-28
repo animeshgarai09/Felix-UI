@@ -27,7 +27,7 @@ const ImageUI = () => {
                 <Image src='/images/3.jpg' width='200px' alt='Dan Abramov' />
             </div>
 
-            <Footer previous='Grid' next='Input' />
+            <Footer currentPage='Image' />
         </>
     )
 }

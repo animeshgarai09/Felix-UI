@@ -51,7 +51,7 @@ const InputUI = () => {
     err_msg: "Incorrect password" 
 }} />`}
             </Codeblock>
-            <Footer previous='Image' next='List' />
+            <Footer currentPage='Input' />
         </>
     )
 }

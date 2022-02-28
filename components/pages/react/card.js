@@ -1,5 +1,7 @@
 import { ProductCard } from "@felix-ui"
 import { Codeblock } from 'components/utils'
+import styles from '@styles/documentation.module.scss'
+
 const CardUI = () => {
     return (
         <>
