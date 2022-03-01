@@ -48,7 +48,7 @@ const ButtonUI = () => {
                 value to <code>round</code>, <code>outline</code>, <code>ghost</code>, or <code>link</code>.</p>
 
             <div className={`${styles.element_container} ${styles.align_center}`}>
-                <Button variant='round'>Submit</Button>
+                <Button isRound={true}>Submit</Button>
                 <Button variant='outline'>Submit</Button>
                 <Button variant='ghost'>Submit</Button>
                 <Button variant='link'>Submit</Button>

@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '@styles/documentation.module.scss'
 import Header from '../../components/header'
 import { A, Button, ButtonGroup } from '@felix-ui'
 import Pages from '/components/pages'
-
 const Documentation = () => {
 
     const [activePage, setActivePage] = useState('')
@@ -32,7 +31,15 @@ const Documentation = () => {
      */
     const loadPage = () => {
         const { [activePage[0].toUpperCase() + activePage.slice(1)]: docPage } = Pages
-        return lang === 'react' ? docPage?.react : docPage?.css
+        /* 
+            Pages JSOn has direct 3 key with component ('installation','colors','typography' )
+            Check if docPage has component or JSON before returning 
+        */
+        if (React.isValidElement(docPage)) {
+            return docPage
+        } else {
+            return lang === 'react' ? docPage?.react : docPage?.css
+        }
     }
 
     //creates side navigation from Pages JSON

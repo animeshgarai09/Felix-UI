@@ -3,7 +3,6 @@ import Footer from 'components/footer'
 const Colors = () => {
     return (
         <>
-            <h1>Colors</h1>
             <p>Felix UI comes with pre-defined colors, which are consistent in the overall design. The colors used are chosen on a generic basis, which can be accessed by pre-defined classNamees.</p>
 
             <h4>Default Palette</h4>
@@ -57,7 +56,7 @@ const Colors = () => {
                 <span className="bg-warning-light ">.bg-warning-light</span>
                 <span className="bg-info-light ">.bg-info-light</span>
             </div>
-            <Footer previous='Installation' next='Typography' />
+            <Footer currentPage='Colors' />
         </>
     )
 }

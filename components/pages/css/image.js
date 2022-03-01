@@ -5,7 +5,6 @@ import Footer from 'components/footer'
 const ImageUI = () => {
     return (
         <>
-            <h1>Image</h1>
             <p>The <code>Image</code> component is used to display images.</p>
             <h4>Import</h4>
             <Codeblock lang="jsx">

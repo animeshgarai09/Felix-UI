@@ -5,7 +5,6 @@ import Footer from 'components/footer/footer'
 const InputUI = () => {
     return (
         <>
-            <h1>Input</h1>
             <p>The <code>Input</code> component is a component that is used to get user input in a text field.</p>
             <h4>Import</h4>
             <Codeblock lang="jsx">

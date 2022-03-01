@@ -3,7 +3,6 @@ import Footer from 'components/footer'
 const Typography = () => {
     return (
         <>
-            <h1>Typography</h1>
             <p>Felix UI uses <code>Montserrat</code>, as its default font, which is a free font available at Google Fonts.</p>
 
             <div className={styles.text_doc_container}>
@@ -17,7 +16,7 @@ const Typography = () => {
                 <label>A Visual Type Scale</label>
             </div>
 
-            <Footer previous='Colors' next='Alert' />
+            <Footer currentPage='Typography' />
         </>
     )
 }

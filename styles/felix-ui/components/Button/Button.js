@@ -3,17 +3,18 @@ import { useState } from 'react'
 import styles from './button.module.scss'
 const Button = (
     {
-        size = "md", //'xs' || 'sm' || 'md' || 'lg', // md is by default
-        theme = "primary", //'primary' || 'info' || 'warning' || 'success' || 'gray',|| disable, // primary is by default
-        variant = "solid", //['round','outline','ghost','link'], // solid is by default
-        leftIcon, // React-icons
-        rightIcon, // React-icons
-        transform = true, // Transform on hover
-        onClick, // function passed to component for onClick event
-        onClickActive = false, //Toggle active class if passes true 
-        selected, // (ButtonGroup only) act as radio button for multiple button, sets active class
-        className, //user-defined classnames
-        children //button text
+        size = "md",            //'xs' || 'sm' || 'md' || 'lg', // md is by default
+        theme = "primary",      //'primary' || 'info' || 'warning' || 'success' || 'gray',|| disable, // primary is by default
+        variant = "solid",      //['outline','ghost','link'], // solid is by default
+        isRound = false,
+        leftIcon,               // React-icons
+        rightIcon,              // React-icons
+        transform = true,       // Transform on hover
+        onClick,                // function passed to component for onClick event
+        onClickActive = false,  //Toggle active class if passes true 
+        selected,               // (ButtonGroup only) act as radio button for multiple button, sets active class
+        className,              //user-defined classnames
+        children                //button text
     }) => {
 
     /* State to check active sate if onClickActive is set true */
@@ -37,11 +38,13 @@ const Button = (
     classNames = classNames.concat((typeof (variant) == 'string' ? [styles[variant]] || '' : variant.map((item) => styles[item])))
     classNames.push((leftIcon || rightIcon) && !children ? styles.icon : '')
     classNames.push(!transform && styles.noTransform)
+    classNames.push(isRound && styles.round)
     classNames.push(selected && styles.active)
     classNames.push(active && styles.active)
     classNames.push(className)
+    classNames = classNames.filter(item => item !== false)
     return (
-        <button type='button' className={`${classNames.join(' ')}`} onClick={btnClick}>
+        <button type='button' role="button" className={`${classNames.join(' ')}`} onClick={btnClick}>
             {leftIcon}
             {children}
             {rightIcon}
@@ -53,7 +56,7 @@ Button.propTypes = {
     size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
     theme: PropTypes.oneOf(['primary', 'info', 'warning', 'success', 'gray', 'disable']),
     variant: PropTypes.oneOfType([
-        PropTypes.oneOf(['round', 'outline', 'ghost', 'link']),
+        PropTypes.oneOf(['outline', 'ghost', 'link']),
         PropTypes.arrayOf(PropTypes.oneOf(['round', 'outline', 'ghost', 'link']))
     ]),
     leftIcon: PropTypes.element,
