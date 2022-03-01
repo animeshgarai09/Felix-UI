@@ -72,9 +72,10 @@ const AlertUI = () => {
                 <Alert
                     status='error'
                     title='There was an error processing your request'
-                    description='Request can not be processed due to insufficient funds in account.'
                     closeButton={true}
-                />
+                >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi <a href="#">cumque officiis </a>  exercitationem iure commodi ipsa quis, doloremque consectetur distinctio natus! Voluptate magnam debitis, exercitationem fuga amet hic voluptatibus repellendus labore?
+                </Alert>
             </div>
             <Codeblock lang="jsx">
                 {`<Alert

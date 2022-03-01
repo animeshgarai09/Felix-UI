@@ -9,7 +9,7 @@ const Button = (
         isRound = false,
         leftIcon,               // React-icons
         rightIcon,              // React-icons
-        transform = true,       // Transform on hover
+        isTransform = true,       // Transform on hover
         onClick,                // function passed to component for onClick event
         onClickActive = false,  //Toggle active class if passes true 
         selected,               // (ButtonGroup only) act as radio button for multiple button, sets active class
@@ -37,7 +37,7 @@ const Button = (
     let classNames = [styles.btn, styles[size], styles[theme]]
     classNames = classNames.concat((typeof (variant) == 'string' ? [styles[variant]] || '' : variant.map((item) => styles[item])))
     classNames.push((leftIcon || rightIcon) && !children ? styles.icon : '')
-    classNames.push(!transform && styles.noTransform)
+    classNames.push(!isTransform && styles.noTransform)
     classNames.push(isRound && styles.round)
     classNames.push(selected && styles.active)
     classNames.push(active && styles.active)
@@ -61,7 +61,7 @@ Button.propTypes = {
     ]),
     leftIcon: PropTypes.element,
     rightIcon: PropTypes.element,
-    transform: PropTypes.bool,
+    isTransform: PropTypes.bool,
     onClick: PropTypes.func,
     onClickActive: PropTypes.bool,
     selected: PropTypes.bool,
