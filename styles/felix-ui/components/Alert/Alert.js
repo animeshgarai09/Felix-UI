@@ -8,29 +8,27 @@ import PropTypes from 'prop-types'
 const Alert = (
     {
         status = 'info',        //  'success'|| 'error' || 'warning' || 'info' || 'gray',
-        icon = true,
+        icon = true,            //   Show icon based on status
         title,                  //  'text', //required,
         closeButton = false,    //   true|| false //default true
-        className,
-        children
+        className,              //   User provided class name
+        children                //   Description as children
     }) => {
 
     const getIcon = () => {
-        if (icon) {
-            if (status == 'success') return <BsCheck />
-            else if (status == 'error') return <HiOutlineExclamationCircle />
-            else if (status == 'warning') return <HiExclamation />
-            else if (status == 'info') return <BsInfo />
-        }
+        if (status == 'success') return <BsCheck />
+        else if (status == 'error') return <HiOutlineExclamationCircle />
+        else if (status == 'warning') return <HiExclamation />
+        else if (status == 'info') return <BsInfo />
     }
     return (
         <div className={`${styles.container} ${styles[status]} ${className}`} role="alert">
 
             <div className={styles.text}>
                 <span className={styles.heading}>
-                    <span className={styles.icon}>
+                    {icon && <span className={styles.icon}>
                         {getIcon()}
-                    </span>
+                    </span>}
                     {title}
                 </span>
                 {children && <p>{children}</p>}
