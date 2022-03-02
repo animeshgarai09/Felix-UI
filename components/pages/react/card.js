@@ -1,4 +1,4 @@
-import { ProductCard } from "@felix-ui"
+import { ProductCard, ProductWrapper, ProductImage, ProductBody } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 
@@ -28,6 +28,23 @@ const CardUI = () => {
                 oldPrice={350}
             // type="horizontal"
             />
+
+            <ProductWrapper>
+                <ProductImage src="/images/product.jpeg" alt='product' badge={{ text: 'new', color: 'yellow' }} />
+                <ProductBody
+                    title="Angie’s Boomchickapop Sweet & Salty"
+                    description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, aliquid quas obcaecati quisquam non ullam numquam et expedita explicabo fugit quibusdam facilis id saepe possimus natus cupiditate porro asperiores dolorem!"
+                    category={{
+                        name: "Food",
+                    }}
+                    vendor={{
+                        name: "Nestle",
+                    }}
+                    rating={1.3}
+                    price={250}
+                    oldPrice={350}
+                />
+            </ProductWrapper>
         </>
     )
 }

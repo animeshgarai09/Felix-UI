@@ -24,7 +24,7 @@ IconButton.propTypes = {
     icon: PropTypes.func.isRequired,
     showBadge: PropTypes.bool,
     badgeNumber: PropTypes.number,
-    ariaLabel: PropTypes.isRequired,
+    ariaLabel: PropTypes.string.isRequired,
     className: PropTypes.string
 }
 export default IconButton;

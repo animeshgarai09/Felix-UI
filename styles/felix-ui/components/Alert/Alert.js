@@ -22,7 +22,7 @@ const Alert = (
         else if (status == 'info') return <BsInfo />
     }
     return (
-        <div className={`${styles.container} ${styles[status]} ${className}`} role="alert">
+        <div className={`${styles.container} ${styles[status]} ${className ? className : ''}`} role="alert">
 
             <div className={styles.text}>
                 <span className={styles.heading}>

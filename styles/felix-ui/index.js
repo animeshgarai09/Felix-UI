@@ -3,7 +3,9 @@ import AvatarGroup from "./components/Avatar/AvatarGroup";
 import Alert from "./components/Alert/Alert";
 import Button from "./components/Button/Button";
 import ButtonGroup from "./components/Button/ButtonGroup";
-import ProductCard from "./components/Card/ProductCard";
+import ProductWrapper from "./components/Card/ProductCard/ProductWrapper";
+import ProductImage from "./components/Card/ProductCard/ProductImage";
+import ProductBody from "./components/Card/ProductCard/ProductBody";
 import Image from "./components/Image";
 import A from './components/A';
 import Badge from "./components/Badge/Badge";
@@ -18,7 +20,9 @@ export {
     Button,
     ButtonGroup,
     Badge,
-    ProductCard,
+    ProductWrapper,
+    ProductImage,
+    ProductBody,
     IconButton,
     Image,
     Input
