@@ -1,4 +1,4 @@
-import { ProductCard, ProductWrapper, ProductImage, ProductBody } from "@felix-ui"
+import { ProductWrapper, ProductImage, ProductBody } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 
@@ -10,7 +10,7 @@ const CardUI = () => {
             <Codeblock lang="jsx">
                 {`import { ProductCard } from "@felix-ui"`}
             </Codeblock>
-            <ProductCard
+            {/* <ProductCard
                 product={{
                     name: "Angie’s Boomchickapop Sweet & Salty",
                     img: "/images/product.jpeg",
@@ -27,7 +27,7 @@ const CardUI = () => {
                 price={250}
                 oldPrice={350}
             // type="horizontal"
-            />
+            /> */}
 
             <ProductWrapper>
                 <ProductImage src="/images/product.jpeg" alt='product' badge={{ text: 'new', color: 'yellow' }} />
