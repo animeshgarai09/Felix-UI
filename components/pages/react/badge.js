@@ -1,4 +1,4 @@
-import { Badge, IconBadge } from '@felix-ui'
+import { Badge, IconButton } from '@felix-ui'
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from 'components/footer'
@@ -27,37 +27,38 @@ const BadgeUI = () => {
             <p>Badge comes with 5 different colors. default is set to gray.</p>
             <div className={`${styles.element_container} ${styles.block}`}>
                 <Badge>default</Badge>
-                <Badge options={{ color: 'primary' }}>new</Badge>
-                <Badge options={{ color: 'green' }}>Added</Badge>
-                <Badge options={{ color: 'red' }}>removed</Badge>
-                <Badge options={{ color: 'yellow' }}>changed</Badge>
+                <Badge color='primary'>new</Badge>
+                <Badge color='green'>Added</Badge>
+                <Badge color='red'>removed</Badge>
+                <Badge color='yellow'>changed</Badge>
             </div>
 
             <Codeblock lang="jsx">
-                {`<Badge options={{ color: 'primary' }}>new</Badge>
-<Badge options={{ color: 'green' }}>Added</Badge>
-<Badge options={{ color: 'red' }}>removed</Badge>
-<Badge options={{ color: 'yellow' }}>changed</Badge>`}
+                {`<Badge>default</Badge>
+<Badge color='primary'>new</Badge>
+<Badge color='green'>Added</Badge>
+<Badge color='red'>removed</Badge>
+<Badge color='yellow'>changed</Badge>`}
             </Codeblock>
             <h4>Badge variant</h4>
             <p>Badge component comes with 3 different variant. Solid is set to default. pass <code>outline</code>, <code>rounded</code> or both in a array via <code>variant</code> prop.</p>
             {/* <Badge options={{ color: 'primary', variant: 'outline' }}>out of stock</Badge> */}
             <div className={`${styles.element_container} ${styles.block}`}>
-                <Badge options={{ color: 'primary', variant: 'outline' }}>new</Badge>
-                <Badge options={{ color: 'green', variant: 'rounded' }}>Added</Badge>
-                <Badge options={{ color: 'red', variant: ['outline', 'rounded'] }}>removed</Badge>
+                <Badge color='primary' variant='outline'>new</Badge>
+                <Badge color='green' variant='round'>Added</Badge>
+                <Badge color='red' variant={['outline', 'round']}>removed</Badge>
             </div>
             <Codeblock lang="jsx">
-                {`<Badge options={{ color: 'primary', variant: 'outline' }}>new</Badge>
-<Badge options={{ color: 'green', variant: 'rounded' }}>Added</Badge>
-<Badge options={{ color: 'red', variant: ['outline', 'rounded'] }}>removed</Badge>`}
+                {`<Badge color= 'primary' variant= 'outline'>new</Badge>
+<Badge color= 'green' variant= 'rounded'>Added</Badge>
+<Badge color= 'red' variant= {['outline', 'rounded'] }>removed</Badge>`}
             </Codeblock>
             <h4>Icon badge</h4>
             <p>Icon badge component can be used for showing number for any action. pass int number to <code>number</code> prop.</p>
             <div className={`${styles.element_container} ${styles.block}`}>
-                <IconBadge options={{ icon: <HiBell /> }} />
-                <IconBadge options={{ icon: <HiBell />, number: 10 }} />
-                <IconBadge options={{ icon: <HiBell />, number: 248 }} />
+                <IconButton icon={<HiBell />} />
+                <IconButton icon={<HiBell />} showBadge={true} badgeNumber={10} />
+                <IconButton icon={<HiBell />} showBadge={true} badgeNumber={248} />
             </div>
 
             <Codeblock lang="jsx">

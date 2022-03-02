@@ -1,6 +1,6 @@
 import Image from '../Image'
 import styles from './avatar.module.scss'
-
+import PropTypes from 'prop-types'
 
 const gradientColors = [
     'linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)',
@@ -18,17 +18,19 @@ const gradientColors = [
 function randomNumberGen(max, min = 0) {
     return Math.floor(Math.random() * (max - min + 1)) << 0;
 }
-const Avatar = ({ options, className }) => {
-    /*
-        options:{
-            name: name,
-            src: link,
-            size: 'xs' || 'sm' || 'md' || 'lg' || 'xl' || '2xl',
-            badge: 'green' || 'red' || 'blue',
-        }
-    */
-    const { name, src, num, size = 'md', badge } = options ? options : {}
+
+const Avatar = (
+    {
+        name,           // Avatar name
+        src,            // link for the Avatar image
+        size = 'md',    // 'xs' || 'sm' || 'md' || 'lg' || 'xl' || '2xl' Size of the avatar
+        status,        // 'green' || 'red' || 'yellow' || 'gray' status symbol for avatar
+        num,            // applied for avatar group to show max number of avatar
+        className       // User defined class name
+    }) => {
+
     const shortName = name && name.split(' ')[0][0].toUpperCase() + name.split(' ')[1][0].toUpperCase()
+
     return (
         <div className={`${styles.container} ${className ? className : ''}`}>
             {src && <Image className={`${styles[size]} ${styles.circle}`} src={src} alt={name} />}
@@ -45,12 +47,21 @@ const Avatar = ({ options, className }) => {
                 </div>
             }
 
-            {badge &&
-                <span className={`${styles.badge} ${styles[badge]} `}>
+            {status &&
+                <span className={`${styles.badge} ${styles[status]} `}>
                 </span>
             }
         </div>
     )
+}
+
+Avatar.propTypes = {
+    name: PropTypes.string,
+    src: PropTypes.string.isRequired,
+    size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', '2xl']),
+    status: PropTypes.oneOf(['green', 'red', 'yellow', 'gray']),
+    num: PropTypes.number,
+    className: PropTypes.string,
 }
 
 export default Avatar

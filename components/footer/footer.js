@@ -19,8 +19,8 @@ const footer = ({ currentPage }) => {
     return (
         <footer className={styles.container}>
             <div className={styles.links_con}>
-                {previous !== -1 && <A href={`/documentation/${pageNames[previous].toLowerCase()}`}><Button className={styles.button} leftIcon={<FiChevronLeft />} transform={false}>{pageNames[previous]}</Button></A>}
-                {next !== -1 && <A href={`/documentation/${pageNames[next].toLowerCase()}`}><Button className={styles.button} rightIcon={<FiChevronRight />} transform={false}>{pageNames[next]}</Button></A>}
+                {previous !== -1 && <A href={`/documentation/${pageNames[previous].toLowerCase()}`}><Button className={styles.button} leftIcon={<FiChevronLeft />} isTransform={false}>{pageNames[previous]}</Button></A>}
+                {next !== -1 && <A href={`/documentation/${pageNames[next].toLowerCase()}`}><Button className={styles.button} rightIcon={<FiChevronRight />} isTransform={false}>{pageNames[next]}</Button></A>}
             </div>
             <SocialLinks />
         </footer>

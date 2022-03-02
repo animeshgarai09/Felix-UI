@@ -57,8 +57,9 @@ Button.propTypes = {
     theme: PropTypes.oneOf(['primary', 'info', 'warning', 'success', 'gray', 'disable']),
     variant: PropTypes.oneOfType([
         PropTypes.oneOf(['outline', 'ghost', 'link']),
-        PropTypes.arrayOf(PropTypes.oneOf(['round', 'outline', 'ghost', 'link']))
+        PropTypes.arrayOf(PropTypes.oneOf(['outline', 'ghost', 'link']))
     ]),
+    isRound: PropTypes.bool,
     leftIcon: PropTypes.element,
     rightIcon: PropTypes.element,
     isTransform: PropTypes.bool,

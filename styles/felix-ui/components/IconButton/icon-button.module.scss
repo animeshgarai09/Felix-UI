@@ -7,6 +7,19 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--clr-black);
+    transition: 0.2s;
+    @media (hover: hover) {
+        &:hover {
+            background: var(--clr-primary-light);
+        }
+    }
+    &:active {
+        background: var(--clr-primary-light);
+    }
     .badge {
         display: inline-flex;
         align-items: center;

@@ -7,7 +7,7 @@ import ProductCard from "./components/Card/ProductCard";
 import Image from "./components/Image";
 import A from './components/A';
 import Badge from "./components/Badge/Badge";
-import IconBadge from "./components/IconBadge/IconBadge";
+import IconButton from "./components/IconButton/IconButton";
 import Input from './components/Input/Input'
 
 export {
@@ -19,7 +19,7 @@ export {
     ButtonGroup,
     Badge,
     ProductCard,
-    IconBadge,
+    IconButton,
     Image,
     Input
 }

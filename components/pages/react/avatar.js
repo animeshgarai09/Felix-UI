@@ -15,101 +15,52 @@ const AvatarUI = () => {
                 <li ><code>AvatarGroup</code>: A wrapper to stack multiple Avatars together.</li>
             </ul>
 
-            <Codeblock>
-
+            <Codeblock lang='jsx'>
                 {`import { Avatar, AvatarGroup } from '@felix-ui'`}
-            </ Codeblock>
+            </Codeblock>
 
             <h4>Usage</h4>
 
 
             <div className={styles.element_container}>
-                <Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
-                <Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />
-                <Avatar options={{ name: 'Kent Dodds' }} />
-                <Avatar options={{ name: 'Ryan Florence', src: '/images/3.jpg' }} />
-                <Avatar options={{ name: 'Christian Nwamba', src: '/images/4.jpg' }} />
-                <Avatar options={{ name: 'Segun Adebayo', src: '/images/5.jpeg' }} />
+                <Avatar name='Dan Abrahmov' src='/images/1.jpeg' />
+                <Avatar name='Kola Tioluwani' src='/images/2.jpeg' />
+                <Avatar name='Kent Dodds' />
+                <Avatar name='Ryan Florence' src='/images/3.jpg' />
+                <Avatar name='Christian Nwamba' src='/images/4.jpg' />
+                <Avatar name='Segun Adebayo' src='/images/5.jpeg' />
 
             </div>
 
-            < Codeblock>
+            <Codeblock lang='jsx'>
 
-                {`<Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
-<Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />
-<Avatar options={{ name: 'Kent Dodds' }} />
-<Avatar options={{ name: 'Ryan Florence', src: '/images/3.jpg' }} />
-<Avatar options={{ name: 'Christian Nwamba', src: '/images/4.jpg' }} />
-<Avatar options={{ name: 'Segun Adebayo', src: '/images/5.jpeg' }} />`}
+                {`<Avatar  name='Dan Abrahmov' src='/images/1.jpeg'/>
+<Avatar  name='Kola Tioluwani' src='/images/2.jpeg'/>
+<Avatar  name='Kent Dodds'/>
+<Avatar  name='Ryan Florence' src='/images/3.jpg'/>
+<Avatar  name='Christian Nwamba' src='/images/4.jpg'/>
+<Avatar  name='Segun Adebayo' src='/images/5.jpeg'/>`}
             </ Codeblock>
 
             <h4>Avatar Sizes</h4>
             <p >The <code >Avatar</code> component comes in 6 sizes.</p>
 
             <div className={styles.element_container}>
-                <Avatar options={{
-                    name: 'Dan Abrahmov',
-                    src: '/images/1.jpeg',
-                    size: 'xs'
-                }} />
-                <Avatar options={{
-                    name: 'Kola Tioluwani',
-                    src: '/images/2.jpeg',
-                    size: 'sm'
-                }} />
-                <Avatar options={{
-                    name: 'Kent Dodds',
-                    size: 'md'
-                }} />
-                <Avatar options={{
-                    name: 'Ryan Florence',
-                    src: '/images/3.jpg',
-                    size: 'lg'
-                }} />
-                <Avatar options={{
-                    name: 'Christian Nwamba',
-                    src: '/images/4.jpg',
-                    size: 'xl'
-                }} />
-                <Avatar options={{
-                    name: 'Segun Adebayo',
-                    src: '/images/5.jpeg',
-                    size: 'xxl'
-                }} />
-
+                <Avatar name='Dan Abrahmov' src='/images/1.jpeg' size='xs' />
+                <Avatar name='Kola Tioluwani' src='/images/2.jpeg' size='sm' />
+                <Avatar name='Kent Dodds' size='md' />
+                <Avatar name='Ryan Florence' src='/images/3.jpg' size='lg' />
+                <Avatar name='Christian Nwamba' src='/images/4.jpg' size='xl' />
+                <Avatar name='Segun Adebayo' src='/images/5.jpeg' size='xxl' />
             </div>
 
-            < Codeblock>
-
-                {`<Avatar options={{
-    name: 'Dan Abrahmov',
-    src: '/images/1.jpeg',
-    size: 'xs'
-}} />
-<Avatar options={{
-    name: 'Kola Tioluwani',
-    src: '/images/2.jpeg',
-    size: 'sm'
-}} />
-<Avatar options={{
-    name: 'Kent Dodds',
-    size: 'md'
-}} />
-<Avatar options={{
-    name: 'Ryan Florence',
-    src: '/images/3.jpg',
-    size: 'lg'
-}} />
-<Avatar options={{
-    name: 'Christian Nwamba',
-    src: '/images/4.jpg',
-    size: 'xl'
-}} />
-<Avatar options={{
-    name: 'Segun Adebayo',
-    src: '/images/5.jpeg',
-    size: 'xxl'
-}} />`}
+            <Codeblock lang='jsx'>
+                {`<Avatar name='Dan Abrahmov' src='/images/1.jpeg' size='xs'/>
+<Avatar name='Kola Tioluwani' src='/images/2.jpeg' size='sm'/>
+<Avatar name='Kent Dodds' size='md'/>
+<Avatar name='Ryan Florence' src='/images/3.jpg' size='lg'/>
+<Avatar name='Christian Nwamba' src='/images/4.jpg' size='xl'/>
+<Avatar name='Segun Adebayo' src='/images/5.jpeg' size='xxl'/>`}
             </ Codeblock>
 
 
@@ -119,40 +70,17 @@ const AvatarUI = () => {
                 online:</p>
 
             <div className={styles.element_container}>
-                <Avatar options={{
-                    name: 'Dan Abrahmov',
-                    src: '/images/1.jpeg',
-                    badge: 'green'
-                }} />
-                <Avatar options={{
-                    name: 'Kola Tioluwani',
-                    src: '/images/2.jpeg',
-                    badge: 'red'
-                }} />
-                <Avatar options={{
-                    name: 'Kola Tioluwani',
-                    src: '/images/2.jpeg',
-                    badge: 'yellow'
-                }} />
+                <Avatar name='Dan Abrahmov' src='/images/1.jpeg' status='green' />
+                <Avatar name='Kola Tioluwani' src='/images/2.jpeg' status='red' />
+                <Avatar name='Kola Tioluwani' src='/images/2.jpeg' status='yellow' />
             </div>
 
-            < Codeblock>
-                {`<Avatar options={{
-    name: 'Dan Abrahmov',
-    src: '/images/1.jpeg',
-    badge: 'green'
-}} />
-<Avatar options={{
-    name: 'Kola Tioluwani',
-    src: '/images/2.jpeg',
-    badge: 'red'
-}} />
-<Avatar options={{
-    name: 'Kola Tioluwani',
-    src: '/images/2.jpeg',
-    badge: 'yellow'
-}} />`}
+            <Codeblock lang='jsx'>
+                {`<Avatar name='Dan Abrahmov' src='/images/1.jpeg' status='green'/>
+<Avatar name='Kola Tioluwani' src='/images/2.jpeg' status='red'/>
+<Avatar name='Kola Tioluwani' src='/images/2.jpeg' status='yellow'/>`}
             </ Codeblock>
+
             <h4>Avatar Group</h4>
             <p >In some cases, you might need to stack avatars as a group. Use the <code >AvatarGroup</code> component.</p>
             <ul>
@@ -163,33 +91,23 @@ const AvatarUI = () => {
             </ul>
 
             <div className={styles.element_container}>
-                <AvatarGroup options={{
-                    size: 'md',
-                    show: 5,
-                    max: 76,
-                }}>
-                    <Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
-                    <Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />
-                    <Avatar options={{ name: 'Kent Dodds' }} />
-                    <Avatar options={{ name: 'Ryan Florence', src: '/images/3.jpg' }} />
-                    <Avatar options={{ name: 'Christian Nwamba', src: '/images/4.jpg' }} />
-                    <Avatar options={{ name: 'Segun Adebayo', src: '/images/5.jpeg' }} />
-
+                <AvatarGroup size='md' show={5} max={76}>
+                    <Avatar name='Dan Abrahmov' src='/images/1.jpeg' />
+                    <Avatar name='Kola Tioluwani' src='/images/2.jpeg' />
+                    <Avatar name='Kent Dodds' />
+                    <Avatar name='Ryan Florence' src='/images/3.jpg' />
+                    <Avatar name='Christian Nwamba' src='/images/4.jpg' />
+                    <Avatar name='Segun Adebayo' src='/images/5.jpeg' />
                 </AvatarGroup>
             </div>
-            < Codeblock>
-                {`<AvatarGroup options={{
-    size: 'md',
-    show: 4,
-    max:100
-}}>
-    <Avatar options={{ name: 'Dan Abrahmov', src: '/images/1.jpeg' }} />
-    <Avatar options={{ name: 'Kola Tioluwani', src: '/images/2.jpeg' }} />
-    <Avatar options={{ name: 'Kent Dodds' }} />
-    <Avatar options={{ name: 'Ryan Florence', src: '/images/3.jpg' }} />
-    <Avatar options={{ name: 'Christian Nwamba', src: '/images/4.jpg' }} />
-    <Avatar options={{ name: 'Segun Adebayo', src: '/images/5.jpeg' }} />
-
+            <Codeblock lang='jsx'>
+                {`<AvatarGroup size='md' show={5} max={76}>
+    <Avatar name='Dan Abrahmov' src='/images/1.jpeg' />
+    <Avatar name='Kola Tioluwani' src='/images/2.jpeg' />
+    <Avatar name='Kent Dodds' />
+    <Avatar name='Ryan Florence' src='/images/3.jpg' />
+    <Avatar name='Christian Nwamba' src='/images/4.jpg' />
+    <Avatar name='Segun Adebayo' src='/images/5.jpeg' />
 </AvatarGroup>`}
             </ Codeblock>
 
