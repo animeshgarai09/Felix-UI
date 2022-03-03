@@ -77,7 +77,7 @@ const ButtonUI = () => {
 <Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
 
-            <ButtonGroup size="xs" theme="danger" >
+            <ButtonGroup size="md" theme="danger" >
                 <Button theme="gray" onClickActive={true}>Submit</Button>
                 <Button theme="warning" onClickActive={true} >Submit</Button>
                 <Button theme="gray" onClickActive={true} >Submit</Button>

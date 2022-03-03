@@ -1,26 +1,31 @@
 import styles from './input.module.scss'
-const InputGroup = ({ options, children }) => {
-    /* 
-        options={
-            label: 'label',
-            id: id,
-            err_msg: 'error message for an input'
-        }
-    */
-    const { label, id, err_msg } = options
-    return (
-        <div className={`${styles.group} ${err_msg ? styles.error : ''}`}>
-            {
-                <div className={styles.row}>
-                    {children}
-                </div>
-            }
+import PropTypes from 'prop-types'
 
+const InputGroup = (
+    {
+        id,         // Id for label
+        label,      // Label for the input
+        errMsg,     // Error message for validation
+        children    // Input element
+    }) => {
+
+    return (
+        <div className={`${styles.group} ${errMsg ? styles.error : ''}`}>
             <div className={styles.info}>
                 <label htmlFor={id}>{label}</label>
-                {err_msg && <span>{err_msg}</span>}
+                {errMsg && <span>{errMsg}</span>}
+            </div>
+            <div className={styles.row}>
+                {children}
             </div>
         </div >
     )
+}
+
+InputGroup.propTypes = {
+    id: PropTypes.string,
+    label: PropTypes.string,
+    errMsg: PropTypes.string,
+    children: PropTypes.node
 }
 export default InputGroup

@@ -6,10 +6,11 @@ const Button = (
         size = "md",            //'xs' || 'sm' || 'md' || 'lg', // md is by default
         theme = "primary",      //'primary' || 'info' || 'warning' || 'success' || 'gray',|| disable, // primary is by default
         variant = "solid",      //['outline','ghost','link'], // solid is by default
-        isRound = false,
         leftIcon,               // React-icons
         rightIcon,              // React-icons
-        isTransform = true,       // Transform on hover
+        isRound = false,        // Rounded button if true
+        isWide = false,           // Full width if true
+        isTransform = true,     // Transform on hover
         onClick,                // function passed to component for onClick event
         onClickActive = false,  //Toggle active class if passes true 
         selected,               // (ButtonGroup only) act as radio button for multiple button, sets active class
@@ -39,6 +40,7 @@ const Button = (
     classNames.push((leftIcon || rightIcon) && !children ? styles.icon : '')
     classNames.push(!isTransform && styles.noTransform)
     classNames.push(isRound && styles.round)
+    classNames.push(isWide && styles.wide)
     classNames.push(selected && styles.active)
     classNames.push(active && styles.active)
     classNames.push(className)
@@ -59,9 +61,10 @@ Button.propTypes = {
         PropTypes.oneOf(['outline', 'ghost', 'link']),
         PropTypes.arrayOf(PropTypes.oneOf(['outline', 'ghost', 'link']))
     ]),
-    isRound: PropTypes.bool,
     leftIcon: PropTypes.element,
     rightIcon: PropTypes.element,
+    isRound: PropTypes.bool,
+    isWide: PropTypes.bool,
     isTransform: PropTypes.bool,
     onClick: PropTypes.func,
     onClickActive: PropTypes.bool,
