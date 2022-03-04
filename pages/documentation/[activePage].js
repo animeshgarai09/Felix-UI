@@ -66,7 +66,7 @@ const Documentation = () => {
                     <span className={styles.label}>Elements</span>
                     {router.isReady && genLink(3, 7)}
                     <span className={styles.label}>Views</span>
-                    {router.isReady && genLink(7, 11)}
+                    {router.isReady && genLink(7, 12)}
                     {/* <span className={styles.label}>Modules</span>
                     {router.isReady && genLink(11)} */}
 

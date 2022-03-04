@@ -1,0 +1,116 @@
+.wrapper {
+    position: absolute;
+    z-index: 100;
+    top: 5.5rem;
+    right: 0.5rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: 2rem 1fr 1.5rem;
+    background-color: var(--clr-white);
+    border: 1px solid var(--clr-border-color);
+    width: 22rem;
+    padding: 0.6rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    box-shadow: var(--box-shadow-1);
+    animation: SlideLeft 0.3s;
+    animation-fill-mode: forwards;
+    &.close {
+        animation: SlideRight 0.3s;
+        animation-fill-mode: forwards;
+    }
+    &.success {
+        .heading {
+            color: var(--clr-green);
+        }
+        .icon {
+            background: var(--clr-green);
+        }
+    }
+    &.error {
+        .heading {
+            color: var(--clr-red);
+        }
+        .icon {
+            background: var(--clr-red);
+        }
+    }
+    &.warning {
+        .heading {
+            color: var(--clr-yellow);
+        }
+        .icon {
+            background: var(--clr-yellow);
+        }
+    }
+    &.info {
+        .heading {
+            color: var(--clr-blue);
+        }
+        .icon {
+            background: var(--clr-blue);
+        }
+    }
+    .text {
+        padding-left: 0.8rem;
+        .heading {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        p {
+            margin-bottom: 0;
+            line-height: 1.2;
+            font-size: 0.8rem;
+            color: var(--clr-gray-2);
+        }
+    }
+    .icon {
+        display: grid;
+        place-items: center;
+        place-self: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        svg {
+            font-size: 1.2rem;
+            color: var(--clr-white);
+        }
+    }
+    .btn_close {
+        background: none !important;
+        padding: 0 !important;
+        width: 1.5rem;
+        height: 1.5rem !important;
+        font-size: 1rem !important;
+        transition: 0.2s;
+        svg {
+            color: #1c1c1c6b;
+        }
+        &:hover {
+            background: #c3c3c33b !important;
+        }
+    }
+}
+
+@keyframes SlideLeft {
+    0% {
+        margin-left: 100%;
+    }
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes SlideRight {
+    0% {
+        margin-left: 0%;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}

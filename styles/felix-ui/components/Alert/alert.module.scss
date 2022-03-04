@@ -2,7 +2,7 @@
     padding: 0.6rem;
     border-radius: 6px;
     display: grid;
-    grid-template-columns: 1rem 1fr 3rem;
+    grid-template-columns: 1rem 1fr 2rem;
     margin: 0.5rem;
     &::before {
         content: "";
@@ -19,9 +19,6 @@
         .icon {
             background: var(--clr-green);
         }
-        .heading {
-            color: var(--clr-green);
-        }
     }
     &.error {
         background: var(--clr-red-light);
@@ -30,9 +27,6 @@
         }
         .icon {
             background: var(--clr-red);
-        }
-        .heading {
-            color: var(--clr-red);
         }
     }
     &.warning {
@@ -43,9 +37,6 @@
         &::before {
             background: var(--clr-yellow);
         }
-        .heading {
-            color: var(--clr-yellow);
-        }
     }
     &.info {
         background: var(--clr-blue-light);
@@ -55,21 +46,18 @@
         &::before {
             background: var(--clr-blue);
         }
-        .heading {
-            color: var(--clr-blue);
-        }
     }
     .text {
         padding-left: 0.8rem;
         .heading {
             display: flex;
             align-items: center;
-            font-weight: 500;
         }
         p {
             margin-top: 0.6rem;
             margin-bottom: 0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: var(--clr-gray-2);
         }
     }
     .icon {

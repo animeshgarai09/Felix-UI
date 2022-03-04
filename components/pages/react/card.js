@@ -11,7 +11,7 @@ const CardUI = () => {
                 {`import { ProductCard } from "@felix-ui"`}
             </Codeblock>
 
-            <ProductWrapper>
+            <ProductWrapper >
                 <ProductImage src="/images/product.jpeg" alt='product' badge={{ text: '30% Off', color: 'yellow' }} />
                 <ProductBody
                     title="Angie’s Boomchickapop Sweet & Salty"

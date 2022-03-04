@@ -7,6 +7,7 @@ import ReactAvatar from "./react/avatar";
 import ReactBadge from "./react/badge";
 import ReactButton from "./react/button";
 import ReactCard from "./react/card";
+import ReactToast from "./react/toast";
 import ReactGrid from "./react/grid";
 import ReactImage from "./react/image";
 import ReactInput from "./react/input";
@@ -67,6 +68,7 @@ export default {
         react: <ReactCard />,
         css: <CSSCard />,
     },
+    Toast: <ReactToast />,
     Grid: {
         react: <ReactGrid />,
         css: <CSSGrid />,

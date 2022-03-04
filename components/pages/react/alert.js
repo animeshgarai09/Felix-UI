@@ -70,7 +70,7 @@ const AlertUI = () => {
             <p>A description can be added to alert component with <code>description</code> prop.</p>
             <div className={`${styles.element_container} ${styles.column}`}>
                 <Alert
-                    status='error'
+                    status='warning'
                     title='There was an error processing your request'
                     closeButton={true}
                 >
