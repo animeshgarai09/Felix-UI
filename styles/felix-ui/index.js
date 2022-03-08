@@ -8,6 +8,7 @@ import ProductImage from "./components/Card/ProductCard/ProductImage";
 import ProductBody from "./components/Card/ProductCard/ProductBody";
 import ToastProvider from "./components/Toast/ToastProvider";
 import { useToast } from "./components/Toast/ToastProvider";
+import { List, ListItem } from "./components/List/List";
 import Image from "./components/Image";
 import A from './components/A';
 import Badge from "./components/Badge/Badge";
@@ -27,6 +28,8 @@ export {
     ProductBody,
     ToastProvider,
     useToast,
+    List,
+    ListItem,
     IconButton,
     Image,
     Input

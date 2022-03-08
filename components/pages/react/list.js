@@ -1,9 +1,15 @@
-const List = () => {
+import { List, ListItem } from "@felix-ui"
+const ListUI = () => {
     return (
         <div>
-            List
+            <List type="ol" style="none" orientation="horizontal">
+                <ListItem>Hello</ListItem>
+                <ListItem>Hello</ListItem>
+                <ListItem>Hello</ListItem>
+                <ListItem>Hello</ListItem>
+            </List>
         </div>
     )
 }
 
-export default List
+export default ListUI

@@ -1,8 +1,7 @@
 import styles from './toast.module.scss'
 import Toast from './Toast'
 import { createContext, useContext, useReducer } from 'react'
-import { v4 } from 'uuid'
-
+import { genKey } from '../../utils/js'
 const ToastContext = createContext()
 
 const ToastProvider = ({ children }) => {
@@ -24,7 +23,7 @@ const ToastProvider = ({ children }) => {
             {children}
             <div className={styles.wrapper}>
                 {
-                    toastState.map(props => {
+                    toastState.slice(0).reverse().map(props => {
                         return <Toast dispatch={toastDispatcher} key={props.id} {...props} />
                     })
                 }
@@ -38,7 +37,7 @@ export const useToast = () => {
     return (props) => dispatch({
         type: "ADD_TOAST",
         payload: {
-            id: v4(),
+            id: genKey(),
             ...props
         }
     })

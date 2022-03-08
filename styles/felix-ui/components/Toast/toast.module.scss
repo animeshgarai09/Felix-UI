@@ -3,13 +3,14 @@
     z-index: 100;
     top: 5.5rem;
     right: 0.5rem;
+    transition: all 0.6s ease-in;
 }
 .container {
     display: grid;
     grid-template-columns: 2rem 1fr 1.5rem;
     background-color: var(--clr-white);
     border: 1px solid var(--clr-border-color);
-    width: 22rem;
+    width: 20rem;
     padding: 0.6rem;
     padding-left: 1rem;
     border-radius: 10px;
@@ -99,18 +100,22 @@
 
 @keyframes SlideLeft {
     0% {
-        margin-left: 100%;
+        opacity: 0.5;
+        transform: scale(0.7) translateX(100%);
     }
     100% {
-        margin-left: 0%;
+        opacity: 1;
+        transform: scale(1) translateX(0);
     }
 }
 
 @keyframes SlideRight {
     0% {
-        margin-left: 0%;
+        opacity: 1;
+        transform: scale(1);
     }
     100% {
-        margin-left: 100%;
+        opacity: 0;
+        transform: scale(0.7);
     }
 }

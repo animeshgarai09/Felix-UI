@@ -9,11 +9,11 @@ import { useEffect, useState } from 'react'
 
 const Toast = (
     {
-        id,
-        message,                // message for the toast
-        status = 'info',        //  'success'|| 'error' || 'warning' || 'info' || 'gray',
-        dispatch,
-        className,              //   User provided class name
+        id,                     // Unique id to track the toast
+        message,                // Message for the toast
+        status = 'info',        // 'success'|| 'error' || 'warning' || 'info' || 'gray',
+        dispatch,               // Dispatcher function to remove toast on close 
+        className,              // User provided class name
     }) => {
 
 
@@ -21,6 +21,10 @@ const Toast = (
     const [intervalId, setIntervalId] = useState(null)
     const [close, setClose] = useState(false)
 
+    /* 
+        Timer is set to decrement counter state(init:100) on every 40ms
+        If the counter reaches 0 then clear the timer and close the toast
+    */
     const startTimer = () => {
         const id = setInterval(() => {
             setCounter(counter => {
@@ -28,16 +32,24 @@ const Toast = (
                     console.log(counter)
                     return --counter
                 }
-                clearInterval(intervalId)
+                closeToast()
                 return counter
             })
         }, 40);
+        /* Timer id is set to track and clear timer on demand */
         setIntervalId(id)
     }
 
+    /* Function to clear the timer */
     const stopTimer = () => {
         clearInterval(intervalId)
     }
+
+    /* 
+        On close set state to add exit animation 
+        Clear the timer
+        Dispatch remove toast action after 400ms 
+    */
 
     const closeToast = () => {
         setClose(true)
@@ -50,15 +62,11 @@ const Toast = (
         }, 400);
     }
 
+    /* Start timer on component mount */
+
     useEffect(() => {
         startTimer()
     }, [])
-
-    useEffect(() => {
-        if (counter === 0) {
-            closeToast()
-        }
-    }, [counter])
 
     const getIcon = () => {
         if (status == 'success') return <Check />
@@ -67,6 +75,7 @@ const Toast = (
         else if (status == 'info') return <Info />
     }
     return (
+        /* Pause timer on hover and start again onMouseLeave  */
         <div onMouseEnter={stopTimer} onMouseLeave={startTimer}
             className={`${styles.container} ${styles[status]} ${className ? className : ''} ${close && styles.close}`}
         >
@@ -83,10 +92,12 @@ const Toast = (
         </div>
     )
 }
+
 Toast.propTypes = {
     id: PropTypes.string.isRequired,
     message: PropTypes.string.isRequired,
     status: PropTypes.oneOf(['danger', 'info', 'warning', 'success', 'gray']).isRequired,
+    dispatch: PropTypes.func,
     className: PropTypes.string,
 }
 export default Toast

@@ -1,0 +1,29 @@
+.list {
+    &.horizontal {
+        display: flex;
+        @extend .style-none;
+    }
+    &.style-none {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &.style-disc {
+        list-style: disc;
+    }
+    &.style-square {
+        list-style: square;
+    }
+    &.style-circle {
+        list-style: circle;
+    }
+    &.style-number {
+        list-style: decimal;
+    }
+    &.style-lowerLetter {
+        list-style: lower-alpha;
+    }
+    &.style-upperLetter {
+        list-style: upper-alpha;
+    }
+}
