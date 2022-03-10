@@ -1,5 +1,7 @@
-import { ProductWrapper, ProductImage, ProductBody } from "@felix-ui"
+import { ProductWrapper, ProductImage, ProductBody, ProductActions, Button } from "@felix-ui"
 import { Codeblock } from 'components/utils'
+import { MdAdd } from 'react-icons/md'
+import { AiOutlineHeart } from 'react-icons/ai'
 import styles from '@styles/documentation.module.scss'
 
 const CardUI = () => {
@@ -25,7 +27,12 @@ const CardUI = () => {
                     rating={1.4}
                     currentPrice={250}
                     price={350}
-                />
+                >
+                    <ProductActions leftAlign={true} newLine={true}>
+                        <Button size="sm" variant="ghost" theme='gray' leftIcon={<AiOutlineHeart />}></Button>
+                        <Button size="sm" variant="ghost" leftIcon={<MdAdd />}>Add</Button>
+                    </ProductActions>
+                </ProductBody>
             </ProductWrapper>
         </>
     )

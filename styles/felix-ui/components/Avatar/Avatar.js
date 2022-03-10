@@ -33,7 +33,7 @@ const Avatar = (
 
     return (
         <div className={`${styles.container} ${className ? className : ''}`}>
-            {src && <Image className={`${styles[size]} ${styles.circle}`} src={src} alt={name} />}
+            {src && <Image className={`${styles[size]} ${styles.circle}`} src={src} alt={name} quality={20} />}
 
             {!src && name &&
                 <div style={{ background: gradientColors[randomNumberGen(9)] }} className={`${styles.text} ${styles[size]} ${styles.circle}`}>

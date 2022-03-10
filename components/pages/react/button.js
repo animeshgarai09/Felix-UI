@@ -77,10 +77,14 @@ const ButtonUI = () => {
 <Button rightIcon={<FiChevronRight />} >Get started</Button>`}
             </Codeblock>
 
-            <ButtonGroup size="md" theme="danger" >
-                <Button theme="gray" onClickActive={true}>Submit</Button>
-                <Button theme="warning" onClickActive={true} >Submit</Button>
-                <Button theme="gray" onClickActive={true} >Submit</Button>
+            <ButtonGroup size="sm" theme="gray" >
+                <Button >1</Button>
+                <Button >2</Button>
+                <Button selected={true}>3</Button>
+                <Button >4</Button>
+                <Button >5</Button>
+                <Button >6</Button>
+                <Button >20</Button>
             </ButtonGroup>
             <Footer currentPage="Button" />
         </>

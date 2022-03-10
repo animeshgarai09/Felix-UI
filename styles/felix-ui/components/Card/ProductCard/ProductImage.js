@@ -25,7 +25,7 @@ const ProductImage = (
                 </Badge>
             }
             <a href={productLink}>
-                <Image src={src} alt={alt} />
+                <Image src={src} alt={alt} quality={50} />
             </a>
         </div>
     )

@@ -75,8 +75,8 @@
             display: block;
         }
         img {
-            max-width: 13rem;
-            max-height: rem(200);
+            max-width: 13rem !important;
+            max-height: rem(200) !important;
             display: block;
         }
     }
@@ -147,6 +147,7 @@
         .bottom {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             align-items: center;
             margin-top: rem(10);
         }
@@ -169,12 +170,21 @@
                 }
             }
         }
-        .action_con button {
-            margin-left: 0.5rem;
-            &:first-child {
-                margin: 0;
-                background: var(--clr-gray-5);
-                color: var(--clr-red);
+        .action_con {
+            margin: 0.5rem 0;
+            &.left_align {
+                flex: 1;
+            }
+            &.new_line {
+                flex-basis: 100%;
+            }
+            button {
+                margin-left: 0.5rem;
+                &:first-child {
+                    margin: 0;
+                    background: var(--clr-gray-5);
+                    color: var(--clr-red);
+                }
             }
         }
     }

@@ -1,9 +1,6 @@
 import styles from './ProductCard.module.scss'
 import PropTypes from 'prop-types'
 import Rating from '../../Rating'
-import Button from '../../Button/Button'
-import { MdAdd } from 'react-icons/md'
-import { AiOutlineHeart } from 'react-icons/ai'
 
 const ProductBody = (
     {
@@ -15,9 +12,8 @@ const ProductBody = (
         rating,         // Rating for the product
         currentPrice,   // Current price of the product
         price,          // Original Price of the product. if provided the discount will be calculated automatically
-        onWishlist,     // Event on wishlist button click
-        onAdd,          // Event on add button click
         className,      // User provided class name
+        children
     }) => {
 
     return (
@@ -32,14 +28,27 @@ const ProductBody = (
                     <span >Rs. {price}</span>
                     {currentPrice && <span>Rs. {currentPrice}</span>}
                 </div>
-                <div className={styles.action_con}>
-                    <Button size="sm" variant="ghost" theme='gray' leftIcon={<AiOutlineHeart />}></Button>
-                    <Button size="sm" variant="ghost" leftIcon={<MdAdd />}>Add</Button>
-                </div>
+                {children}
             </div>
         </div>
     )
 }
+
+
+const ProductActions = (
+    {
+        leftAlign = false,     // If true align actions to left else right
+        newLine = false,       // If true put all action to new row
+        className,           // User provided class name
+        children
+    }) => {
+    return (
+        <div className={`${styles.action_con} ${leftAlign && styles["left_align"]} ${newLine && styles["new_line"]} ${className ? className : ''}`}>
+            {children}
+        </div>
+    )
+}
+
 
 ProductBody.propTypes = {
     title: PropTypes.string,
@@ -56,9 +65,16 @@ ProductBody.propTypes = {
     rating: PropTypes.number,
     currentPrice: PropTypes.number,
     price: PropTypes.number,
-    onWishlist: PropTypes.func,
-    onAdd: PropTypes.func,
     className: PropTypes.string,
     children: PropTypes.node
 }
-export default ProductBody
+
+ProductActions.propTypes = {
+    leftAlign: PropTypes.bool,
+    newLine: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.node
+}
+
+
+export { ProductBody, ProductActions }
