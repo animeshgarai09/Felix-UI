@@ -13,6 +13,7 @@ const Toast = (
         message,                // Message for the toast
         status = 'info',        // 'success'|| 'error' || 'warning' || 'info' || 'gray',
         dispatch,               // Dispatcher function to remove toast on close 
+        duration = 3,               // Duration for the toast in seconds
         className,              // User provided class name
     }) => {
 
@@ -35,7 +36,7 @@ const Toast = (
                 closeToast()
                 return counter
             })
-        }, 40);
+        }, duration * 10);
         /* Timer id is set to track and clear timer on demand */
         setIntervalId(id)
     }
@@ -98,6 +99,7 @@ Toast.propTypes = {
     message: PropTypes.string.isRequired,
     status: PropTypes.oneOf(['danger', 'info', 'warning', 'success', 'gray']).isRequired,
     dispatch: PropTypes.func,
+    duration: PropTypes.number,
     className: PropTypes.string,
 }
 export default Toast

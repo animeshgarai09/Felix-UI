@@ -3,6 +3,7 @@ import { useState } from 'react'
 import styles from './button.module.scss'
 const Button = (
     {
+        type = "button",        //Button type can be button or submit
         size = "md",            //'xs' || 'sm' || 'md' || 'lg', // md is by default
         theme = "primary",      //'primary' || 'info' || 'warning' || 'success' || 'gray',|| disable, // primary is by default
         variant = "solid",      //['outline','ghost','link'], // solid is by default
@@ -11,6 +12,7 @@ const Button = (
         isRound = false,        // Rounded button if true
         isWide = false,           // Full width if true
         isTransform = true,     // Transform on hover
+        isLoading = false,        // loading animation
         onClick,                // function passed to component for onClick event
         onClickActive = false,  //Toggle active class if passes true 
         selected,               // (ButtonGroup only) act as radio button for multiple button, sets active class
@@ -43,18 +45,21 @@ const Button = (
     classNames.push(isWide && styles.wide)
     classNames.push(selected && styles.active)
     classNames.push(active && styles.active)
+    classNames.push(isLoading && styles.disable)
     classNames.push(className)
     classNames = classNames.filter(item => item !== false)
     return (
-        <button type='button' role="button" className={`${classNames.join(' ')}`} onClick={btnClick}>
-            {leftIcon}
-            {children}
-            {rightIcon}
+        <button type={type} role="button" className={`${classNames.join(' ')}`} onClick={btnClick}>
+            {isLoading && <div className={styles.loader}></div>}
+            {!isLoading && leftIcon}
+            {!isLoading && children}
+            {!isLoading && rightIcon}
         </button>
     )
 }
 
 Button.propTypes = {
+    type: PropTypes.string,
     size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
     theme: PropTypes.oneOf(['primary', 'info', 'warning', 'success', 'gray', 'disable']),
     variant: PropTypes.oneOfType([
@@ -66,6 +71,7 @@ Button.propTypes = {
     isRound: PropTypes.bool,
     isWide: PropTypes.bool,
     isTransform: PropTypes.bool,
+    isLoading: PropTypes.bool,
     onClick: PropTypes.func,
     onClickActive: PropTypes.bool,
     selected: PropTypes.bool,

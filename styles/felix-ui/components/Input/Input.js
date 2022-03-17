@@ -16,22 +16,24 @@ const Input = (props) => {
 }
 
 
-const InputText = ({ label, errMsg, type, ref, placeholder, onChange }) => {
+const InputText = ({ label, errMsg, type, Fref, placeholder, name, value, onChange }) => {
 
     return (
         <InputGroup id={id} label={label} errMsg={errMsg}>
             <input
                 id={id}
-                ref={ref}
+                ref={Fref}
                 type={type}
                 placeholder={placeholder}
+                name={name}
+                value={value}
                 onChange={onChange}
             />
         </InputGroup>
     )
 }
 
-const InputPassword = ({ label, errMsg, ref, placeholder, onChange }) => {
+const InputPassword = ({ label, errMsg, Fref, placeholder, name, value, onChange }) => {
 
     const [visible, setVisible] = useState(false)
 
@@ -41,10 +43,12 @@ const InputPassword = ({ label, errMsg, ref, placeholder, onChange }) => {
         <InputGroup id={id} label={label} errMsg={errMsg}>
             <input
                 id={id}
-                ref={ref}
+                ref={Fref}
                 type={visible ? 'text' : 'password'}
                 placeholder={placeholder}
                 onChange={onChange}
+                name={name}
+                value={value}
                 className={styles.password}
             />
             {visible && <VscEyeClosed onClick={passwordToggle} />}

@@ -18,7 +18,7 @@ const ButtonUI = () => {
             </Codeblock>
             <h4>Usage</h4>
             <div className={styles.element_container}>
-                <Button>Submit</Button>
+                <Button isLoading={true}>Submit</Button>
             </div>
             <Codeblock lang="jsx">
 

@@ -4,7 +4,7 @@ import { createContext, useContext, useReducer } from 'react'
 import { genKey } from '../../utils/js'
 const ToastContext = createContext()
 
-const ToastProvider = ({ children }) => {
+const ToastProvider = ({ className, children }) => {
 
     const [toastState, toastDispatcher] = useReducer((state, action) => {
 
@@ -21,7 +21,7 @@ const ToastProvider = ({ children }) => {
     return (
         <ToastContext.Provider value={toastDispatcher}>
             {children}
-            <div className={styles.wrapper}>
+            <div className={`${styles.wrapper} ${className ? className : ''}`}>
                 {
                     toastState.slice(0).reverse().map(props => {
                         return <Toast dispatch={toastDispatcher} key={props.id} {...props} />

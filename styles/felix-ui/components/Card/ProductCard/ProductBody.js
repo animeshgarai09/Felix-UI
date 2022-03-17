@@ -16,17 +16,25 @@ const ProductBody = (
         children
     }) => {
 
+    const discount = (((price - currentPrice) / price) * 100).toFixed(1)
     return (
         <div className={`${styles.content_wrap} ${className ? className : ''}`}>
             {category?.name && <a className={styles.category} href={category.link || "#"}>{category.name}</a>}
             <a className={styles.name} href={link}>{title}</a>
             {description && <p>{description}</p>}
-            {rating && <Rating points={rating} text={true} className={styles.rating} />}
-            {vendor?.name && <span className={styles.vendor}>By <a href={vendor.link || '#'}>{vendor.name}</a></span>}
+            <div className={styles.row}>
+                {vendor?.name && <span className={styles.vendor}>By <a href={vendor.link || '#'}>{vendor.name}</a></span>}
+                {rating && <Rating points={rating} text={true} className={styles.rating} />}
+            </div>
             <div className={styles.bottom}>
                 <div className={styles.price}>
-                    <span >Rs. {price}</span>
-                    {currentPrice && <span>Rs. {currentPrice}</span>}
+                    <span >Rs. {currentPrice}</span>
+                    {price &&
+                        <div className={styles.discount}>
+                            <span>Rs. {price}</span>
+                            <span>-{discount}%</span>
+                        </div>
+                    }
                 </div>
                 {children}
             </div>
