@@ -14,8 +14,11 @@
             color: var(--clr-red);
             margin: 0 0.4rem;
         }
+        a {
+            margin-left: 0.5rem;
+        }
     }
-    svg {
+    .links svg {
         font-size: 1.8rem;
         margin: 0 0.5rem;
         color: #b2b2b2;

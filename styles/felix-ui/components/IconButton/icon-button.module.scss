@@ -10,15 +10,18 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--clr-black);
-    transition: 0.2s;
+    color: var(--clr-primary);
+    background: var(--clr-primary-light);
+    transition: 0.3s;
     @media (hover: hover) {
         &:hover {
-            background: var(--clr-primary-light);
+            color: #ffffff;
+            background: var(--clr-primary);
         }
     }
     &:active {
-        background: var(--clr-primary-light);
+        color: #ffffff;
+        background: var(--clr-primary);
     }
     .badge {
         display: inline-flex;

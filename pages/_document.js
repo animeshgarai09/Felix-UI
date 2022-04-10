@@ -11,32 +11,22 @@ class MyDocument extends Document {
         return (
             <Html lang="en">
                 <Head>
-                    <link rel="icon" href="/favicon.ico" sizes="any" />
-                    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-                    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-                    <link rel="manifest" href="/site.webmanifest" />
-                    <meta name="apple-mobile-web-app-title" content="Felix-UI" />
-                    <meta name="application-name" content="Felix-UI" />
-                    <meta name="theme-color" content="#1B1B1B" />
+                    <meta charset="utf-8" />
+                    <link rel="icon" href="/favicon/favicon.ico" />
+                    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+                    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+                    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+                    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#a8a8a8" />
+                    <meta name="msapplication-TileColor" content="#da532c" />
+                    <meta name="theme-color" content="#2f2f2f" />
+                    <meta name="description" content="Documentation for React JS component library - Felix UI" />
+
+                    {/* <link rel="manifest" href="/manifest.json" /> */}
                     <link href="/fonts/Montserrat-Regular.woff2" rel='preload' as='font' />
                     <link href="/fonts/Montserrat-Bold.woff2" rel='preload' as='font' />
-                    <meta charSet="utf-8" />
                     <link rel="stylesheet" href="https://felix-ui-dev.netlify.app/components/main.css" />
-
-                    <meta name="description" content='A community of AI enthusiast' />
-
-                    {/* Twitter */}
-                    <meta name="twitter:card" content="summary" />
-                    {/* <meta name="twitter:creator" content={this.twitterHandle} /> */}
-
-                    {/* Open Graph */}
-                    {/* <meta property="og:url" content={this.currentURL} />
-                    <meta property="og:type" content="website" />
-                    <meta property="og:image" content={this.previewImage} />
-                    <meta property="og:title" content={this.pageTitle} />
-                    <meta property="og:description" content={this.description} /> */}
                 </Head>
-                <body>
+                <body >
                     <Main />
                     <NextScript />
                 </body>

@@ -1,7 +1,7 @@
 import styles from './toast.module.scss'
-import Check from '../../svg/check.svg'
-import Error from '../../svg/error.svg'
-import Info from '../../svg/info.svg'
+import { ReactComponent as Check } from '../../svg/check.svg'
+import { ReactComponent as Error } from '../../svg/error.svg'
+import { ReactComponent as Info } from '../../svg/info.svg'
 import Button from '../Button/Button'
 import { CgClose } from 'react-icons/cg'
 import PropTypes from 'prop-types'
@@ -13,7 +13,7 @@ const Toast = (
         message,                // Message for the toast
         status = 'info',        // 'success'|| 'error' || 'warning' || 'info' || 'gray',
         dispatch,               // Dispatcher function to remove toast on close 
-        duration = 3,               // Duration for the toast in seconds
+        duration = 3,           // Duration for the toast in seconds
         className,              // User provided class name
     }) => {
 
@@ -30,7 +30,6 @@ const Toast = (
         const id = setInterval(() => {
             setCounter(counter => {
                 if (counter != 0) {
-                    console.log(counter)
                     return --counter
                 }
                 closeToast()

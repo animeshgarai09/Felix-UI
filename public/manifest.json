@@ -1,0 +1,25 @@
+{
+    "short_name": "Felix UI",
+    "name": "React JS component library",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/favicon/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": ".",
+    "theme_color": "#2f2f2f",
+    "background_color": "#2f2f2f",
+    "display": "standalone"
+}

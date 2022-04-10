@@ -14,7 +14,7 @@ const ToastUI = () => {
         toast({
             status: "error",
             message: "Data uploaded to the server.",
-            duration: 10
+            duration: 100
         })
     }
     const warning = () => {

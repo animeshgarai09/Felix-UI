@@ -66,7 +66,7 @@ a {
     transition: 0.2s;
     &:hover,
     &:active {
-        color: var(--clr-primary-light);
+        color: var(--clr-primary-dark);
     }
 }
 
@@ -172,6 +172,30 @@ strong {
 }
 
 ///testing
+
+.list-style-none {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.list-style-disc {
+    list-style: disc;
+}
+.list-style-square {
+    list-style: square;
+}
+.list-style-circle {
+    list-style: circle;
+}
+.list-style-number {
+    list-style: decimal;
+}
+.list-style-lowerLetter {
+    list-style: lower-alpha;
+}
+.list-style-upperLetter {
+    list-style: upper-alpha;
+}
 
 input {
     background-image: none;

@@ -6,6 +6,7 @@ import { SocialLinks } from '../components/utils'
 import { AiFillGithub } from 'react-icons/ai'
 import Left from '../public/svg/left.svg'
 import Right from '../public/svg/right.svg'
+
 export default function Index() {
     return (
         <>
@@ -17,15 +18,15 @@ export default function Index() {
             <main className={styles.container}>
                 <div className={styles.text}>
                     <h1>Build modern websites better <span> with speed </span></h1>
-                    <p>Felix UI is a React component library built for Next JS </p>
+                    <p>Felix UI is a highly customizable React component library </p>
                     <p>Minimal, modular and accessible component library that gives you the building blocks for faster development.</p>
                     <div className={styles.actions}>
-                        <a href="/documentation.html#introduction"><Button
+                        <a href="/documentation/installation"><Button
                             size='lg'
                             variant='round'
                         >Get started</Button>
                         </a>
-                        <a href="https://github.com/animeshgarai09/Felix-UI-Vanilla"><Button
+                        <a href="https://github.com/animeshgarai09/Felix-UI-Library"><Button
                             leftIcon={<AiFillGithub />}
                             size='lg'
                             variant={['round', 'outline']}

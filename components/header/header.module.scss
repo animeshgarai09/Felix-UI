@@ -13,16 +13,14 @@
         max-width: 1240px;
         margin: auto;
         align-items: center;
-        padding: 1.25rem 1.25rem;
+        padding: 1rem 1.25rem;
     }
     .logo {
-        width: 120px;
+        width: 110px;
     }
     .links {
         display: flex;
         align-items: center;
-        a {
-            margin-left: 1.5rem;
-        }
+        gap: 1rem;
     }
 }

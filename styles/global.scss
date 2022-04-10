@@ -13,3 +13,43 @@ body {
 *::after {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+table {
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--clr-table-bg);
+    margin-bottom: 2rem;
+    td,
+    th {
+        padding: 0.6rem 1rem;
+        text-align: left;
+    }
+
+    td {
+        border-right: 1px solid var(--clr-table-bg-odd);
+        font-size: 0.9rem;
+        &:first-child {
+            width: 20%;
+            white-space: nowrap;
+        }
+    }
+
+    thead th {
+        color: #ffffff;
+        background: var(--clr-secondary);
+        border-radius: 0 10px 0 0;
+    }
+
+    thead th:nth-child(odd) {
+        border-radius: 10px 0 0 0;
+    }
+
+    tr:nth-child(even) {
+        background: var(--clr-table-bg-odd);
+    }
+}

@@ -3,21 +3,20 @@ import InputGroup from './InputGroup'
 import { useState } from 'react'
 import { VscEyeClosed, VscEye, } from 'react-icons/vsc'
 
-const id = Math.random().toString(36).substring(2, 10);
 
 
 const Input = (props) => {
+    const id = Math.random().toString(36).substring(2, 10);
     const { type } = props
     if (type == 'text' || type == "email") {
-        return <InputText {...props} />
+        return <InputText id={id} {...props} />
     } else if (type == 'password') {
-        return <InputPassword {...props} />
+        return <InputPassword id={id} {...props} />
     }
 }
 
 
-const InputText = ({ label, errMsg, type, Fref, placeholder, name, value, onChange }) => {
-
+const InputText = ({ id, label, errMsg, type, Fref, placeholder, name, value, onChange }) => {
     return (
         <InputGroup id={id} label={label} errMsg={errMsg}>
             <input
@@ -33,7 +32,7 @@ const InputText = ({ label, errMsg, type, Fref, placeholder, name, value, onChan
     )
 }
 
-const InputPassword = ({ label, errMsg, Fref, placeholder, name, value, onChange }) => {
+const InputPassword = ({ id, label, errMsg, Fref, placeholder, name, value, onChange }) => {
 
     const [visible, setVisible] = useState(false)
 

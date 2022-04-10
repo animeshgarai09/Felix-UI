@@ -8,8 +8,8 @@
 .container {
     display: grid;
     grid-template-columns: 2rem 1fr 1.5rem;
-    background-color: var(--clr-white);
-    border: 1px solid var(--clr-border-color);
+    background-color: var(--clr-toast-bg);
+    border: 1px solid var(--clr-border-color-3);
     width: 20rem;
     padding: 0.6rem;
     padding-left: 1rem;
@@ -90,7 +90,7 @@
         font-size: 1rem !important;
         transition: 0.2s;
         svg {
-            color: #1c1c1c6b;
+            color: var(--clr-toast-close);
         }
         &:hover {
             background: #c3c3c33b !important;

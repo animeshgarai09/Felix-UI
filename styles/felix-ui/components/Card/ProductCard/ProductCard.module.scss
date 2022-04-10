@@ -22,18 +22,24 @@
     }
     &.horizontal {
         flex-direction: row;
+        .image {
+            min-width: 11rem;
+            img {
+                padding-left: rem(15);
+            }
+        }
     }
     .remove {
         position: absolute;
         display: inline-flex;
-        height: 1.8rem;
-        width: 1.8rem;
+        height: 1.6rem;
+        width: 1.6rem;
         justify-content: center;
         align-items: center;
-        right: rem(15);
+        right: rem(10);
         color: #a7a7a7;
         font-size: 1.3rem;
-        top: rem(15);
+        top: rem(10);
         z-index: 1;
         background: #edeeef;
         border-radius: 50%;
@@ -41,6 +47,9 @@
         cursor: pointer;
         &:hover {
             color: var(--clr-gray-1);
+        }
+        &:active {
+            transform: scale(0.8);
         }
     }
     .overlay {
@@ -188,6 +197,7 @@
         .action_con {
             display: flex;
             gap: 0.5rem;
+            margin-top: 0.5rem;
             &.left_align {
                 flex: 1;
             }

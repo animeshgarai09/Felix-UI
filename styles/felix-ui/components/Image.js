@@ -27,7 +27,6 @@ const Image = (
                 className: `${styles.image}`
             });
         } catch {
-            console.log("Not using Next.js");
             return React.createElement("img", {
                 src,
                 alt,

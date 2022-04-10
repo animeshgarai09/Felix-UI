@@ -22,7 +22,7 @@ const IconButton = (
 }
 
 IconButton.propTypes = {
-    icon: PropTypes.func.isRequired,
+    icon: PropTypes.node.isRequired,
     showBadge: PropTypes.bool,
     badgeNumber: PropTypes.number,
     ariaLabel: PropTypes.string.isRequired,

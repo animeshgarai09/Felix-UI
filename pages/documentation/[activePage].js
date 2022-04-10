@@ -76,8 +76,8 @@ const Documentation = () => {
                         <div className={styles.heading_con}>
                             <h1>{activePage && activePage[0].toUpperCase() + activePage.slice(1)}</h1>
                             {showLangSwitch && <ButtonGroup size="sm" theme="primary">
-                                <Button onClick={() => { setLang('react') }} selected={lang == 'react' && true}>React</Button>
-                                <Button onClick={() => { setLang('css') }} selected={lang == 'css' && true}>CSS</Button>
+                                <Button onClick={() => { setLang('react') }} selected={lang === 'react'}>React</Button>
+                                <Button onClick={() => { setLang('css') }} selected={lang === 'css'}>CSS</Button>
                             </ButtonGroup>}
                         </div>
                         {activePage && lang && loadPage()}
