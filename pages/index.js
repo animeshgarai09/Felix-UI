@@ -23,13 +23,14 @@ export default function Index() {
                     <div className={styles.actions}>
                         <a href="/documentation/installation"><Button
                             size='lg'
-                            variant='round'
+                            isRound
                         >Get started</Button>
                         </a>
                         <a href="https://github.com/animeshgarai09/Felix-UI-Library"><Button
                             leftIcon={<AiFillGithub />}
                             size='lg'
-                            variant={['round', 'outline']}
+                            variant='outline'
+                            isRound
                         >GitHub</Button>
                         </a>
                     </div>

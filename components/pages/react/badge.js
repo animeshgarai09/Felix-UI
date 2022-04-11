@@ -1,4 +1,4 @@
-import { Badge, IconButton } from '@felix-ui'
+import { Badge } from '@felix-ui'
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from 'components/footer'
@@ -8,13 +8,8 @@ const BadgeUI = () => {
         <>
             <p className={styles.des}>Badges are used to highlight an item's status for quick recognition.</p>
             <h4>Import</h4>
-            <p >Felix UI exports 2 badge-related components:</p>
-            <ul >
-                <li><code >Badge</code>: The tag to represent the status.</li>
-                <li><code>IconBadge</code>: A wrapper to add badges to icons.</li>
-            </ul>
             <Codeblock lang="jsx">
-                {`import { Badge, IconBadge } from '@felix-ui'`}
+                {`import { Badge } from "react-felix-ui"`}
             </Codeblock>
             <h4>Usage</h4>
             <div className={`${styles.element_container} ${styles.block}`}>
@@ -52,19 +47,6 @@ const BadgeUI = () => {
                 {`<Badge color= 'primary' variant= 'outline'>new</Badge>
 <Badge color= 'green' variant= 'rounded'>Added</Badge>
 <Badge color= 'red' variant= {['outline', 'rounded'] }>removed</Badge>`}
-            </Codeblock>
-            <h4>Icon badge</h4>
-            <p>Icon badge component can be used for showing number for any action. pass int number to <code>number</code> prop.</p>
-            <div className={`${styles.element_container} ${styles.block}`}>
-                <IconButton icon={<HiBell />} />
-                <IconButton icon={<HiBell />} showBadge={true} badgeNumber={10} />
-                <IconButton icon={<HiBell />} showBadge={true} badgeNumber={248} />
-            </div>
-
-            <Codeblock lang="jsx">
-                {`<IconBadge options={{ icon: <HiBell /> }} />
-<IconBadge options={{ icon: <HiBell />, number: 10 }} />
-<IconBadge options={{ icon: <HiBell />, number: 248 }} />`}
             </Codeblock>
             <Footer currentPage='Badge' />
 

@@ -12,6 +12,17 @@ a:visited,
 a:active {
     text-decoration: none;
 }
+a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--clr-primary);
+    font-weight: 500;
+    transition: 0.2s;
+    &:hover,
+    &:active {
+        color: var(--clr-primary-dark);
+    }
+}
 // 1.200 Minor third
 h1,
 h2,
@@ -56,60 +67,6 @@ p {
 label {
     font-size: var(--fs-100);
     font-weight: 500;
-}
-
-a {
-    display: inline-flex;
-    align-items: center;
-    color: var(--clr-primary);
-    font-weight: 500;
-    transition: 0.2s;
-    &:hover,
-    &:active {
-        color: var(--clr-primary-dark);
-    }
-}
-
-.text-gradient {
-    background: var(--clr-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.react-select-container {
-    .react-select__control {
-        cursor: pointer;
-        background-color: var(--clr-input-bg);
-        border: none !important;
-        &.react-select__control--is-focused {
-            box-shadow: none;
-        }
-    }
-    .react-select__single-value {
-        color: var(--clr-white);
-    }
-    .react-select__menu {
-        background-color: #202020;
-        .react-select__menu-list {
-            overflow-y: overlay;
-        }
-        .react-select__option {
-            background-color: transparent;
-            cursor: pointer;
-            &.react-select__option--is-focused {
-                background-color: #545454;
-            }
-            &:hover {
-                background-color: #545454;
-            }
-        }
-
-        .react-select__option--is-selected {
-            background-color: var(--clr-primary);
-            &.react-select__option--is-focused {
-                background-color: var(--clr-primary);
-            }
-        }
-    }
 }
 
 [type="checkbox"] {
@@ -160,15 +117,6 @@ a {
 
 strong {
     font-weight: 600;
-}
-.container {
-    display: flex;
-    .column {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 0;
-        width: 316px;
-    }
 }
 
 ///testing
@@ -330,25 +278,20 @@ input:focus {
 /* Skeleton loader animation */
 .loader {
     background: #f6f7f8;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: placeholderSkeleton;
-    -webkit-animation-timing-function: linear;
     background-image: -webkit-gradient(linear, left center, right center, from(#f6f7f8), color-stop(0.2, #edeef1), color-stop(0.4, #f6f7f8), to(#f6f7f8));
     background-image: -webkit-linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
     background-repeat: no-repeat;
-    // background-size: 800px 104px;
+    -webkit-animation-fill-mode: forwards;
     position: relative;
-}
-
-@-webkit-keyframes placeholderSkeleton {
-    0% {
-        background-position: -468px 0;
+    @include keyframes(placeholderSkeleton) {
+        0% {
+            background-position: -468px 0;
+        }
+        100% {
+            background-position: 468px 0;
+        }
     }
-    100% {
-        background-position: 468px 0;
-    }
+    @include animate(placeholderSkeleton, 1s, linear, infinite);
 }
 
 @keyframes check {

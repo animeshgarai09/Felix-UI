@@ -2,7 +2,7 @@ import styles from './footer.module.scss'
 import { SocialLinks } from '../utils'
 import Pages from '/components/pages'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-import { A, Button } from '@felix-ui'
+import { Button } from '@felix-ui'
 import PropTypes from 'prop-types'
 
 
@@ -19,8 +19,8 @@ const footer = ({ currentPage }) => {
     return (
         <footer className={styles.container}>
             <div className={styles.links_con}>
-                {previous !== -1 && <A href={`/documentation/${pageNames[previous].toLowerCase()}`}><Button className={styles.button} leftIcon={<FiChevronLeft />} isTransform={false}>{pageNames[previous]}</Button></A>}
-                {next !== -1 && <A href={`/documentation/${pageNames[next].toLowerCase()}`}><Button className={styles.button} rightIcon={<FiChevronRight />} isTransform={false}>{pageNames[next]}</Button></A>}
+                {previous !== -1 && <a href={`/documentation/${pageNames[previous].toLowerCase()}`}><Button className={styles.button} leftIcon={<FiChevronLeft />} isTransform={false}>{pageNames[previous]}</Button></a>}
+                {next !== -1 && <a href={`/documentation/${pageNames[next].toLowerCase()}`}><Button className={styles.button} rightIcon={<FiChevronRight />} isTransform={false}>{pageNames[next]}</Button></a>}
             </div>
             <SocialLinks />
         </footer>

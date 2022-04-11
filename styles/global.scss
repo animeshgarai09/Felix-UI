@@ -1,9 +1,26 @@
 :root {
-    --clr-page-bg: #f7f7f7;
+    --clr-theme-bg-1: #f7f7f7;
+    --clr-theme-bg-2: #fff;
+    --clr-theme-bg-3: #fff;
+
+    --clr-table-bg: var(--clr-white);
+    --clr-table-bg-odd: #f8f8f8;
+}
+.dark-mode {
+    --clr-theme-bg-1: #222222;
+    --clr-theme-bg-2: #2a2a2a;
+    --clr-theme-bg-3: #1e1e1e;
+
+    --clr-page-bg: #222222;
+    --clr-page-light-bg: #2a2a2a;
+    --clr-page-dark-bg: #1e1e1e;
+
+    --clr-table-bg: #2d2d2d;
+    --clr-table-bg-odd: #222222;
 }
 html,
 body {
-    background-color: var(--clr-page-bg);
+    background-color: var(--clr-theme-bg-1);
     font-size: 100%;
     color: var(--clr-text-color);
     -webkit-tap-highlight-color: transparent;

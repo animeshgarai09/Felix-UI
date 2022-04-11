@@ -3,16 +3,15 @@ import { AiFillHeart, AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai'
 import { IoLogoLinkedin } from 'react-icons/io'
 import { HiMail } from 'react-icons/hi'
 import { CopyBlock, dracula } from "react-code-blocks"
-import { A } from '@felix-ui'
 export const SocialLinks = () => {
     return (
         <div className={styles.container}>
-            <span>Made with <AiFillHeart /> by <A href="https://portfolio-alpha-liart.vercel.app/"> Animesh Garai</A></span>
+            <span>Made with <AiFillHeart /> by <a href="https://portfolio-alpha-liart.vercel.app/"> Animesh Garai</a></span>
             <div className={styles.links}>
-                <A href={'https://github.com/animeshgarai09'}><AiFillGithub /></A>
-                <A href={'https://twitter.com/animeshgarai09'}><AiFillTwitterCircle /></A>
-                <A href={'https://www.linkedin.com/in/animesh-garai-29a5251b4'}><IoLogoLinkedin /></A>
-                <A href={'mailto:animeshgarai09@gmail.com'}><HiMail /></A>
+                <a href={'https://github.com/animeshgarai09'}><AiFillGithub /></a>
+                <a href={'https://twitter.com/animeshgarai09'}><AiFillTwitterCircle /></a>
+                <a href={'https://www.linkedin.com/in/animesh-garai-29a5251b4'}><IoLogoLinkedin /></a>
+                <a href={'mailto:animeshgarai09@gmail.com'}><HiMail /></a>
             </div>
         </div>
     )

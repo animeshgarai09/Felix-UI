@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '@styles/documentation.module.scss'
 import Header from '../../components/header'
-import { A, Button, ButtonGroup } from '@felix-ui'
+import { Button, ButtonGroup } from '@felix-ui'
 import Pages from '/components/pages'
 const Documentation = () => {
 
@@ -47,7 +47,7 @@ const Documentation = () => {
         const pageNames = Object.keys(Pages)
         let com = pageNames.slice(start, end).map((item, i) => {
             const link = item.toLowerCase()
-            return <A key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</A>
+            return <a key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} href={`${link}`}>{item}</a>
         })
         return com
     }

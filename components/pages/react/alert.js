@@ -8,7 +8,7 @@ const AlertUI = () => {
             <p className={styles.des}>Alerts are used to communicate a state that affects a system, feature or page.</p>
             <h4>Import</h4>
             <Codeblock lang="jsx">
-                {`import { Alert } from "@felix-ui"`}
+                {`import { Alert } from "react-felix-ui"`}
             </Codeblock>
 
             <h4>Usage</h4>
@@ -67,23 +67,26 @@ const AlertUI = () => {
 />`}
             </Codeblock>
             <h4>Description</h4>
-            <p>A description can be added to alert component with <code>description</code> prop.</p>
+            <p>isOnClickActive description can be added to alert component with <code>description</code> prop.</p>
             <div className={`${styles.element_container} ${styles.column}`}>
                 <Alert
                     status='warning'
                     title='There was an error processing your request'
-                    closeButton={true}
+                    closeButton
                 >
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi <a href="#">cumque officiis </a>  exercitationem iure commodi ipsa quis, doloremque consectetur distinctio natus! Voluptate magnam debitis, exercitationem fuga amet hic voluptatibus repellendus labore?
                 </Alert>
             </div>
             <Codeblock lang="jsx">
                 {`<Alert
-    status='error'
+    status='warning'
     title='There was an error processing your request'
-    description='Request can not be processed due to insufficient funds in account.'
-    closeButton={true}
-/>`}
+    closeButton
+>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi <a href="#">cumque officiis </a>  
+    exercitationem iure commodi ipsa quis,doloremque consectetur distinctio natus! Voluptate 
+    magnam debitis, exercitationem fuga amet hic voluptatibus repellendus labore?
+</Alert>`}
             </Codeblock>
             <Footer currentPage='Alert' />
         </>

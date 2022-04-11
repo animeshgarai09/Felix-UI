@@ -1,9 +1,23 @@
 @use "sass:math";
 
 @function rem($pixels, $context: 16) {
-  @return (math.div($pixels, $context)) * 1rem;
+    @return (math.div($pixels, $context)) * 1rem;
 }
 
 @function em($pixels, $context: 16) {
-  @return (math.div($pixels, $context)) * 1em;
+    @return (math.div($pixels, $context)) * 1em;
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+    -webkit-animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
 }

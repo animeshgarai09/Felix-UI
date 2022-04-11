@@ -1,6 +1,7 @@
 import React from 'react'
-import styles from '../utils/system.module.scss'
+import styles from './image.module.scss'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 const Image = (
     {
@@ -14,6 +15,10 @@ const Image = (
         className
     }) => {
 
+    const classNames = classnames(
+        styles.container,
+        className
+    )
     const loadImage = () => {
         try {
             return React.createElement(require.resolve("next/image").default, {
@@ -38,7 +43,7 @@ const Image = (
     }
 
     return (
-        <div style={{ width: width }} className={`${styles.image__con} ${className ? className : ''}`}>
+        <div style={{ width: width }} className={classNames}>
             {loadImage()}
         </div>
     )

@@ -15,7 +15,7 @@
         flex-direction: column;
         height: calc(100vh - 82px - 2rem);
         overflow-y: scroll;
-        border-right: 2px solid #e7e7e7;
+        border-right: 2px solid var(--clr-border-color-3);
         .label {
             font-size: 0.9rem;
             font-weight: 600;
@@ -65,7 +65,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: var(--clr-white);
+        background: var(--clr-theme-bg-2);
         margin: 2rem -1rem;
         padding: 0.4rem 1rem;
         border-radius: 0.5rem;
@@ -107,7 +107,7 @@
 
     .element_container {
         border: 1px solid var(--clr-border-color-3);
-        background: #ffffff;
+        background: var(--clr-theme-bg-2);
         border-radius: 10px;
         display: flex;
         flex-wrap: wrap;

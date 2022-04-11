@@ -1,7 +1,6 @@
 import { Button, ButtonGroup, Alert } from "@felix-ui"
 import { Codeblock } from 'components/utils'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
-import { BiHomeCircle } from 'react-icons/bi'
 import Footer from "components/footer"
 import styles from '@styles/documentation.module.scss'
 
@@ -12,6 +11,11 @@ const ButtonUI = () => {
                 form, opening a dialog, canceling an action, or performing a delete operation.</p>
 
             <h4>Import</h4>
+            <p >Felix UI exports 2 button-related components:</p>
+            <ul >
+                <li><code>Button</code>: The button element.</li>
+                <li><code>BUttonGroup</code>: A wrapper to group button together.</li>
+            </ul>
             <Codeblock lang="jsx">
                 {`import { Button, ButtonGroup } from "react-felix-ui"`}
             </Codeblock>
@@ -148,14 +152,14 @@ const ButtonUI = () => {
 
             <div className={`${styles.element_container} ${styles.align_center}`}>
                 <ButtonGroup size="sm" theme="primary">
-                    <Button>Male</Button>
+                    <Button selected>Male</Button>
                     <Button>Female</Button>
                 </ButtonGroup>
             </div>
 
             <Codeblock lang="jsx">
                 {`<ButtonGroup size="sm" theme="primary">
-    <Button>Male</Button>
+    <Button selected>Male</Button>
     <Button>Female</Button>
 </ButtonGroup>`}
             </Codeblock>

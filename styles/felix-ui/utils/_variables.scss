@@ -3,6 +3,7 @@
 
     --clr-black: #2d3748;
     --clr-white: #ffffff;
+
     --clr-primary: #3bb57c;
     --clr-primary-light: #def9ec;
     --clr-primary-dark: #29a56c;
@@ -51,10 +52,6 @@
     --fs-200: 1rem;
     --fs-100: 0.8rem;
 
-    --clr-table-bg: var(--clr-white);
-    --clr-table-bg-odd: #f8f8f8;
-
-    --clr-page-bg: var(--clr-white);
     --clr-label-white: #707070;
     --clr-input-bg: #e5e5e563;
     --clr-error: #f66969;
@@ -63,22 +60,22 @@
 .dark-mode {
     /* Colors */
     --clr-text-color: var(--clr-white);
-    --clr-page-bg: #222222;
-    --clr-page-light-bg: #2a2a2a;
-    --clr-page-dark-bg: #1e1e1e;
-    --clr-table-bg: #2d2d2d;
-    --clr-table-bg-odd: #222222;
 
-    --clr-card-bg: var(--clr-page-dark-bg);
-    --clr-border-color-3: #303030;
+    --clr-gray-4: #222222;
+    --clr-gray-5: #2a2a2a;
+    --clr-gray-6: #1e1e1e;
+
     --clr-primary-light: #2f2f2f;
     --clr-input-bg: #333333;
+    --clr-border-color-3: #303030;
     --clr-border-color-2: var(--clr-primary);
+
+    --clr-card-bg: #1e1e1e;
     --clr-card-name: var(--clr-white);
+
     --clr-label-white: #707070;
     --clr-input-bg: #3e3e3e63;
-    --clr-toast-bg: var(--clr-page-dark-bg);
+    --clr-toast-bg: #1e1e1e;
     --clr-toast-close: #ffffff6b;
-    --clr-error: #f66969;
     --box-shadow-1: rgb(0 0 0 / 35%) 0px 5px 15px;
 }

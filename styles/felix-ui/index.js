@@ -10,14 +10,12 @@ import { ProductBody, ProductActions } from "./components/Card/ProductCard/Produ
 import ToastProvider from "./components/Toast/ToastProvider";
 import { useToast } from "./components/Toast/ToastProvider";
 import { List, ListItem } from "./components/List/List";
-import Image from "./components/Image";
-import A from './components/A';
+import Image from "./components/Image/Image";
 import Badge from "./components/Badge/Badge";
 import IconButton from "./components/IconButton/IconButton";
 import Input from './components/Input/Input'
 
 export {
-    A,
     Avatar,
     AvatarGroup,
     Alert,

@@ -1,6 +1,6 @@
 import styles from './ProductCard.module.scss'
 import PropTypes from 'prop-types'
-import Image from '../../Image'
+import Image from '../../Image/Image'
 import Badge from '../../Badge/Badge'
 
 const ProductImage = (

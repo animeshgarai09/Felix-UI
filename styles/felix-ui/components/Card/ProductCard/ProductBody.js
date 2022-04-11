@@ -1,6 +1,6 @@
 import styles from './ProductCard.module.scss'
 import PropTypes from 'prop-types'
-import Rating from '../../Rating'
+import Rating from '../../Rating/Rating'
 
 const ProductBody = (
     {

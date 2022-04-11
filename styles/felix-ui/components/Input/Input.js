@@ -2,26 +2,27 @@ import styles from './input.module.scss'
 import InputGroup from './InputGroup'
 import { useState } from 'react'
 import { VscEyeClosed, VscEye, } from 'react-icons/vsc'
+import { forwardRef } from 'react'
 
 
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
     const id = Math.random().toString(36).substring(2, 10);
     const { type } = props
     if (type == 'text' || type == "email") {
-        return <InputText id={id} {...props} />
+        return <InputText id={id} ref={ref} {...props} />
     } else if (type == 'password') {
-        return <InputPassword id={id} {...props} />
+        return <InputPassword id={id} ref={ref} {...props} />
     }
-}
+})
 
 
-const InputText = ({ id, label, errMsg, type, Fref, placeholder, name, value, onChange }) => {
+const InputText = forwardRef(({ id, label, errMsg, type, placeholder, name, value, onChange }, ref) => {
     return (
         <InputGroup id={id} label={label} errMsg={errMsg}>
             <input
                 id={id}
-                ref={Fref}
+                ref={ref}
                 type={type}
                 placeholder={placeholder}
                 name={name}
@@ -30,9 +31,9 @@ const InputText = ({ id, label, errMsg, type, Fref, placeholder, name, value, on
             />
         </InputGroup>
     )
-}
+})
 
-const InputPassword = ({ id, label, errMsg, Fref, placeholder, name, value, onChange }) => {
+const InputPassword = forwardRef(({ id, label, errMsg, placeholder, name, value, onChange }, ref) => {
 
     const [visible, setVisible] = useState(false)
 
@@ -42,7 +43,7 @@ const InputPassword = ({ id, label, errMsg, Fref, placeholder, name, value, onCh
         <InputGroup id={id} label={label} errMsg={errMsg}>
             <input
                 id={id}
-                ref={Fref}
+                ref={ref}
                 type={visible ? 'text' : 'password'}
                 placeholder={placeholder}
                 onChange={onChange}
@@ -54,6 +55,6 @@ const InputPassword = ({ id, label, errMsg, Fref, placeholder, name, value, onCh
             {!visible && <VscEye onClick={passwordToggle} />}
         </InputGroup>
     )
-}
+})
 
 export default Input

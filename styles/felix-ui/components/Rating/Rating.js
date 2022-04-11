@@ -1,12 +1,14 @@
-import styles from '../utils/system.module.scss'
+import styles from './rating.module.scss'
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa"
+import classnames from 'classnames'
 
-const Rating = ({ points, text, className }) => {
-    /*
-            points: number,//(0-5)
-            text: false || true //default true
-    */
-    // let { points, text } = options ? options : {}
+const Rating = (
+    {
+        points,
+        text,
+        className
+    }) => {
+
     let [first, second] = points.toString().split('.')
     let blank = second ? 4 - parseInt(first) : 5 - parseInt(first)
     let arr = []
@@ -24,8 +26,12 @@ const Rating = ({ points, text, className }) => {
         i++
     }
 
+    const classNames = classnames(
+        styles.container,
+        className
+    )
     return (
-        <span className={`${styles.rating} ${className ? className : ''}`}>
+        <span className={classNames}>
             {arr}
             {text && points}
         </span>

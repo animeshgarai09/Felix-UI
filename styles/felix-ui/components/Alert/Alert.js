@@ -1,9 +1,10 @@
 import styles from './alert.module.scss'
-import Button from '../Button/Button'
 import { CgClose } from 'react-icons/cg'
 import { BsCheck, BsInfo } from 'react-icons/bs'
 import { HiExclamation, HiOutlineExclamationCircle } from 'react-icons/hi'
 import PropTypes from 'prop-types'
+import IconButton from '../IconButton/IconButton'
+import classnames from 'classnames'
 
 const Alert = (
     {
@@ -21,8 +22,14 @@ const Alert = (
         else if (status == 'warning') return <HiExclamation />
         else if (status == 'info') return <BsInfo />
     }
+
+    const classNames = classnames(
+        styles.container,
+        styles[status],
+        className
+    )
     return (
-        <div className={`${styles.container} ${styles[status]} ${className ? className : ''}`} role="alert">
+        <div className={classNames} role="alert">
 
             <div className={styles.text}>
                 <span className={styles.heading}>
@@ -33,12 +40,12 @@ const Alert = (
                 </span>
                 {children && <p>{children}</p>}
             </div>
-            {closeButton && <Button leftIcon={<CgClose />} className={styles.close} isTransform={false} />}
+            {closeButton && <IconButton icon={<CgClose />} className={styles.close} ariaLabel="alert close button" />}
         </div>
     )
 }
 Alert.propTypes = {
-    status: PropTypes.oneOf(['danger', 'info', 'warning', 'success', 'gray']),
+    status: PropTypes.oneOf(['error', 'info', 'warning', 'success', 'gray']),
     icon: PropTypes.bool,
     title: PropTypes.string,
     closeButton: PropTypes.bool,

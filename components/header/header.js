@@ -1,5 +1,5 @@
 import styles from './header.module.scss'
-import { A, Button, IconButton } from '@felix-ui'
+import { Button, IconButton } from '@felix-ui'
 import { AiFillGithub } from 'react-icons/ai'
 import { HiOutlineSun } from 'react-icons/hi'
 import useDarkMode from "use-dark-mode";
@@ -11,8 +11,8 @@ const Header = () => {
             <div className={styles.wrapper}>
                 <a href="/"> <img src="/images/felix.png" className={styles.logo} alt="" /></a>
                 <div className={styles.links}>
-                    <A href="/documentation/installation" >Documentation</A>
-                    <A href="#">
+                    <a href="/documentation/installation" >Documentation</a>
+                    <a href="#">
                         <Button
                             leftIcon={<AiFillGithub />}
                             theme="primary"
@@ -21,7 +21,7 @@ const Header = () => {
                         >
                             Github
                         </Button>
-                    </A>
+                    </a>
                     <IconButton icon={<HiOutlineSun />} ariaLabel="theme changer button" onClick={darkMode.toggle} />
                 </div>
             </div>

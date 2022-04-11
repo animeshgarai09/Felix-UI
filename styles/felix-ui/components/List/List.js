@@ -1,6 +1,6 @@
 import styles from "./list.module.scss"
 import PropTypes from 'prop-types'
-
+import classnames from 'classnames'
 
 const List = (
     {
@@ -12,16 +12,21 @@ const List = (
     }
 ) => {
 
-
+    const classNames = classnames(
+        styles.list,
+        styles[orientation],
+        styles['style-' + style],
+        className
+    )
     return (
         <>
             {type == 'ul' &&
-                <ul className={`${styles.list} ${styles[orientation]} ${styles['style-' + style]} ${className ? className : ''}`}>
+                <ul className={classNames} role="list">
                     {children}
                 </ul>
             }
             {type == 'ol' &&
-                <ol className={`${styles.list} ${styles[orientation]} ${styles['style-' + style]} ${className ? className : ''}`}>
+                <ol className={classNames} role="list" >
                     {children}
                 </ol>
             }

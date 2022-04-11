@@ -1,6 +1,7 @@
-import Image from '../Image'
+import Image from '../Image/Image'
 import styles from './avatar.module.scss'
 import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react';
 
 const gradientColors = [
     'linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%)',
@@ -30,13 +31,16 @@ const Avatar = (
     }) => {
 
     const shortName = name && name.split(' ')[0][0].toUpperCase() + name.split(' ')[1][0].toUpperCase()
-
+    const [gradient, setGradient] = useState(null)
+    useEffect(() => {
+        setGradient(gradientColors[randomNumberGen(9)])
+    }, [])
     return (
         <div className={`${styles.container} ${className ? className : ''}`}>
             {src && <Image className={`${styles[size]} ${styles.circle}`} src={src} alt={name} quality={20} />}
 
             {!src && name &&
-                <div style={{ background: gradientColors[randomNumberGen(9)] }} className={`${styles.text} ${styles[size]} ${styles.circle}`}>
+                <div style={{ background: gradient }} className={`${styles.text} ${styles[size]} ${styles.circle}`}>
                     <span>{shortName}</span>
                 </div>
             }
