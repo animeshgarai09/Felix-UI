@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../styles/index.module.scss'
 import { Button } from '@felix-ui'
 import Header from '../components/header'
@@ -21,11 +22,11 @@ export default function Index() {
                     <p>Felix UI is a highly customizable React component library </p>
                     <p>Minimal, modular and accessible component library that gives you the building blocks for faster development.</p>
                     <div className={styles.actions}>
-                        <a href="/documentation/installation"><Button
+                        <Link href="/documentation/installation?v=react"><a><Button
                             size='lg'
                             isRound
                         >Get started</Button>
-                        </a>
+                        </a></Link>
                         <a href="https://github.com/animeshgarai09/Felix-UI-Library"><Button
                             leftIcon={<AiFillGithub />}
                             size='lg'

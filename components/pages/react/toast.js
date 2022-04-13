@@ -32,9 +32,9 @@ const ToastUI = () => {
     return (
         <div>
             <Button onClick={success}>success</Button>
-            <Button onClick={error} theme="danger">success</Button>
-            <Button onClick={warning} theme="warning">success</Button>
-            <Button onClick={info} theme="info">success</Button>
+            <Button onClick={error} color="danger">success</Button>
+            <Button onClick={warning} color="warning">success</Button>
+            <Button onClick={info} color="info">success</Button>
         </div>
     )
 }

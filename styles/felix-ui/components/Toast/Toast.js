@@ -1,7 +1,7 @@
 import styles from './toast.module.scss'
-import { ReactComponent as Check } from '../../svg/check.svg'
-import { ReactComponent as Error } from '../../svg/error.svg'
-import { ReactComponent as Info } from '../../svg/info.svg'
+import Check from '../../svg/check.svg'
+import Error from '../../svg/error.svg'
+import Info from '../../svg/info.svg'
 import Button from '../Button/Button'
 import { CgClose } from 'react-icons/cg'
 import PropTypes from 'prop-types'
@@ -96,7 +96,7 @@ const Toast = (
 Toast.propTypes = {
     id: PropTypes.string.isRequired,
     message: PropTypes.string.isRequired,
-    status: PropTypes.oneOf(['danger', 'info', 'warning', 'success', 'gray']).isRequired,
+    status: PropTypes.oneOf(['error', 'info', 'warning', 'success', 'gray']).isRequired,
     dispatch: PropTypes.func,
     duration: PropTypes.number,
     className: PropTypes.string,

@@ -1,10 +1,10 @@
-import styles from './toast.module.scss'
-import Toast from './Toast'
+import styles from '../Toast/toast.module.scss'
+import Toast from '../Toast/Toast'
 import { createContext, useContext, useReducer } from 'react'
 import { genKey } from '../../utils/js'
 const ToastContext = createContext()
 
-const ToastProvider = ({ className, children }) => {
+const FelixProvider = ({ className, children }) => {
 
     const [toastState, toastDispatcher] = useReducer((state, action) => {
 
@@ -43,4 +43,4 @@ export const useToast = () => {
     })
 }
 
-export default ToastProvider
+export default FelixProvider

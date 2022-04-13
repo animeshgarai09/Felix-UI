@@ -8,31 +8,31 @@ const Colors = () => {
             <h4>Default Palette</h4>
             <p>Below is the color palette, used by Felix, listed with the hex-codes.</p>
             <div className={styles.palette}>
-                <div>
+                <div className="bg-primary">
                     <span>Primary</span>
                     <span>#3bb77e</span>
                 </div>
-                <div>
+                <div className="bg-secondary">
                     <span>Secondary</span>
                     <span>#2d3748</span>
                 </div>
-                <div>
+                <div className="bg-gray">
                     <span>Gray</span>
                     <span>#626262</span>
                 </div>
-                <div>
+                <div className="bg-success">
                     <span>Success</span>
                     <span>#20a779</span>
                 </div>
-                <div>
-                    <span>Danger</span>
+                <div className="bg-danger">
+                    <span>Error</span>
                     <span>#fd4e4e</span>
                 </div>
-                <div>
+                <div className="bg-warning">
                     <span>Warning</span>
                     <span>#f8aa1c</span>
                 </div>
-                <div>
+                <div className="bg-info">
                     <span>Info</span>
                     <span>#007bc3</span>
                 </div>
@@ -48,7 +48,7 @@ const Colors = () => {
                 <span className="bg-info">.bg-info</span>
             </div>
             <div className={`${styles.util_colors} text-secondary`}>
-                <span className="bg-primary-light ">.bg-primary-light</span>
+                <span className={`bg-primary-light ${styles.outlie}`}>.bg-primary-light</span>
                 <span className="bg-secondary-light ">.bg-secondary-light</span>
                 <span className="bg-gray-light ">.bg-gray-light</span>
                 <span className="bg-success-light ">.bg-success-light</span>

@@ -5,6 +5,7 @@ import Footer from "components/footer"
 import styles from '@styles/documentation.module.scss'
 
 const ButtonUI = () => {
+
     return (
         <>
             <p>The Button component is used to trigger an action or event, such as submitting a

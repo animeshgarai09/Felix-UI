@@ -2,7 +2,6 @@ import { Input } from '@felix-ui'
 import { Codeblock } from 'components/utils'
 import styles from '@styles/documentation.module.scss'
 import Footer from 'components/footer/footer'
-import { useEffect, useRef } from "react"
 
 const InputUI = () => {
 

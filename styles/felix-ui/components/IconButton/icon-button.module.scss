@@ -11,12 +11,10 @@
     border: none;
     cursor: pointer;
     color: var(--clr-primary);
-    background: var(--clr-primary-light);
     transition: 0.3s;
     @media (hover: hover) {
         &:hover {
             color: #ffffff;
-            background: var(--clr-primary);
         }
     }
     &:active {

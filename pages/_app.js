@@ -1,12 +1,12 @@
 import '@felix-ui/global.scss'
 import '../styles/fonts.scss'
 import '../styles/global.scss'
-import { ToastProvider } from '@felix-ui'
+import { FelixProvider } from '@felix-ui'
 function MyApp({ Component, pageProps }) {
     return (
-        <ToastProvider>
+        <FelixProvider>
             <Component {...pageProps} />
-        </ToastProvider>
+        </FelixProvider>
     )
 }
 

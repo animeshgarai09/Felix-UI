@@ -7,13 +7,15 @@ import ButtonGroup from "./components/Button/ButtonGroup";
 import ProductWrapper from "./components/Card/ProductCard/ProductWrapper";
 import ProductImage from "./components/Card/ProductCard/ProductImage";
 import { ProductBody, ProductActions } from "./components/Card/ProductCard/ProductBody";
-import ToastProvider from "./components/Toast/ToastProvider";
-import { useToast } from "./components/Toast/ToastProvider";
+import FelixProvider, { useToast } from "./components/FelixProvider/FelixProvider";
 import { List, ListItem } from "./components/List/List";
 import Image from "./components/Image/Image";
 import Badge from "./components/Badge/Badge";
 import IconButton from "./components/IconButton/IconButton";
 import Input from './components/Input/Input'
+import { useLockBodyScroll } from "./components/Hooks/useLockBodyScroll";
+import { useOnClickOutside } from "./components/Hooks/useOnClickOutside";
+import { useClipboard } from "./components/Hooks/useClipboard";
 
 export {
     Avatar,
@@ -26,12 +28,15 @@ export {
     ProductImage,
     ProductBody,
     ProductActions,
-    ToastProvider,
+    FelixProvider,
     useToast,
     List,
     ListItem,
     IconButton,
     Image,
-    Input
+    Input,
+    useLockBodyScroll,
+    useOnClickOutside,
+    useClipboard
 }
 

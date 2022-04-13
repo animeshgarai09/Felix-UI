@@ -2,18 +2,26 @@
     --clr-theme-bg-1: #f7f7f7;
     --clr-theme-bg-2: #fff;
     --clr-theme-bg-3: #fff;
-
+    --clr-label: var(--clr-gray-3);
     --clr-table-bg: var(--clr-white);
     --clr-table-bg-odd: #f8f8f8;
+
+    --clr-heading: var(--clr-black);
+    --clr-element-container-bg: var(--clr-white);
 }
 .dark-mode {
+    --clr-heading: var(--clr-white);
+    --clr-text-color: #e3e3e3;
     --clr-theme-bg-1: #222222;
     --clr-theme-bg-2: #2a2a2a;
     --clr-theme-bg-3: #1e1e1e;
 
-    --clr-page-bg: #222222;
-    --clr-page-light-bg: #2a2a2a;
-    --clr-page-dark-bg: #1e1e1e;
+    --clr-label: var(--clr-gray-1);
+    --clr-element-container-bg: var(--clr-page-light-bg);
+
+    // --clr-page-bg: #222222;
+    // --clr-page-light-bg: #2a2a2a;
+    // --clr-page-dark-bg: #1e1e1e;
 
     --clr-table-bg: #2d2d2d;
     --clr-table-bg-odd: #222222;
@@ -30,7 +38,14 @@ body {
 *::after {
     font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--clr-heading);
+}
 table {
     border-radius: 5px;
     font-size: 0.9rem;

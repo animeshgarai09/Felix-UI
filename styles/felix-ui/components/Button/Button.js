@@ -67,7 +67,7 @@ const Button = (
 Button.propTypes = {
     type: PropTypes.string,
     size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
-    color: PropTypes.oneOf(['primary', 'info', 'warning', 'success', 'gray']),
+    color: PropTypes.oneOf(['primary', 'danger', 'info', 'warning', 'success', 'gray']),
     variant: PropTypes.oneOf(['outline', 'ghost', 'link', 'disable']),
     leftIcon: PropTypes.element,
     rightIcon: PropTypes.element,
