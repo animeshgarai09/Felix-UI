@@ -36,24 +36,31 @@ export const Codeblock = ({ lang, className, children }) => {
     )
 }
 
-export const LinkGenerator = ({ activePage, lang, styles }) => {
+export const LinkGenerator = ({ activePage, lang, styles, onClick }) => {
     return (
         <>
             <span className={styles.label}>Getting started</span>
-            {genLink(activePage, lang, styles, 0, 3)}
+            {genLink(activePage, lang, styles, 0, 3, onClick)}
             <span className={styles.label}>Elements</span>
-            {genLink(activePage, lang, styles, 3, 7)}
+            {genLink(activePage, lang, styles, 3, 7, onClick)}
             <span className={styles.label}>Views</span>
-            {genLink(activePage, lang, styles, 7, 12)}
+            {genLink(activePage, lang, styles, 7, 12, onClick)}
         </>
     )
 }
 
-const genLink = (activePage, lang, styles, start, end) => {
+const genLink = (activePage, lang, styles, start, end, onClick) => {
     const pageNames = Object.keys(Pages)
     let com = pageNames.slice(start, end).map((item, i) => {
         const link = item.toLowerCase()
-        return <Link href={link + `?v=${lang}`}><a key={i} className={`${styles.link} ${activePage == link ? styles.active : ''}`} >{item}</a></Link>
+        return <Link href={link + `?v=${lang}`} >
+            <a key={i}
+                className={`${styles.link} ${activePage == link ? styles.active : ''}`}
+                onClick={onClick}
+            >
+                {item}
+            </a>
+        </Link>
     })
     return com
 }

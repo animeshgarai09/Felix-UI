@@ -53,7 +53,7 @@ const Header = ({ activePage, lang }) => {
             <div className={`${styles.menu} ${menu && styles.open}`}>
                 {
                     activePage && lang &&
-                    <LinkGenerator activePage={activePage} lang={lang} styles={styles} />
+                    <LinkGenerator activePage={activePage} lang={lang} styles={styles} onClick={() => setMenu(false)} />
                 }
             </div>
         </header>
