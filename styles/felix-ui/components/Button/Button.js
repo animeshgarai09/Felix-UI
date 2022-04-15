@@ -2,13 +2,14 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 import styles from './button.module.scss'
 import classnames from 'classnames'
+import { forwardRef } from 'react'
 
-const Button = (
+const Button = forwardRef((
     {
         type = "button",            // Button type can be button or submit
         size = "md",                // 'xs' || 'sm' || 'md' || 'lg', // md is by default
         color = "primary",          // 'primary' || danger || 'info' || 'warning' || 'success' || 'gray'  // primary is by default
-        variant = "solid",          // 'outline','ghost','link','disable' // solid is by default
+        variant,                    // 'outline','ghost','link','disable' // solid is by default
         leftIcon,                   // React-icons
         rightIcon,                  // React-icons
         onClick,                    // function passed to component for onClick event
@@ -20,7 +21,7 @@ const Button = (
         selected,                   // (ButtonGroup only) act as radio button for multiple button, sets active class
         className,                  // user-defined classnames
         children                    // button text
-    }) => {
+    }, ref) => {
 
     /* State to check active sate if isOnClickActive is set true */
     const [active, setActive] = useState(false)
@@ -55,14 +56,14 @@ const Button = (
         className
     )
     return (
-        <button type={type} role="button" className={classNames} onClick={btnClick}>
+        <button ref={ref} type={type} role="button" className={classNames} onClick={btnClick}>
             {isLoading && <div className={styles.loader}></div>}
             {!isLoading && leftIcon}
             {!isLoading && children}
             {!isLoading && rightIcon}
         </button>
     )
-}
+})
 
 Button.propTypes = {
     type: PropTypes.string,

@@ -1,20 +1,25 @@
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const DEFAULT_EVENTS = ['mousedown', 'touchstart'];
 
-export const useOnClickOutside = ({ ref, handler }) => {
+export const useOnClickOutside = ({ handler, elements }) => {
+    const element = useRef()
     useEffect(() => {
         const listener = (event) => {
             // Do nothing if clicking ref's element or descendent elements
-            if (!ref.current || ref.current.contains(event.target)) {
+            if (!element.current
+                || element.current.contains(event.target)
+                || elements.some((item) => item === event.target)) {
                 return;
             }
+
             handler(event);
         };
         DEFAULT_EVENTS.forEach((event) => document.addEventListener(event, listener));
         return () => {
             DEFAULT_EVENTS.forEach((event) => document.removeEventListener(event, listener));
         };
-    }, [ref, handler]);
+    }, [element, handler]);
+    return element
 }

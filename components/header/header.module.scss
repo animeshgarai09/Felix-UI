@@ -25,9 +25,11 @@
     gap: 1rem;
     .toggle {
         background-color: var(--clr-primary-light);
+        color: var(--clr-primary);
         @media (hover: hover) {
             &:hover {
                 background-color: var(--clr-primary);
+                color: var(--clr-white);
             }
         }
     }

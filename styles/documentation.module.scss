@@ -6,7 +6,6 @@
     max-width: 1240px;
     margin: 0 auto;
     padding: 0 rem(20);
-    position: relative;
     .side_container {
         position: sticky;
         top: calc(2rem + 66px);
@@ -241,6 +240,7 @@
         h1 {
             margin: 0.7rem 0;
             line-height: 1;
+            color: inherit;
         }
         p {
             font-size: 0.9rem;

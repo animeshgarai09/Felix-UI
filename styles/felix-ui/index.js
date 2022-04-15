@@ -12,7 +12,8 @@ import { List, ListItem } from "./components/List/List";
 import Image from "./components/Image/Image";
 import Badge from "./components/Badge/Badge";
 import IconButton from "./components/IconButton/IconButton";
-import Input from './components/Input/Input'
+import Input from './components/Input/Input';
+import { Menu, MenuButton, MenuList, MenuItem } from "./components/Menu/Menu";
 import { useLockBodyScroll } from "./components/Hooks/useLockBodyScroll";
 import { useOnClickOutside } from "./components/Hooks/useOnClickOutside";
 import { useClipboard } from "./components/Hooks/useClipboard";
@@ -35,6 +36,10 @@ export {
     IconButton,
     Image,
     Input,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
     useLockBodyScroll,
     useOnClickOutside,
     useClipboard

@@ -5,8 +5,7 @@ import { HiMail } from 'react-icons/hi'
 import { CopyBlock, dracula } from "react-code-blocks"
 import Link from 'next/link'
 import Pages from '/components/pages'
-import { useRouter } from 'next/router'
-
+import React from 'react'
 export const SocialLinks = () => {
     return (
         <div className={styles.container}>
@@ -44,7 +43,7 @@ export const LinkGenerator = ({ activePage, lang, styles, onClick }) => {
             <span className={styles.label}>Elements</span>
             {genLink(activePage, lang, styles, 3, 7, onClick)}
             <span className={styles.label}>Views</span>
-            {genLink(activePage, lang, styles, 7, 12, onClick)}
+            {genLink(activePage, lang, styles, 7, 13, onClick)}
         </>
     )
 }
@@ -52,10 +51,13 @@ export const LinkGenerator = ({ activePage, lang, styles, onClick }) => {
 const genLink = (activePage, lang, styles, start, end, onClick) => {
     const pageNames = Object.keys(Pages)
     let com = pageNames.slice(start, end).map((item, i) => {
-        const link = item.toLowerCase()
-        return <Link href={link + `?v=${lang}`} >
-            <a key={i}
-                className={`${styles.link} ${activePage == link ? styles.active : ''}`}
+
+        const check = React.isValidElement(Pages[item])
+        const link = item.toLowerCase() + (!check ? `?v=${lang}` : '')
+
+        return <Link href={link} key={item}>
+            <a
+                className={`${styles.link} ${activePage == item.toLowerCase() ? styles.active : ''}`}
                 onClick={onClick}
             >
                 {item}

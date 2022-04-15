@@ -19,16 +19,20 @@ const Documentation = () => {
         if (!router.isReady) return
         const { activePage, v } = router.query
         setActivePage(activePage)
-        setLang(v)
-        /* Check if language switch is required or not based on pages */
-        activePage === 'installation' || activePage === 'colors' || activePage === 'typography'
-            ? showLangSwitch && setShowLangSwitch(() => false)
-            : !showLangSwitch && setShowLangSwitch(() => true)
+        v && setLang(v)
+
+        // /* Check if language switch is required or not based on pages */
+        const pageName = activePage && activePage[0].toUpperCase() + activePage.slice(1)
+        const { [pageName]: docPage } = Pages
+
+        if (React.isValidElement(docPage)) {
+            setShowLangSwitch(false)
+        } else {
+            setShowLangSwitch(true)
+        }
     }, [router.isReady, router.query])
 
-    useEffect(() => {
 
-    }, [])
     const pageName = activePage && activePage[0].toUpperCase() + activePage.slice(1)
     /* 
         Based on the page stored in activePage variable 

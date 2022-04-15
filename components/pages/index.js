@@ -12,6 +12,7 @@ import ReactGrid from "./react/grid";
 import ReactImage from "./react/image";
 import ReactInput from "./react/input";
 import ReactList from "./react/list";
+import ReactMenu from "./react/menu";
 import ReactModal from "./react/modal";
 import ReactNavigation from "./react/navigation";
 import ReactRating from "./react/rating";
@@ -69,6 +70,7 @@ export default {
         css: <CSSCard />,
     },
     Toast: <ReactToast />,
+    Menu: <ReactMenu />,
     Grid: {
         react: <ReactGrid />,
         css: <CSSGrid />,

@@ -22,7 +22,7 @@ export default function Index() {
                     <p>Felix UI is a highly customizable React component library </p>
                     <p>Minimal, modular and accessible component library that gives you the building blocks for faster development.</p>
                     <div className={styles.actions}>
-                        <Link href="/documentation/installation?v=react"><a><Button
+                        <Link href="/documentation/installation"><a><Button
                             size='lg'
                             isRound
                         >Get started</Button>

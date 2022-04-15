@@ -25,7 +25,7 @@ const Header = ({ activePage, lang }) => {
             <div className={styles.wrapper}>
                 <Link href="/"><a> <img src="/images/felix.png" className={styles.logo} alt="" /></a></Link>
                 <div className={styles.links}>
-                    <Link href="/documentation/installation?v=react"><a className={styles.desk}>Documentation</a></Link>
+                    <Link href="/documentation/installation"><a className={styles.desk}>Documentation</a></Link>
                     <a href="https://github.com/animeshgarai09/Felix-UI-Library" className={styles.desk}>
                         <Button
                             leftIcon={<AiFillGithub />}
