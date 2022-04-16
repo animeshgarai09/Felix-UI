@@ -43,7 +43,7 @@ export const LinkGenerator = ({ activePage, lang, styles, onClick }) => {
             <span className={styles.label}>Elements</span>
             {genLink(activePage, lang, styles, 3, 7, onClick)}
             <span className={styles.label}>Views</span>
-            {genLink(activePage, lang, styles, 7, 13, onClick)}
+            {genLink(activePage, lang, styles, 7, 14, onClick)}
         </>
     )
 }

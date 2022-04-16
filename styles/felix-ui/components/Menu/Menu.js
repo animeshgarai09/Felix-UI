@@ -1,10 +1,14 @@
-import styles from "./menu.module.scss"
-import { cloneElement, forwardRef, useRef, useEffect, useState } from "react"
-import { useOnClickOutside } from "../Hooks/useOnClickOutside"
+import { cloneElement, useState } from "react"
 import { usePopper } from 'react-popper';
-import Button from "../Button/Button"
+import PropTypes from "prop-types";
 
-const Menu = ({ children }) => {
+const Menu = (
+    {
+        children,
+        menuPlacement = "bottom-start",  // popper input for menu position
+        isLazy = false,                   // if true MenuList will mount on MenuState true else MenuList will be rendered in DOM 
+        offset = [0, 15]
+    }) => {
     const [menuState, setMenuState] = useState(false)
     const [menuButtonElement, setMenuButtonElement] = useState(null);
     const [menuListElement, setMenuListElement] = useState(null);
@@ -14,27 +18,25 @@ const Menu = ({ children }) => {
         attributes: { popper: popperAttributes } } = usePopper(
             menuButtonElement,
             menuListElement, {
-            placement: "bottom-start",
+            placement: menuPlacement,
             modifiers: [
                 {
                     name: 'offset',
                     options: {
-                        offset: [0, 15],
+                        offset,
                     },
                 },
                 {
-                    name: styles.arrow,
+                    name: "arrow",
                     options: {
                         element: arrowElement,
-                        padding: 5,
+                        // padding: 5,
                     }
                 }
             ],
         });
     return (
-
         <>
-            {/* {console.log(children)} */}
             {children.map((child, i) => {
                 const displayName = child.type.displayName
 
@@ -45,7 +47,9 @@ const Menu = ({ children }) => {
                         ref: setMenuButtonElement,
                         key: i
                     })
-                } else if (displayName === "MenuList") {
+                } else if (
+                    (isLazy && menuState && displayName === "MenuList")
+                    || (!isLazy && displayName === "MenuList")) {
                     return cloneElement(child, {
                         menuState,
                         closeMenu: () => setMenuState(false),
@@ -62,74 +66,40 @@ const Menu = ({ children }) => {
 
 Menu.displayName = "Menu"
 
-const MenuButton = forwardRef((
-    {
-        size = "md",                // 'xs' || 'sm' || 'md' || 'lg', // md is by default
-        color = "primary",          // 'primary' || danger || 'info' || 'warning' || 'success' || 'gray'  // primary is by default
-        variant,                    // 'outline','ghost','link','disable' // solid is by default
-        leftIcon,                   // React-icons
-        rightIcon,                  // React-icons
-        isRound = false,            // Rounded button if true
-        isWide = false,             // Full width if true
-        className,                  // user-defined classnames
-        children,                   // Button text
-        menuState,                  // Menu list state true || false
-        menuToggle,                 // function to open close menu
-    }, ref) => {
-
-    const props = { size, color, variant, leftIcon, rightIcon, isRound, isWide, className, children, ref }
-    return (
-        <Button {...props} isTransform={false} onClick={menuToggle}>{children}</Button>
-    )
-})
-
-MenuButton.displayName = "MenuButton"
-
-
-const MenuList = forwardRef((
-    {
-        className,
-        children,
-        menuState,
-        closeMenu,
-        popperStyles,
-        popperAttributes
-    }, ref) => {
-
-    const { menuButtonElement, setMenuListElement, setArrowElement } = ref
-    const menuListRef = useRef()
-    const dropdownRef = useOnClickOutside({ handler: closeMenu, elements: [menuButtonElement] })
-
-    useEffect(() => {
-        dropdownRef.current = menuListRef.current
-        setMenuListElement(menuListRef.current)
-    }, [menuListRef.current])
-    return (
-        <div ref={menuListRef} className={`${className} ${styles.container} ${menuState ? styles.open : ''} `} style={popperStyles} {...popperAttributes}>
-            <div ref={setArrowElement} className={`${styles.arrow} popper__arrow`}></div>
-            <ul>
-                {children.map((child, i) => {
-                    if (child.type.displayName === "MenuItem")
-                        return cloneElement(child, { closeMenu, key: i })
-                })}
-            </ul>
-        </div>
-
-    )
-})
-
-MenuList.displayName = "MenuList"
-
-const MenuItem = (
-    {
-        onClick,
-        closeMenu,
-        className,
-        children }) => {
-    return (
-        <li className={className} onClick={() => { onClick && onClick(); closeMenu(); }}>{children}</li>
-    )
+const isValidChild = (props, propName, componentName) => {
+    if (!Array.isArray(props)) {
+        return new Error(`Invalid children provided. Expected only "MenuButton" and "MenuList" component as a direct children of ${componentName} component.`)
+    } else {
+        if (!props[propName].type.displayName || !["MenuButton", "MenuList"].includes(props[propName].type.displayName)) {
+            return new Error(`Invalid children provided. Expected only "MenuButton" and "MenuList" component as a direct children of ${componentName} component.`)
+        }
+    }
 }
-MenuItem.displayName = "MenuItem"
 
-export { Menu, MenuButton, MenuList, MenuItem }
+Menu.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(isValidChild),
+        // isValidChild
+    ]).isRequired,
+    menuPlacement: PropTypes.oneOf([
+        "auto",
+        "auto-start",
+        "auto-end",
+        "top",
+        "top-start",
+        "top-bottom",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "right",
+        "right-start",
+        "right-end",
+        "left",
+        "left-start",
+        "left-end",
+    ]),
+    isLazy: PropTypes.bool,
+    offset: PropTypes.arrayOf(PropTypes.number)
+}
+
+export default Menu

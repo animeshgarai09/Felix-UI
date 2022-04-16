@@ -10,7 +10,7 @@
         width: 1rem;
         background: var(--clr-primary);
         position: absolute;
-        border: 2px solid var(--clr-gray-6);
+        border: 2px solid var(--clr-theme-3);
         &.green {
             background: var(--clr-green);
         }
@@ -36,7 +36,7 @@
         font-size: 1rem !important;
         font-weight: 500;
         color: var(--clr-gray-1);
-        background: var(--clr-gray-4);
+        background: var(--clr-theme-2);
     }
 }
 .xs {
@@ -116,7 +116,7 @@
         }
         & > div {
             border-radius: 50%;
-            border: 2px solid var(--clr-gray-6);
+            border: 2px solid var(--clr-theme-3);
         }
     }
     &.xs .container > div {

@@ -71,13 +71,13 @@ export default {
     },
     Toast: <ReactToast />,
     Menu: <ReactMenu />,
-    Grid: {
-        react: <ReactGrid />,
-        css: <CSSGrid />,
-    },
     Modal: {
         react: <ReactModal />,
         css: <CSSModal />,
+    },
+    Grid: {
+        react: <ReactGrid />,
+        css: <CSSGrid />,
     },
     Navigation: {
         react: <ReactNavigation />,

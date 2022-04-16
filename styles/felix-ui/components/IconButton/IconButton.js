@@ -1,7 +1,8 @@
 import styles from './icon-button.module.scss'
 import PropTypes from 'prop-types'
+import { forwardRef } from 'react'
 
-const IconButton = (
+const IconButton = forwardRef((
     {
         icon,                 // Icon component
         showBadge = false,    // Show badge on true
@@ -9,17 +10,17 @@ const IconButton = (
         ariaLabel,            // For accessability 
         onClick,
         className,
-    }) => {
+    }, ref) => {
 
     const num = showBadge && (badgeNumber && parseInt(badgeNumber) >= 100 ? '99+' : badgeNumber)
 
     return (
-        <button onClick={onClick} className={`${styles.container} ${className ? className : ''}`} aria-label={ariaLabel}>
+        <button ref={ref} onClick={onClick} className={`${styles.container} ${className ? className : ''}`} aria-label={ariaLabel}>
             {showBadge && <span style={{ padding: num && '7px 5px' }} className={styles.badge}>{num}</span>}
             {icon}
         </button>
     )
-}
+})
 
 IconButton.propTypes = {
     icon: PropTypes.node.isRequired,

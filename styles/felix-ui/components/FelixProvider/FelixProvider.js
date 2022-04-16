@@ -21,13 +21,14 @@ const FelixProvider = ({ className, children }) => {
     return (
         <ToastContext.Provider value={toastDispatcher}>
             {children}
-            <div className={`${styles.wrapper} ${className ? className : ''}`}>
+            <div id="felix-toast-root" className={`${styles.wrapper} ${className ? className : ''}`}>
                 {
                     toastState.slice(0).reverse().map(props => {
                         return <Toast dispatch={toastDispatcher} key={props.id} {...props} />
                     })
                 }
             </div>
+            <div id="felix-modal-root"></div>
         </ToastContext.Provider>
     )
 }

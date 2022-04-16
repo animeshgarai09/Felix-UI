@@ -3,7 +3,7 @@
     width: max-content;
     border-radius: 6px;
     border: 1px solid var(--clr-border-color-3);
-    background: var(--clr-theme-bg-3);
+    background: var(--clr-theme-3);
     box-shadow: var(--box-shadow-1);
     min-width: 10rem;
     .arrow {
@@ -22,7 +22,17 @@
             transform: rotate(45deg);
         }
     }
-    &[data-popper-placement^="top-start"] .arrow {
+    &[data-popper-placement="top"] .arrow {
+        bottom: -6px;
+        left: 50%;
+        transform: translate(-50%);
+        &::before {
+            border: none;
+            border-bottom: 1px solid var(--clr-border-color-3);
+            border-right: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="top-start"] .arrow {
         bottom: -6px;
         left: 10px;
         &::before {
@@ -31,13 +41,97 @@
             border-right: 1px solid var(--clr-border-color-3);
         }
     }
-    &[data-popper-placement^="bottom-start"] .arrow {
+    &[data-popper-placement="top-end"] .arrow {
+        bottom: -6px;
+        right: 10px;
+        &::before {
+            border: none;
+            border-bottom: 1px solid var(--clr-border-color-3);
+            border-right: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="bottom"] .arrow {
+        top: -6px;
+        left: 50%;
+        transform: translate(-50%);
+        &::before {
+            border: none;
+            border-top: 1px solid var(--clr-border-color-3);
+            border-left: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="bottom-start"] .arrow {
         top: -6px;
         left: 10px;
         &::before {
             border: none;
             border-top: 1px solid var(--clr-border-color-3);
             border-left: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="bottom-end"] .arrow {
+        top: -6px;
+        right: 10px;
+        &::before {
+            border: none;
+            border-top: 1px solid var(--clr-border-color-3);
+            border-left: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="left"] .arrow {
+        top: 50%;
+        right: -7px;
+        transform: translate(0, -50%);
+        &::before {
+            border: none;
+            border-top: 1px solid var(--clr-border-color-3);
+            border-right: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="left-start"] .arrow {
+        top: 10px;
+        right: -7px;
+        &::before {
+            border: none;
+            border-top: 1px solid var(--clr-border-color-3);
+            border-right: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="left-end"] .arrow {
+        bottom: 10px;
+        right: -7px;
+        &::before {
+            border: none;
+            border-top: 1px solid var(--clr-border-color-3);
+            border-right: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="right"] .arrow {
+        top: 50%;
+        left: -7px;
+        transform: translate(0, -50%);
+        &::before {
+            border: none;
+            border-left: 1px solid var(--clr-border-color-3);
+            border-bottom: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="right-start"] .arrow {
+        top: 10px;
+        left: -7px;
+        &::before {
+            border: none;
+            border-left: 1px solid var(--clr-border-color-3);
+            border-bottom: 1px solid var(--clr-border-color-3);
+        }
+    }
+    &[data-popper-placement="right-end"] .arrow {
+        bottom: 10px;
+        left: -7px;
+        &::before {
+            border: none;
+            border-left: 1px solid var(--clr-border-color-3);
+            border-bottom: 1px solid var(--clr-border-color-3);
         }
     }
     &.open {
@@ -47,11 +141,13 @@
         list-style: none !important;
         padding: 0.5rem 0 !important;
         margin: 0 !important;
+        position: relative;
+        z-index: 2;
         a {
             all: unset;
         }
         li {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem;
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: 500;
@@ -64,6 +160,10 @@
             }
             &:hover {
                 background: var(--clr-gray-6);
+            }
+            svg {
+                font-size: 1.3rem;
+                place-self: center;
             }
         }
     }
