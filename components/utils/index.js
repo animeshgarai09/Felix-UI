@@ -44,20 +44,23 @@ export const LinkGenerator = ({ activePage, lang, styles, onClick }) => {
             {genLink(activePage, lang, styles, 3, 7, onClick)}
             <span className={styles.label}>Views</span>
             {genLink(activePage, lang, styles, 7, 14, onClick)}
+            <span className={styles.label}>Hooks</span>
+            {genLink(activePage, lang, styles, 18, -1, onClick)}
         </>
     )
 }
 
 const genLink = (activePage, lang, styles, start, end, onClick) => {
     const pageNames = Object.keys(Pages)
-    let com = pageNames.slice(start, end).map((item, i) => {
+    let com = pageNames.slice(start, end != -1 ? end : pageNames.length).map((item, i) => {
 
         const check = React.isValidElement(Pages[item])
-        const link = item.toLowerCase() + (!check ? `?v=${lang}` : '')
+        const lowerCase = item[0].toLowerCase() + item.slice(1)
+        const link = lowerCase + (!check ? `?v=${lang}` : '')
 
         return <Link href={link} key={item}>
             <a
-                className={`${styles.link} ${activePage == item.toLowerCase() ? styles.active : ''}`}
+                className={`${styles.link} ${activePage == lowerCase ? styles.active : ''}`}
                 onClick={onClick}
             >
                 {item}

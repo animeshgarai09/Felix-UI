@@ -17,6 +17,8 @@ import ReactModal from "./react/modal";
 import ReactNavigation from "./react/navigation";
 import ReactRating from "./react/rating";
 import ReactToggleButton from "./react/toggleButton";
+import ReactUseClipboard from "./react/useClipboard";
+import ReactUseOnClickOutside from "./react/useOnClickOutside";
 
 import CSSAlert from "./css/alert";
 import CSSAvatar from "./css/avatar";
@@ -90,5 +92,7 @@ export default {
     "Toggle button": {
         react: <ReactToggleButton />,
         css: <CSSToggleButton />,
-    }
+    },
+    useClipboard: <ReactUseClipboard />,
+    useOnClickOutside: <ReactUseOnClickOutside />
 }

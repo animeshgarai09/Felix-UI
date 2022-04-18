@@ -9,6 +9,7 @@ import Pages from '/components/pages'
 const Documentation = () => {
 
     const [activePage, setActivePage] = useState('')
+    const [pageName, setPageName] = useState('')
     const [lang, setLang] = useState('react')
     const [showLangSwitch, setShowLangSwitch] = useState(false)
 
@@ -22,7 +23,11 @@ const Documentation = () => {
         v && setLang(v)
 
         // /* Check if language switch is required or not based on pages */
-        const pageName = activePage && activePage[0].toUpperCase() + activePage.slice(1)
+        const pageName = activePage && activePage.includes("use") ? activePage : activePage[0].toUpperCase() + activePage.slice(1)
+        console.log("🚀 ~ file: [activePage].js ~ line 27 ~ useEffect ~ pageName", pageName)
+
+        setPageName(pageName)
+
         const { [pageName]: docPage } = Pages
 
         if (React.isValidElement(docPage)) {
@@ -33,7 +38,7 @@ const Documentation = () => {
     }, [router.isReady, router.query])
 
 
-    const pageName = activePage && activePage[0].toUpperCase() + activePage.slice(1)
+    // const pageName = activePage && activePage activePage[0].toUpperCase() + activePage.slice(1)
     /* 
         Based on the page stored in activePage variable 
         this function loads that particular component from JSON Pages imported
@@ -41,7 +46,7 @@ const Documentation = () => {
     const loadPage = () => {
         const { [pageName]: docPage } = Pages
         /* 
-            Pages JSOn has direct 3 key with component ('installation','colors','typography' )
+            Pages JSON has direct 3 key with component ('installation','colors','typography' )
             Check if docPage has component or JSON before returning 
         */
         if (React.isValidElement(docPage)) {

@@ -9,7 +9,7 @@ import classNames from "classnames";
 
 const Modal = (
     {
-        size = "lg",
+        size = "md",
         title,
         isOpen,
         blockScrollOnMount = true,

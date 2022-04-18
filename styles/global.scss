@@ -4,7 +4,7 @@
     --clr-theme-bg-3: #fff;
     --clr-label: var(--clr-gray-3);
     --clr-table-bg: var(--clr-white);
-    --clr-table-bg-odd: #f8f8f8;
+    --clr-table-bg-odd: #f0f0f0;
 
     --clr-heading: var(--clr-black);
     --clr-element-container-bg: var(--clr-white);
@@ -18,8 +18,8 @@
 
     --clr-label: var(--clr-gray-1);
     --clr-element-container-bg: var(--clr-page-light-bg);
-    --clr-table-bg: #2d2d2d;
-    --clr-table-bg-odd: #222222;
+    --clr-table-bg: #232b37;
+    --clr-table-bg-odd: #1e2430;
 }
 html,
 body {
@@ -42,8 +42,8 @@ h6 {
     color: var(--clr-heading);
 }
 table {
-    border-radius: 5px;
-    font-size: 0.9rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
@@ -51,6 +51,7 @@ table {
     max-width: 100%;
     background-color: var(--clr-table-bg);
     margin-bottom: 2rem;
+    overflow: hidden;
     td,
     th {
         padding: 0.6rem 1rem;
@@ -59,9 +60,8 @@ table {
 
     td {
         border-right: 1px solid var(--clr-table-bg-odd);
-        font-size: 0.9rem;
         &:first-child {
-            width: 20%;
+            max-width: 20%;
             white-space: nowrap;
         }
     }
@@ -69,11 +69,12 @@ table {
     thead th {
         color: #ffffff;
         background: var(--clr-secondary);
-        border-radius: 0 10px 0 0;
-    }
-
-    thead th:nth-child(odd) {
-        border-radius: 10px 0 0 0;
+        &:first-child {
+            border-radius: 10px 0 0 0;
+        }
+        &:last-child {
+            border-radius: 0 10px 0 0;
+        }
     }
 
     tr:nth-child(even) {
