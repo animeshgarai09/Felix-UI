@@ -9,7 +9,6 @@ const Badge = (
         children
     }) => {
 
-    console.log(variant)
     return (
         <span className={`
         ${styles.container} 

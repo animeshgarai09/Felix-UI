@@ -26,14 +26,13 @@ const Modal = (
     const bodyLock = useLockBodyScroll()
 
     const escFunction = useCallback((event) => {
-        console.log(event.key)
         if (event.keyCode === 27) {
             onClose()
         }
     }, []);
 
     useEffect(() => {
-        blockScrollOnMount && bodyLock.lock()
+        isOpen && blockScrollOnMount && bodyLock.lock()
         closeOnEsc && document.addEventListener("keydown", escFunction);
         isOpen && onOpenFocus && onOpenFocus.current.focus()
 
@@ -41,7 +40,7 @@ const Modal = (
             closeOnEsc && document.removeEventListener("keydown", escFunction);
             blockScrollOnMount && bodyLock.unlock()
         };
-    }, [blockScrollOnMount, closeOnEsc, escFunction]);
+    }, [isOpen, blockScrollOnMount, closeOnEsc, escFunction]);
 
     const containerClass = classNames(
         styles.container,

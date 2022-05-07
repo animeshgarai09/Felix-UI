@@ -16,7 +16,7 @@ const MenuList = forwardRef((
 
     const { menuButtonElement, setMenuListElement, setArrowElement } = ref
     const menuListRef = useRef()
-    const dropdownRef = useOnClickOutside({ handler: closeMenu, elements: [menuButtonElement] })
+    const dropdownRef = useOnClickOutside({ handler: closeMenu, nodes: [menuButtonElement] })
 
     useEffect(() => {
         dropdownRef.current = menuListRef.current

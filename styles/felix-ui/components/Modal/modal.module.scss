@@ -61,6 +61,7 @@
     }
     .close {
         color: var(--clr-gray-3);
+        background: none;
         font-size: 1.6rem;
         &:hover,
         &:focus {

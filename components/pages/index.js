@@ -19,6 +19,7 @@ import ReactRating from "./react/rating";
 import ReactToggleButton from "./react/toggleButton";
 import ReactUseClipboard from "./react/useClipboard";
 import ReactUseOnClickOutside from "./react/useOnClickOutside";
+import ReactUseLockBodyScrollUI from "./react/useLockBodyScroll";
 
 import CSSAlert from "./css/alert";
 import CSSAvatar from "./css/avatar";
@@ -94,5 +95,6 @@ export default {
         css: <CSSToggleButton />,
     },
     useClipboard: <ReactUseClipboard />,
-    useOnClickOutside: <ReactUseOnClickOutside />
+    useOnClickOutside: <ReactUseOnClickOutside />,
+    useLockBodyScroll: <ReactUseLockBodyScrollUI />
 }

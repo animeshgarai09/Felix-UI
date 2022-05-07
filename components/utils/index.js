@@ -9,7 +9,7 @@ import React from 'react'
 export const SocialLinks = () => {
     return (
         <div className={styles.container}>
-            <span>Made with <AiFillHeart /> by <a href="https://portfolio-alpha-liart.vercel.app/"> Animesh Garai</a></span>
+            <span>Made with <AiFillHeart /> by <a href="https://animesh-designs.vercel.app/"> Animesh Garai</a></span>
             <div className={styles.links}>
                 <a href={'https://github.com/animeshgarai09'}><AiFillGithub /></a>
                 <a href={'https://twitter.com/animeshgarai09'}><AiFillTwitterCircle /></a>

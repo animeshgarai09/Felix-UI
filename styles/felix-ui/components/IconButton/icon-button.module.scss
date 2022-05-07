@@ -11,6 +11,7 @@
     border: none;
     cursor: pointer;
     color: var(--clr-text-color);
+    background-color: var(--clr-theme-3);
     transition: 0.3s;
     @media (hover: hover) {
         &:hover {

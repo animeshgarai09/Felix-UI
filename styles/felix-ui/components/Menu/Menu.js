@@ -15,7 +15,7 @@ const Menu = (
     const [arrowElement, setArrowElement] = useState(null);
 
     const { styles: { popper: popperStyles },
-        attributes: { popper: popperAttributes } } = usePopper(
+        attributes: { popper: popperAttributes }, update } = usePopper(
             menuButtonElement,
             menuListElement, {
             placement: menuPlacement,
@@ -44,6 +44,7 @@ const Menu = (
                     return cloneElement(child, {
                         menuState,
                         menuToggle: () => setMenuState(prev => !prev),
+                        updatePopper: async () => await update(),
                         ref: setMenuButtonElement,
                         key: i
                     })

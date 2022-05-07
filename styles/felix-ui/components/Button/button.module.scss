@@ -58,6 +58,9 @@
         &:hover {
             transform: none;
         }
+        &:active {
+            transform: scale(0.95);
+        }
     }
     /* Button sizes */
 

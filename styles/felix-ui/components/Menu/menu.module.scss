@@ -159,16 +159,17 @@
                 border-bottom: 0.5px solid var(--clr-border-color-3);
             }
             &:hover {
-                background: var(--clr-gray-6);
+                background: var(--clr-theme-2);
             }
             svg {
-                font-size: 1.3rem;
+                font-size: 1rem;
                 place-self: center;
             }
         }
     }
 }
 
-:global(.dark-mode) .container {
-    --clr-gray-6: var(--clr-gray-5);
+:global(body:not(.dark-mode)) .container {
+    --clr-theme-3: var(--clr-white);
+    --clr-theme-2: var(--clr-gray-6);
 }

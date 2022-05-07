@@ -7,17 +7,18 @@
 }
 .container {
     display: grid;
-    grid-template-columns: 2rem 1fr 1.5rem;
+    grid-template-columns: 2rem 1fr;
     background-color: var(--clr-toast-bg);
     border: 1px solid var(--clr-border-color-3);
-    width: 20rem;
-    padding: 0.6rem;
-    padding-left: 1rem;
+    width: 18rem;
+    padding: 0.6rem 0.8rem;
+    // padding-left: 1rem;
     border-radius: 10px;
     margin: 0.5rem;
     box-shadow: var(--box-shadow-1);
     animation: SlideLeft 0.3s;
     animation-fill-mode: forwards;
+    position: relative;
     &.close {
         animation: SlideRight 0.3s;
         animation-fill-mode: forwards;
@@ -61,6 +62,7 @@
             align-items: center;
             font-size: 0.9rem;
             font-weight: 600;
+
             text-transform: capitalize;
         }
         p {
@@ -89,6 +91,9 @@
         height: 1.5rem !important;
         font-size: 1rem !important;
         transition: 0.2s;
+        position: absolute;
+        right: 8px;
+        top: 8px;
         svg {
             color: var(--clr-toast-close);
         }

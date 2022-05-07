@@ -23,6 +23,7 @@ const MenuButton = forwardRef((
 
         menuState,                  // Menu list state true || false
         menuToggle,                 // function to open close menu
+        updatePopper
     }, ref) => {
 
     const buttonProps = { size, color, variant, leftIcon, rightIcon, isRound, isWide, className, children, ref }
@@ -30,7 +31,7 @@ const MenuButton = forwardRef((
     return (
         <>
             {as === "IconButton"
-                ? <IconButton {...iconButtonProps} onClick={menuToggle} />
+                ? <IconButton {...iconButtonProps} onClick={() => { menuToggle(); updatePopper(); }} />
                 : <Button {...buttonProps} isTransform={false} onClick={menuToggle}>{children}</Button>
             }
         </>

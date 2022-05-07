@@ -13,7 +13,7 @@ const CardUI = () => {
                 {`import { ProductCard } from "@felix-ui"`}
             </Codeblock>
 
-            <ProductWrapper isLoading={true}>
+            <ProductWrapper >
                 <ProductImage src="/images/product.jpeg" alt='product' badge={{ text: '30% Off', color: 'yellow' }} />
                 <ProductBody
                     title="Angie’s Boomchickapop Sweet & Salty"
@@ -28,7 +28,7 @@ const CardUI = () => {
                     currentPrice={250}
                     price={350}
                 >
-                    <ProductActions leftAlign={true} newLine={true}>
+                    <ProductActions >
                         <Button size="sm" variant="ghost" theme='gray' leftIcon={<AiOutlineHeart />}></Button>
                         <Button size="sm" variant="ghost" leftIcon={<MdAdd />}>Add</Button>
                     </ProductActions>

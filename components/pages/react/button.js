@@ -23,7 +23,7 @@ const ButtonUI = () => {
 
             <h4>Usage</h4>
             <div className={styles.element_container}>
-                <Button>Submit</Button>
+                <Button isTransform={false}>Submit</Button>
             </div>
             <Codeblock lang="jsx">
                 {`<Button>Submit</Button>`}
