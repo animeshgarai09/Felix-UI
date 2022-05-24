@@ -11,10 +11,17 @@ const AvatarGroup = (
         children
     }) => {
 
+    const renderMax = () => {
+        if (show && children.length > show) {
+            return <Avatar num={max || (children.slice(show, children.length)).length} />
+        } else if (max) {
+            return <Avatar num={max} />
+        }
+    }
     return (
-        <div className={`${styles.group} ${styles[size]} ${className ? className : ''}`}>
-            {children.slice(0, show)}
-            <Avatar num={max || (children.slice(show, children.length)).length} />
+        <div className={`${styles.group} ${styles[size + "-g"]} ${className ? className : ''}`}>
+            {show ? children.slice(0, show) : children}
+            {renderMax()}
         </div>
     )
 

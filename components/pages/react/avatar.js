@@ -91,9 +91,9 @@ const AvatarUI = () => {
             </ul>
 
             <div className={styles.element_container}>
-                <AvatarGroup size='md' show={5} max={76}>
+                <AvatarGroup size='md' max={43}>
                     <Avatar name='Dan Abrahmov' src='/images/1.jpeg' />
-                    <Avatar name='Kola Tioluwani' src='/images/2.jpeg' />
+                    <Avatar size='lg' name='Kola Tioluwani' src='/images/2.jpeg' />
                     <Avatar name='Kent Dodds' />
                     <Avatar name='Ryan Florence' src='/images/3.jpg' />
                     <Avatar name='Christian Nwamba' src='/images/4.jpg' />

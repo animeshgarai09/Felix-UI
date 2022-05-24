@@ -21,8 +21,9 @@ const Modal = (
         children,
         onOpenFocus,
     }) => {
-
-    const contentRef = closeOnOverlayClick ? useOnClickOutside({ handler: onClose }) : useRef()
+    const onClickOutsideRef = useOnClickOutside({ handler: onClose })
+    let contentRef = useRef()
+    contentRef = closeOnOverlayClick ? onClickOutsideRef : contentRef
     const bodyLock = useLockBodyScroll()
 
     const escFunction = useCallback((event) => {

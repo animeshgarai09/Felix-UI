@@ -2,7 +2,6 @@
 .container {
     position: relative;
     display: inline-block;
-    margin: 0 0.5rem;
     .badge {
         display: inline-block;
         border-radius: 50%;
@@ -110,7 +109,7 @@
 .group {
     display: inline-flex;
     .container {
-        margin-right: -1.7rem;
+        margin-right: -1.1rem;
         &:last-of-type {
             margin-right: 0;
         }
@@ -119,7 +118,7 @@
             border: 2px solid var(--clr-theme-3);
         }
     }
-    &.xs .container > div {
+    &.xs-g .container > div {
         @extend .xs;
         + .badge {
             width: 0.5rem;
@@ -129,7 +128,7 @@
             border-width: 1px;
         }
     }
-    &.sm .container > div {
+    &.sm-g .container > div {
         @extend .sm;
         + .badge {
             width: 0.7rem;
@@ -138,7 +137,7 @@
             right: 0;
         }
     }
-    &.md .container > div {
+    &.md-g .container > div {
         @extend .md;
         + .badge {
             width: 0.9rem;
@@ -147,7 +146,7 @@
             right: 0;
         }
     }
-    &.lg .container > div {
+    &.lg-g .container > div {
         @extend .lg;
         + .badge {
             width: 1.1rem;
@@ -156,7 +155,7 @@
             right: 4px;
         }
     }
-    &.xl .container > div {
+    &.xl-g .container > div {
         @extend .xl;
         + .badge {
             width: 1.3rem;
@@ -165,7 +164,7 @@
             right: 8px;
         }
     }
-    &.xxl .container > div {
+    &.xxl-g .container > div {
         @extend .xxl;
         + .badge {
             width: 1.3rem;
