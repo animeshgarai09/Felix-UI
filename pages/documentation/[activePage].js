@@ -71,10 +71,10 @@ const Documentation = () => {
                     <section className={styles.sub_container}>
                         {pageName !== "Installation" && <div className={styles.heading_con}>
                             <h1>{pageName}</h1>
-                            {showLangSwitch && <ButtonGroup size="sm" theme="primary">
+                            {/* {showLangSwitch && <ButtonGroup size="sm" theme="primary">
                                 <Button onClick={() => { router.push(`/documentation/${activePage}?v=react`) }} selected={lang === 'react'}>React</Button>
                                 <Button onClick={() => { router.push(`/documentation/${activePage}?v=css`) }} selected={lang === 'css'}>CSS</Button>
-                            </ButtonGroup>}
+                            </ButtonGroup>} */}
                         </div>
                         }
                         {activePage && lang && loadPage()}

@@ -13,9 +13,9 @@ const ButtonUI = () => {
 
             <h4>Import</h4>
             <p >Felix UI exports 2 button-related components:</p>
-            <ul >
+            <ul>
                 <li><code>Button</code>: The button element.</li>
-                <li><code>BUttonGroup</code>: A wrapper to group button together.</li>
+                <li><code>ButtonGroup</code>: A wrapper to group button together.</li>
             </ul>
             <Codeblock lang="jsx">
                 {`import { Button, ButtonGroup } from "react-felix-ui"`}

@@ -5,7 +5,7 @@ import classnames from 'classnames'
 const List = (
     {
         type = "ul",    // "ol" || "ul" for ordered and unordered list
-        style,          // "none"||"disc"||"square"||"circle"||"number"||"lowerLetter"||"upperLetter" List styles
+        style = "disc",          // "none"||"disc"||"square"||"circle"||"number"||"lowerLetter"||"upperLetter" List styles
         orientation,    // "horizontal" for inline list
         className,      // user defined class name
         children        // ListItems for the list

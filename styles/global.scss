@@ -81,3 +81,42 @@ table {
         background: var(--clr-table-bg-odd);
     }
 }
+
+@media screen and (max-width: 63em) {
+    .basic.responsive-3,
+    .overlay.responsive-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+    .overlay .card:nth-child(1) {
+        display: none;
+    }
+    .basic .card:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 32em) {
+    .basic.responsive-3,
+    .overlay.responsive-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .basic .card:nth-child(2) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 75em) {
+    .horizontal,
+    .text {
+        &.responsive-2 {
+            grid-template-columns: 1fr;
+        }
+        .card:nth-child(2) {
+            display: none;
+        }
+    }
+}
+.grid {
+    margin-bottom: 2rem;
+}

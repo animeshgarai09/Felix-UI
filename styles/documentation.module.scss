@@ -196,6 +196,8 @@
     padding: 0.7rem;
     margin-bottom: 1rem;
     gap: rem(15);
+    position: relative;
+    z-index: 1;
     .icon-badge {
         margin-right: 1rem;
     }
@@ -376,4 +378,14 @@
             width: 70%;
         }
     }
+}
+
+.menu_side_list {
+    display: flex;
+    gap: 5rem;
+}
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // justify-content: center;
 }

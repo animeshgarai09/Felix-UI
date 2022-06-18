@@ -26,6 +26,20 @@ const ButtonUI = () => {
 <button className="btn btn--warning">Warning</button>
 <button className="btn btn--error">Error</button>`}
             </Codeblock>
+            <h4>Button sizes</h4>
+            <div className={styles.element_container}>
+                <button className="btn btn--primary btn--xs">Primary</button>
+                <button className="btn btn--info btn--sm">Info</button>
+                <button className="btn btn--warning btn--md">Warning</button>
+                <button className="btn btn--error btn--lg">Error</button>
+            </div>
+            <Codeblock lang="html">
+
+                {`<button className="btn btn--primary btn--xs">Primary</button>
+<button className="btn btn--info btn--sm">Info</button>
+<button className="btn btn--warning btn--md">Warning</button>
+<button className="btn btn--error btn--lg">Error</button>`}
+            </Codeblock>
             <h4>Button variants</h4>
             <div className={styles.element_container}>
                 <button className="btn btn--primary btn--round">Primary</button>

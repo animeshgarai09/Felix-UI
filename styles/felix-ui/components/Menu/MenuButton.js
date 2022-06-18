@@ -32,7 +32,7 @@ const MenuButton = forwardRef((
         <>
             {as === "IconButton"
                 ? <IconButton {...iconButtonProps} onClick={() => { menuToggle(); updatePopper(); }} />
-                : <Button {...buttonProps} isTransform={false} onClick={menuToggle}>{children}</Button>
+                : <Button {...buttonProps} isTransform={false} onClick={() => { menuToggle(); updatePopper(); }}>{children}</Button>
             }
         </>
     )
