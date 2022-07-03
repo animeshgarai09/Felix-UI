@@ -20,32 +20,24 @@ const Installation = () => {
             </Codeblock>
 
             <h4>Usage</h4>
-            <p>To start using the components, please follow these steps:</p>
-            <ul>
-                <li>Wrap your application with the <code>FelixProvider</code> provided by <strong> react-felix-ui</strong>.</li>
-            </ul>
+            <p>To start using the components, Wrap your application with the <code>FelixProvider</code> provided by <strong> react-felix-ui</strong>.
+                Felix UI ships with easy to use utility classes. To add CSS Import global CSS file from the package, in your <code> index.js </code>file.
+            </p>
             <Codeblock lang="jsx">
                 {`import { FelixProvider } from "react-felix-ui"
-
-// Do this at the root of your application
-function App({ children }) {
-    return <FelixProvider>{children}</FelixProvider>
-}`}
-            </Codeblock>
-            <ul>
-                <li>Felix UI ships with easy to use utility classes. To add CSS Import global CSS file from the package, in your <code> index.js </code>file.</li>
-            </ul>
-            <Codeblock lang="jsx">
-                {`// import Felix UI global CSS file
 import "react-felix-ui/dist/cjs/index.css"
 
+// Do this at the root of your application
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <FelixProvider>
+            <App />
+        </FelixProvider>
     </React.StrictMode>,
     document.getElementById("root")
 )`}
             </Codeblock>
+
 
             <h4>Use as a styling framework</h4>
             <p>Felix UI can be used as a styling framework for your vanilla HTML CSS projects also. To start using the components in your project, Copy-paste the stylesheet <code> link </code>into your <code> head</code> before all other stylesheets to load Felix UI CSS.</p>

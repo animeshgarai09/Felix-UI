@@ -16,7 +16,6 @@ const InputUI = () => {
             <p>Here's a basic usage example of the <code>Input</code> component:</p>
             <div className={styles.element_container}>
                 <Input type="text" label="Full name" />
-                <Input type="textarea" label="Full name" height="200" resize />
             </div>
             <Codeblock lang="jsx">
                 {`<Input type="text" label="Full name"/>`}
@@ -28,11 +27,13 @@ const InputUI = () => {
                 <Input type="text" label="Full name" />
                 <Input type="email" label="Email" />
                 <Input type="password" label="Password" />
+                <Input type="textarea" label="Full name" height="200" resize />
             </div>
             <Codeblock lang="jsx">
                 {`<Input type="text" label="Full name" />
 <Input type="email" label="Email" />
-<Input type="password" label="Password" />`}
+<Input type="password" label="Password" />
+<Input type="textarea" label="Full name" height="200" resize />`}
             </Codeblock>
 
             <h4>Input with error message</h4>
